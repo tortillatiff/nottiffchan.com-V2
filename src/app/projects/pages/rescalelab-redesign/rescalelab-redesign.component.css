@@ -1,8 +1,0 @@
-p, li {
-    font-size: var(--text-xs);
-}
-
-img {
-    width: 100%;
-    border-radius: 15px;
-}
