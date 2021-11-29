@@ -777,15 +777,344 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_herogif_gif__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/herogif.gif */ "./src/assets/herogif.gif");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _components_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/icons */ "./src/components/icons/index.js");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+
+
+const StyledHeroSection = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    @media (max-width: 480px) and (min-height: 700px) {
+        padding-bottom: 10vh;
+    }
+
+    .getintouch {
+        font-weight: 500;
+        color: var(--black);
+        // cursor: none;
+        animation-delay: 0.7s!important;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 36px;
+    }
+
+    .email {
+        color: var(--purple);
+        text-decoration: underline;
+        margin-left: 8px;
+    } 
+      
+    .email:hover {
+        color: var(--pink);
+    }
+`;
+const HeroGif = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img`
+    width: 432px;
+
+    @media (max-width: 432px) {
+        width: 100%;
+    }
+`;
+const StyledHeroText = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h1`
+    color: var(--purple);
+    line-height: 120%;
+    margin: 0;
+    font-size: clamp(36px, 4.3vw, 70px);
+    text-align: center;
+    margin-top: 48px;
+    width: 85%;
+
+    @media (max-width: 600px) {
+        width: 95%;
+    }
+
+    span {
+        transition: color 2s;
+        transition-delay: 1.5s;
+    }
+
+    span:nth-child(1n):hover {
+        color: var(--pink);
+    }
+    
+    span:nth-child(2n):hover {
+        color: var(--gold);
+    }
+    
+    span:nth-child(3n):hover {
+        color: var(--pink-dark);
+    }
+    
+    span:hover {
+        transition: color 0s;
+    }
+`;
+
+const Hero = () => {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(StyledHeroSection, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(HeroGif, {
+    src: _assets_herogif_gif__WEBPACK_IMPORTED_MODULE_1__["default"],
+    alt: ""
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(StyledHeroText, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "h"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "l"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "! "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "\u2019"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "m "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, ", "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "-"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "v"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "l"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "p"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "x"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "g"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "g "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "q"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "x"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "p"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, ".")), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+    class: "getintouch"
+  }, "Get in touch", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_icons__WEBPACK_IMPORTED_MODULE_2__.Icon, {
+    name: "ArrowRight"
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+    class: "email",
+    href: "mailto:hi@nottiffchan.com"
+  }, "hi@nottiffchan.com")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Hero);
+
+/***/ }),
+
+/***/ "./src/components/icons/arrowRight.js":
+/*!********************************************!*\
+  !*** ./src/components/icons/arrowRight.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
 
 
 
-const Hero = () => {
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", null, "hero");
+const IconArrowRight = () => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "2",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  class: "feather feather-arrow-right"
+}, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+  x1: "5",
+  y1: "12",
+  x2: "19",
+  y2: "12"
+}), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+  points: "12 5 19 12 12 19"
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconArrowRight);
+
+/***/ }),
+
+/***/ "./src/components/icons/arrowUpRight.js":
+/*!**********************************************!*\
+  !*** ./src/components/icons/arrowUpRight.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+const IconArrowUpRight = () => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "2",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  class: "feather feather-arrow-up-right"
+}, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+  x1: "7",
+  y1: "17",
+  x2: "17",
+  y2: "7"
+}), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+  points: "7 7 17 7 17 17"
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconArrowUpRight);
+
+/***/ }),
+
+/***/ "./src/components/icons/icon.js":
+/*!**************************************!*\
+  !*** ./src/components/icons/icon.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons */ "./src/components/icons/index.js");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+
+
+const Icon = ({
+  name
+}) => {
+  switch (name) {
+    case 'ArrowRight':
+      return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_2__.IconArrowRight, null);
+
+    case 'ArrowUpRight':
+      return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_2__.IconArrowUpRight, null);
+
+    case 'LinkedIn':
+      return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_2__.IconLinkedIn, null);
+
+    case 'Mail':
+      return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(_icons__WEBPACK_IMPORTED_MODULE_2__.IconMail, null);
+  }
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Hero);
+Icon.propTypes = {
+  name: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);
+
+/***/ }),
+
+/***/ "./src/components/icons/index.js":
+/*!***************************************!*\
+  !*** ./src/components/icons/index.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "IconArrowRight": () => (/* reexport safe */ _arrowRight__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "IconArrowUpRight": () => (/* reexport safe */ _arrowUpRight__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   "IconLinkedIn": () => (/* reexport safe */ _linkedin__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "IconMail": () => (/* reexport safe */ _mail__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   "Icon": () => (/* reexport safe */ _icon__WEBPACK_IMPORTED_MODULE_4__["default"])
+/* harmony export */ });
+/* harmony import */ var _arrowRight__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrowRight */ "./src/components/icons/arrowRight.js");
+/* harmony import */ var _arrowUpRight__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./arrowUpRight */ "./src/components/icons/arrowUpRight.js");
+/* harmony import */ var _linkedin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./linkedin */ "./src/components/icons/linkedin.js");
+/* harmony import */ var _mail__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mail */ "./src/components/icons/mail.js");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./icon */ "./src/components/icons/icon.js");
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/components/icons/linkedin.js":
+/*!******************************************!*\
+  !*** ./src/components/icons/linkedin.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+const IconLinkedIn = () => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "2",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  class: "feather feather-linkedin"
+}, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+  d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+}), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+  x: "2",
+  y: "9",
+  width: "4",
+  height: "12"
+}), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+  cx: "4",
+  cy: "4",
+  r: "2"
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconLinkedIn);
+
+/***/ }),
+
+/***/ "./src/components/icons/mail.js":
+/*!**************************************!*\
+  !*** ./src/components/icons/mail.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+const IconMail = () => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "2",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  class: "feather feather-mail"
+}, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+  d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+}), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+  points: "22,6 12,13 2,6"
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconMail);
 
 /***/ }),
 
@@ -1292,7 +1621,7 @@ const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_7__["defa
 `;
 
 const IndexPage = () => {
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_8__.jsx)(StyledMainContainer, null));
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_8__.jsx)(StyledMainContainer, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_hero__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
@@ -1459,6 +1788,21 @@ function memoize(fn) {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (memoize);
 
+
+/***/ }),
+
+/***/ "./src/assets/herogif.gif":
+/*!********************************!*\
+  !*** ./src/assets/herogif.gif ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/herogif-8b8e24f22857b659bcdaf5bf8b012799.gif");
 
 /***/ }),
 

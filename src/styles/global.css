@@ -163,9 +163,9 @@ h1, .text-h1 {
     }
   
     :root {
-      --text-body: 22px;
+      --text-body: 20px;
       --text-h3: 32px;
-      --text-h2: 48px;
+      --text-h2: 44px;
       --text-h1: 45px;
       --text-display: 3.5rem;
     }
