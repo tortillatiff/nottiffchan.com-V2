@@ -15,10 +15,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <StyledMainContainer>
-        {/* <Hero />
-        <About />
-        <Projects />
-        <Resume /> */}
+        <Hero />
+        {/* <About /> */}
+        {/* <Projects /> */}
+        {/* <Resume /> */}
       </StyledMainContainer>
     </Layout>
   )

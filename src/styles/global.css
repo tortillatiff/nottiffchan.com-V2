@@ -92,7 +92,6 @@ html {
 ::selection {
     background: var(--pink-light);
 }
-
   
 .purple-font {
     color: var(--purple);

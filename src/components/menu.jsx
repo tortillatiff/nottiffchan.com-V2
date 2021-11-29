@@ -44,7 +44,7 @@ const StyledHamburgerButton = styled.button`
     width: 30px;
     height: 4px;
     border-radius: 50px;
-    background-color: var(--pink);
+    background-color: var(--purple);
     transition-duration: 0.22s;
     transition-property: transform;
     transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
@@ -62,7 +62,7 @@ const StyledHamburgerButton = styled.button`
       width: 30px;
       height: 4px;
       border-radius: 4px;
-      background-color: var(--pink);
+      background-color: var(--purple);
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;

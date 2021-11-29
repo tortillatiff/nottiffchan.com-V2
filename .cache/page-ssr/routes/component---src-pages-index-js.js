@@ -844,25 +844,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
-/* harmony import */ var _hooks_useOnClickOutside__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useOnClickOutside */ "./src/hooks/useOnClickOutside.js");
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
 
 
 
 
-
-
-const StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div`
+const StyledMenu = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
   display: none;
 
   @media (max-width: 768px) {
     display: block;
   }
 `;
-const StyledHamburgerButton = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].button`
+const StyledHamburgerButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button`
   display: none;
 
   @media (max-width: 768px) {
@@ -894,9 +890,9 @@ const StyledHamburgerButton = styled_components__WEBPACK_IMPORTED_MODULE_4__["de
     top: 50%;
     right: 0;
     width: 30px;
-    height: 2px;
+    height: 4px;
     border-radius: 50px;
-    background-color: var(--green);
+    background-color: var(--purple);
     transition-duration: 0.22s;
     transition-property: transform;
     transition-delay: ${props => props.menuOpen ? `0.12s` : `0s`};
@@ -912,9 +908,9 @@ const StyledHamburgerButton = styled_components__WEBPACK_IMPORTED_MODULE_4__["de
       left: auto;
       right: 0;
       width: 30px;
-      height: 2px;
+      height: 4px;
       border-radius: 4px;
-      background-color: var(--green);
+      background-color: var(--purple);
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
@@ -937,7 +933,7 @@ const StyledHamburgerButton = styled_components__WEBPACK_IMPORTED_MODULE_4__["de
     }
   }
 `;
-const StyledSidebar = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].aside`
+const StyledSidebar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].aside`
   display: none;
 
   @media (max-width: 768px) {
@@ -949,11 +945,10 @@ const StyledSidebar = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].
     bottom: 0;
     right: 0;
     padding: 50px 10px;
-    width: min(75vw, 400px);
+    width 100vw;
     height: 100vh;
     outline: 0;
     background-color: var(--pink-light);
-    // box-shadow: -10px 0px 30px -15px var(--navy-shadow);
     z-index: 9;
     transform: translateX(${props => props.menuOpen ? 0 : 100}vw);
     visibility: ${props => props.menuOpen ? 'visible' : 'hidden'};
@@ -975,34 +970,33 @@ const StyledSidebar = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].
     margin: 0;
     list-style: none;
     width: 100%;
+    
+    li { padding: 20px; }
 
-    li {
-      position: relative;
-      margin: 0 auto 20px;
-      counter-increment: item 1;
-      font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
+    .link {
+        text-align: center;
+        padding: 0 1rem;
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--purple);
+        transition: var(--transition);
+        font-size: var(--text-xs);
+        // cursor: none;
+        padding: 20px;
+        width: 100%;
 
-      @media (max-width: 600px) {
-        margin: 0 auto 10px;
-      }
-
-      &:before {
-        content: '0' counter(item) '.';
-        display: block;
-        margin-bottom: 5px;
-        color: var(--green);
-        font-size: var(--fz-sm);
-      }
+        position: relative;
+        margin: 0 auto 20px;
+        font-size: clamp(var(--text-sm), 4vw, var(--text-lg));
+  
+        @media (max-width: 600px) {
+          margin: 0 auto 10px;
+        }
     }
-
-    a {
-    //   ${({
-  theme
-}) => theme.mixins.link};
-      width: 100%;
-      padding: 3px 20px 20px;
-    }
-  }
+    
+    .link:hover {
+        color: var(--pink);
+    } 
 `;
 
 const Menu = () => {
@@ -1024,50 +1018,7 @@ const Menu = () => {
   }, {
     name: 'resume',
     url: '/#projects'
-  }]; // let menuFocusables;
-  // let firstFocusableEl;
-  // let lastFocusableEl;
-  // const setFocusables = () => {
-  //     menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
-  //     firstFocusableEl = menuFocusables[0];
-  //     lastFocusableEl = menuFocusables[menuFocusables.length - 1];
-  // };
-  //   const handleBackwardTab = e => {
-  //     if (document.activeElement === firstFocusableEl) {
-  //       e.preventDefault();
-  //       lastFocusableEl.focus();
-  //     }
-  //   };
-  //   const handleForwardTab = e => {
-  //     if (document.activeElement === lastFocusableEl) {
-  //       e.preventDefault();
-  //       firstFocusableEl.focus();
-  //     }
-  //   };
-  //   const onKeyDown = e => {
-  //     switch (e.key) {
-  //       case KEY_CODES.ESCAPE:
-  //       case KEY_CODES.ESCAPE_IE11: {
-  //         setMenuOpen(false);
-  //         break;
-  //       }
-  //       case KEY_CODES.TAB: {
-  //         if (menuFocusables && menuFocusables.length === 1) {
-  //           e.preventDefault();
-  //           break;
-  //         }
-  //         if (e.shiftKey) {
-  //           handleBackwardTab(e);
-  //         } else {
-  //           handleForwardTab(e);
-  //         }
-  //         break;
-  //       }
-  //       default: {
-  //         break;
-  //       }
-  //     }
-  //   };
+  }];
 
   const onResize = e => {
     if (e.currentTarget.innerWidth > 768) {
@@ -1076,47 +1027,41 @@ const Menu = () => {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    // document.addEventListener('keydown', onKeyDown);
-    window.addEventListener('resize', onResize); // setFocusables();
-
+    window.addEventListener('resize', onResize);
     return () => {
-      //   document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
     };
   }, []);
-  const wrapperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  (0,_hooks_useOnClickOutside__WEBPACK_IMPORTED_MODULE_3__.useOnClickOutside)(wrapperRef, () => setMenuOpen(false));
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(StyledMenu, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_helmet__WEBPACK_IMPORTED_MODULE_1__.Helmet, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("body", {
-    className: menuOpen ? 'blur' : ''
-  })), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    ref: wrapperRef
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(StyledHamburgerButton, {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(StyledMenu, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(StyledHamburgerButton, {
     onClick: toggleMenu,
     menuOpen: menuOpen,
     ref: buttonRef,
     "aria-label": "Menu"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "ham-box"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "ham-box-inner"
-  }))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(StyledSidebar, {
+  }))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(StyledSidebar, {
     menuOpen: menuOpen,
     "aria-hidden": !menuOpen,
     tabIndex: menuOpen ? 1 : -1
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
     ref: navRef
-  }, navLinks && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("ol", null, navLinks.map(({
+  }, navLinks && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("ol", null, navLinks.map(({
     url,
     name
-  }, i) => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+  }, i) => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
     key: i
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    className: "link",
     to: url,
     onClick: () => setMenuOpen(false)
-  }, name)))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-    href: "/",
-    className: "tiff-btn btn-sec"
-  }, "Resume")))));
+  }, name)))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+    className: "tiff-btn btn-sec",
+    style: {
+      marginTop: '20px'
+    }
+  }, "get in touch")))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Menu);
@@ -1308,51 +1253,6 @@ const Resume = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Resume);
-
-/***/ }),
-
-/***/ "./src/hooks/useOnClickOutside.js":
-/*!****************************************!*\
-  !*** ./src/hooks/useOnClickOutside.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- // https://usehooks.com/useOnClickOutside/
-
-const useOnClickOutside = (ref, handler) => {
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const listener = event => {
-      // Do nothing if clicking ref's element or descendent elements
-      if (!ref.current || ref.current.contains(event.target)) {
-        return;
-      }
-
-      handler(event);
-    };
-
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
-    return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
-    };
-  }, // Add ref and handler to effect dependencies
-  // It's worth noting that because passed in handler is a new ...
-  // ... function on every render that will cause this effect ...
-  // ... callback/cleanup to run every render. It's not a big deal ...
-  // ... but to optimize you can wrap handler in useCallback before ...
-  // ... passing it into this hook.
-  [ref, handler]);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useOnClickOutside);
 
 /***/ }),
 
