@@ -3,9 +3,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 const StyledAboutSection = styled.section`
-    padding: 0;
+    max-width: 1200px;
+    width: 100%;
     @media (max-width: 1200px) {
-        padding: 0 40px;
+        padding-left: 40px;
+        padding-left: 40px;
     }
 
     .inner {
@@ -17,6 +19,7 @@ const StyledAboutSection = styled.section`
 
         @media (max-width: 768px) {
             display: block;
+            padding-right: 20px;
         }
     }
 `;
@@ -26,7 +29,7 @@ const StyledPic = styled.div`
   max-width: 300px;
 
   @media (max-width: 768px) {
-    margin: 50px auto 0;
+    margin: 50px 20px 0;
     width: 70%;
   }
 

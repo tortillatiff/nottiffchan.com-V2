@@ -9,6 +9,8 @@ const StyledHeroSection = styled.section`
     align-items: center;
     min-height: 100vh;
     width: 100%;
+    max-width: 1200px;
+    padding: 0;
 
     @media (max-width: 480px) and (min-height: 700px) {
         padding-bottom: 10vh;

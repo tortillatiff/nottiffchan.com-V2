@@ -5,8 +5,8 @@ body {
     /* cursor: none!important; */
     color: var(--black);
     overflow-x: hidden;
-    max-width: 1200px;
-    width: 100%;
+    /* max-width: 1200px;
+    width: 100%; */
     margin: 0 auto;
 }
 
@@ -120,10 +120,6 @@ h1, .text-h1 {
     color: var(--grey);
 }
   
-/* li {
-    margin: 18px 0;
-} */
-  
 .tiff-btn {
     font-weight: bold;
     border-radius: var(--br-sm);
@@ -155,6 +151,19 @@ h1, .text-h1 {
     box-shadow: none;
     background-color: var(--purple);
     color: white;
+}
+
+section {
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+    section { padding: 80px 0; }
+}
+
+@media (max-width: 480px) {
+    section { padding: 60px 0; }
 }
   
 @media screen and (min-width: 576px) {

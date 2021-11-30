@@ -17,6 +17,8 @@ const Icon = ({ name }) => {
       return <IconLinkedIn />;
     case 'Mail':
       return <IconMail />;
+    default:
+      return null;
   }
 };
 
