@@ -99,7 +99,7 @@ var navLinks = [
       url: '/#jobs',
     },
     {
-      name: 'resume',
+      name: 'contact',
       url: '/#projects',
     }
 ];
@@ -117,7 +117,7 @@ const Nav = () => {
                         <Link key={name} className="link" to={url}>{name}</Link>
                     ))}
                 </ol>
-                <button className="contact-button tiff-btn btn-sec">get in touch</button>
+                <button className="contact-button tiff-btn btn-sec">résumé</button>
             </StyledLinks>
             <Menu />
         </StyledHeader>

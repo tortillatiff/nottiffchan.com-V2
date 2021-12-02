@@ -4348,6 +4348,88 @@ const About = () => {
 
 /***/ }),
 
+/***/ "./src/components/footer.jsx":
+/*!***********************************!*\
+  !*** ./src/components/footer.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+const StyledFooter = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section`
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 75%;
+    height: 100%;
+    padding: 0;
+
+    .boldtext {
+        color: var(--bg-color);
+        font-size: 70px;
+        font-weight: 800;
+    }
+
+    a {
+        text-decoration: none;
+        color: #3D3333;
+        transition: var(--transition);
+        text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color), -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
+    }
+
+    a:hover {
+        color: var(--bg-color);
+        text-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+        .boldtext {
+            font-size: 60px;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .boldtext {
+            font-size: 50px;
+        }
+    }
+`;
+
+const Footer = () => {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)(StyledFooter, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+    className: "boldtext"
+  }, "check out my", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+    href: "../assets/TiffanyChan.pdf"
+  }, " resume"), " and ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+    href: "https://github.com/nottiffchan"
+  }, "github"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", null), " ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", null), "say hi on ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+    href: "https://www.linkedin.com/in/nottiffchan/"
+  }, "linkedin"), " or ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+    href: "mailto"
+  }, "email"), "!"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+    style: {
+      position: 'absolute',
+      bottom: '0',
+      color: 'var(--bg-color)',
+      fontSize: 'var(--text-xs)'
+    }
+  }, "\xA9 Designed & built by scratch by Tiffany 2021"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ }),
+
 /***/ "./src/components/head.jsx":
 /*!*********************************!*\
   !*** ./src/components/head.jsx ***!
@@ -5247,23 +5329,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/global.css */ "./src/styles/global.css");
 /* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_global_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.jsx");
 /* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/hero */ "./src/components/hero.jsx");
 /* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/about */ "./src/components/about.jsx");
-/* harmony import */ var react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-scrolling-color-background */ "./node_modules/react-scrolling-color-background/lib/index.js");
-/* harmony import */ var _assets_projects_thumbnails_berryThumbnail_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/projects/thumbnails/berryThumbnail.png */ "./src/assets/projects/thumbnails/berryThumbnail.png");
-/* harmony import */ var _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/projects/thumbnails/vibingThumbnail.png */ "./src/assets/projects/thumbnails/vibingThumbnail.png");
-/* harmony import */ var _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/projects/thumbnails/shillyThumbnail.png */ "./src/assets/projects/thumbnails/shillyThumbnail.png");
-/* harmony import */ var _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/projects/thumbnails/rescaleLabThumbnail.png */ "./src/assets/projects/thumbnails/rescaleLabThumbnail.png");
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+/* harmony import */ var _components_footer_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/footer.jsx */ "./src/components/footer.jsx");
+/* harmony import */ var react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-scrolling-color-background */ "./node_modules/react-scrolling-color-background/lib/index.js");
+/* harmony import */ var _assets_projects_thumbnails_berryThumbnail_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/projects/thumbnails/berryThumbnail.png */ "./src/assets/projects/thumbnails/berryThumbnail.png");
+/* harmony import */ var _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/projects/thumbnails/vibingThumbnail.png */ "./src/assets/projects/thumbnails/vibingThumbnail.png");
+/* harmony import */ var _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/projects/thumbnails/shillyThumbnail.png */ "./src/assets/projects/thumbnails/shillyThumbnail.png");
+/* harmony import */ var _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/projects/thumbnails/rescaleLabThumbnail.png */ "./src/assets/projects/thumbnails/rescaleLabThumbnail.png");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
 
 
 
 
 
  // import Projects from '../components/projects';
-// import Resume from '../components/resume';
 // import { StaticImage } from 'gatsby-plugin-image';
 
 
@@ -5272,7 +5355,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].main`
+const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_11__["default"].main`
   counter-reset: section;
 
   .section {
@@ -5295,66 +5378,71 @@ const projects = [{
   name: "Shilly",
   desc: "Social platform connecting influencers and crypto coins",
   tags: "web, design, development",
-  thumbnail: _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+  thumbnail: _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_9__["default"],
   bgCol: bgPink
 }, {
   name: "vibing.",
   desc: "Creating personalized Spotify playlists for friends",
   tags: "web, design, development",
-  thumbnail: _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+  thumbnail: _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_8__["default"],
   bgCol: bgGrey
 }, {
   name: "Rescale Lab",
   desc: "SaaS platform for entrepreneurs",
   tags: "web, design, development",
-  thumbnail: _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+  thumbnail: _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_10__["default"],
   bgCol: bgGreen
 }, {
   name: "berry",
   desc: "Tile-style shopping list mobile app",
   tags: "mobile, design, development",
-  thumbnail: _assets_projects_thumbnails_berryThumbnail_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+  thumbnail: _assets_projects_thumbnails_berryThumbnail_png__WEBPACK_IMPORTED_MODULE_7__["default"],
   bgCol: bgPurple
 }];
 
 const IndexPage = () => {
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(StyledMainContainer, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(StyledMainContainer, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_6__["default"], {
     selector: ".js-color-stop[data-background-color]",
     colorDataAttribute: "data-background-color",
     initialRgb: "rgb(0, 0, 0)"
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
     "data-background-color": bgWhite,
     className: "js-color-stop section"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_hero__WEBPACK_IMPORTED_MODULE_3__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_hero__WEBPACK_IMPORTED_MODULE_3__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
     "data-background-color": bgWhite,
     className: "js-color-stop section"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_about__WEBPACK_IMPORTED_MODULE_4__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_about__WEBPACK_IMPORTED_MODULE_4__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
     project: projects[0],
     isFirst: true
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
     project: projects[1]
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
     project: projects[2]
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
     project: projects[3]
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-    "data-background-color": bgWhite,
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+    "data-background-color": "rgb(61, 51, 51)",
     className: "js-color-stop",
     style: {
       height: '100vh',
       position: 'relative'
     }
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h3", null, "Resume part"))));
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_footer_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null))));
 };
 
 const Project = props => {
-  const StyledProjectSection = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].div`
+  const StyledProjectSection = styled_components__WEBPACK_IMPORTED_MODULE_11__["default"].div`
     padding: 48px 20px;
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
 
     h2 { width: 80%; }
+
+    .thumbnail-wrap {
+      position: sticky;
+      top: 0;
+    }
 
     .inner {
       display: grid;
@@ -5403,20 +5491,20 @@ const Project = props => {
       }
     }
   `;
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(StyledProjectSection, {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(StyledProjectSection, {
     "data-background-color": props.project.bgCol,
     className: "js-color-stop section"
-  }, props.isFirst && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", {
+  }, props.isFirst && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", {
     className: "purple-font",
     style: {
       marginBottom: '100px'
     }
-  }, "my projects"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+  }, "my projects"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
     className: "inner"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h3", null, props.project.name), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", null, props.project.desc), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", null, props.project.tags)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("a", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("h3", null, props.project.name), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", null, props.project.desc), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", null, props.project.tags)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("a", {
     href: "/",
     className: "thumbnail-wrap"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
     src: props.project.thumbnail,
     alt: "Project thumbnail"
   }))));

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import CV from '../assets/TiffanyChan.pdf';
 
 const StyledFooter = styled.section`
     display: flex;
@@ -27,6 +28,13 @@ const StyledFooter = styled.section`
         text-shadow: none;
     }
 
+    .smalltext {
+        position: absolute;
+        bottom: 0;
+        color: var(--bg-color);
+        font-size: var(--text-xs);
+    }
+
     @media (max-width: 768px) {
         .boldtext {
             font-size: 60px;
@@ -37,6 +45,7 @@ const StyledFooter = styled.section`
         .boldtext {
             font-size: 50px;
         }
+        .smalltext { font-size: 16px; }
     }
 `;
 
@@ -45,14 +54,16 @@ const Footer = () => {
         <StyledFooter>
             <p className="boldtext">
                 check out my 
-                <a href="/"> resume</a> and <a href="https://github.com/nottiffchan">github</a>
+                <a href={CV} target="_blank" rel="noreferrer"> resume</a> and <a href="https://github.com/nottiffchan" target="_blank" rel="noreferrer">github</a>
                 <br /> <br />
-                say hi on <a href="https://www.linkedin.com/in/nottiffchan/">linkedin</a> or <a href="mailto">email</a>!
+                say hi on <a href="https://www.linkedin.com/in/nottiffchan/" target="_blank" rel="noreferrer">linkedin</a> or 
+                <a href="mailto:hi@nottiffchan.com"> email</a>!
             </p>
 
-            <p style={{position: 'absolute', bottom: '0', color: 'var(--bg-color)', fontSize: 'var(--text-xs)'}}>© Designed & built by scratch by Tiffany 2021</p>
+            <p className="smalltext">© Designed & built by scratch by Tiffany 2021</p>
         </StyledFooter>
     )
 }
 
 export default Footer
+ 

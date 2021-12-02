@@ -158,18 +158,18 @@ const Menu = () => {
     const navRef = useRef(null);
 
     var navLinks = [
-        {
+      {
         name: 'about',
         url: '/#about',
-        },
-        {
+      },
+      {
         name: 'projects',
         url: '/#jobs',
-        },
-        {
-        name: 'resume',
+      },
+      {
+        name: 'contact',
         url: '/#projects',
-        }
+      }
     ];
 
   const onResize = e => {
@@ -215,7 +215,7 @@ const Menu = () => {
             )}
 
             <button className="tiff-btn btn-sec" style={{marginTop: '20px'}}>
-              get in touch
+            résumé
             </button>
           </nav>
         </StyledSidebar>

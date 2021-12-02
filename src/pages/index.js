@@ -92,6 +92,8 @@ const Project = (props) => {
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
+    position: sticky;
+    top: 0;
 
     h2 { width: 80%; }
 
