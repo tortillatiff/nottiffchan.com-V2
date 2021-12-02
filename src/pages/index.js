@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
 import About from '../components/about';
+import Footer from '../components/footer.jsx';
 // import Projects from '../components/projects';
-// import Resume from '../components/resume';
 
 // import { StaticImage } from 'gatsby-plugin-image';
 import ScrollingColorBackground from 'react-scrolling-color-background';
@@ -73,15 +73,14 @@ const IndexPage = () => {
         <Project project={projects[3]}/>
 
         <div
-          data-background-color={bgWhite}
+          data-background-color='rgb(61, 51, 51)'
           className='js-color-stop'
           style={{height: '100vh', position: 'relative'}}
         >
-          <h3>Resume part</h3>
+          <Footer />
         </div>
 
         {/* <Projects /> */}
-         {/* <Resume /> */}
       </StyledMainContainer>
     </Layout>
   )
@@ -95,6 +94,11 @@ const Project = (props) => {
     margin: 0 auto;
 
     h2 { width: 80%; }
+
+    .thumbnail-wrap {
+      position: sticky;
+      top: 0;
+    }
 
     .inner {
       display: grid;

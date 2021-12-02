@@ -4248,6 +4248,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const StyledAboutSection = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section`
+    max-width: 1200px;
+    width: 100%;
     @media (max-width: 1200px) {
         padding-left: 40px;
         padding-left: 40px;
@@ -4262,6 +4264,7 @@ const StyledAboutSection = styled_components__WEBPACK_IMPORTED_MODULE_1__["defau
 
         @media (max-width: 768px) {
             display: block;
+            padding-right: 20px;
         }
     }
 `;
@@ -4270,7 +4273,7 @@ const StyledPic = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   max-width: 300px;
 
   @media (max-width: 768px) {
-    margin: 50px auto 0;
+    margin: 50px 20px 0;
     width: 70%;
   }
 
@@ -4480,6 +4483,7 @@ const StyledHeroSection = styled_components__WEBPACK_IMPORTED_MODULE_3__["defaul
     align-items: center;
     min-height: 100vh;
     width: 100%;
+    max-width: 1200px;
     padding: 0;
 
     @media (max-width: 480px) and (min-height: 700px) {
@@ -5228,72 +5232,6 @@ const Nav = () => {
 
 /***/ }),
 
-/***/ "./src/components/projects.jsx":
-/*!*************************************!*\
-  !*** ./src/components/projects.jsx ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-scrolling-color-background */ "./node_modules/react-scrolling-color-background/lib/index.js");
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
- // import styled from 'styled-components';
-
-
-
-
-const Projects = () => {
-  const bgPink = 'rgb(252, 233, 238)';
-  const bgGrey = 'rgb(228, 236, 241)';
-  const bgGreen = 'rgb(224, 245, 236)';
-  const bgPurple = 'rgb(235, 222, 237)';
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    selector: ".js-color-stop[data-background-color]",
-    colorDataAttribute: "data-background-color",
-    initialRgb: "rgb(0, 0, 0)"
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-    "data-background-color": bgPink,
-    className: "js-color-stop",
-    style: {
-      height: '100vh'
-    }
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-    src: "../assets/me.png",
-    style: {
-      width: '600px'
-    },
-    alt: ""
-  })), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-    "data-background-color": bgGrey,
-    className: "js-color-stop",
-    style: {
-      height: '100vh'
-    }
-  }, "VIINGIN. today, we did nothing."), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-    "data-background-color": bgGreen,
-    className: "js-color-stop",
-    style: {
-      height: '100vh'
-    }
-  }, "Some content"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-    "data-background-color": bgPurple,
-    className: "js-color-stop",
-    style: {
-      height: '100vh'
-    }
-  }, "Some content"));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);
-
-/***/ }),
-
 /***/ "./src/pages/index.js":
 /*!****************************!*\
   !*** ./src/pages/index.js ***!
@@ -5309,35 +5247,179 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/global.css */ "./src/styles/global.css");
 /* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_global_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.jsx");
 /* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/hero */ "./src/components/hero.jsx");
 /* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/about */ "./src/components/about.jsx");
-/* harmony import */ var _components_projects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/projects */ "./src/components/projects.jsx");
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+/* harmony import */ var react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-scrolling-color-background */ "./node_modules/react-scrolling-color-background/lib/index.js");
+/* harmony import */ var _assets_projects_thumbnails_berryThumbnail_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/projects/thumbnails/berryThumbnail.png */ "./src/assets/projects/thumbnails/berryThumbnail.png");
+/* harmony import */ var _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/projects/thumbnails/vibingThumbnail.png */ "./src/assets/projects/thumbnails/vibingThumbnail.png");
+/* harmony import */ var _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/projects/thumbnails/shillyThumbnail.png */ "./src/assets/projects/thumbnails/shillyThumbnail.png");
+/* harmony import */ var _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/projects/thumbnails/rescaleLabThumbnail.png */ "./src/assets/projects/thumbnails/rescaleLabThumbnail.png");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+
+
+
+
+
+ // import Projects from '../components/projects';
+// import Resume from '../components/resume';
+// import { StaticImage } from 'gatsby-plugin-image';
 
 
 
 
 
 
- // import Resume from '../components/resume';
 
-
-const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].main`
+const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].main`
   counter-reset: section;
+
+  .section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .section { height: auto; }
+  }
 `;
+const bgPink = 'rgb(252, 233, 238)';
+const bgGrey = 'rgb(228, 236, 241)';
+const bgGreen = 'rgb(224, 245, 236)';
+const bgPurple = 'rgb(235, 222, 237)';
+const bgWhite = 'rgb(253, 249, 247)';
+const projects = [{
+  name: "Shilly",
+  desc: "Social platform connecting influencers and crypto coins",
+  tags: "web, design, development",
+  thumbnail: _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+  bgCol: bgPink
+}, {
+  name: "vibing.",
+  desc: "Creating personalized Spotify playlists for friends",
+  tags: "web, design, development",
+  thumbnail: _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+  bgCol: bgGrey
+}, {
+  name: "Rescale Lab",
+  desc: "SaaS platform for entrepreneurs",
+  tags: "web, design, development",
+  thumbnail: _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+  bgCol: bgGreen
+}, {
+  name: "berry",
+  desc: "Tile-style shopping list mobile app",
+  tags: "mobile, design, development",
+  thumbnail: _assets_projects_thumbnails_berryThumbnail_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+  bgCol: bgPurple
+}];
 
 const IndexPage = () => {
-  return (// <Layout>
-    //   <StyledMainContainer>
-    //     <Hero />
-    //     <About />
-    (0,_emotion_react__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_projects__WEBPACK_IMPORTED_MODULE_5__["default"], null) // {/* <Resume /> */}
-    //   </StyledMainContainer>
-    // </Layout>
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(StyledMainContainer, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    selector: ".js-color-stop[data-background-color]",
+    colorDataAttribute: "data-background-color",
+    initialRgb: "rgb(0, 0, 0)"
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    "data-background-color": bgWhite,
+    className: "js-color-stop section"
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_hero__WEBPACK_IMPORTED_MODULE_3__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    "data-background-color": bgWhite,
+    className: "js-color-stop section"
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_about__WEBPACK_IMPORTED_MODULE_4__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+    project: projects[0],
+    isFirst: true
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+    project: projects[1]
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+    project: projects[2]
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(Project, {
+    project: projects[3]
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    "data-background-color": bgWhite,
+    className: "js-color-stop",
+    style: {
+      height: '100vh',
+      position: 'relative'
+    }
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h3", null, "Resume part"))));
+};
 
-  );
+const Project = props => {
+  const StyledProjectSection = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].div`
+    padding: 48px 20px;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 { width: 80%; }
+
+    .inner {
+      display: grid;
+      grid-template-columns: 7fr 4fr;
+      grid-gap: 68px;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .inner h2, h3 {
+      font-weight: 500;
+    }
+
+    .inner p {
+      color: var(--grey);
+    }
+
+    .inner img {
+      width: 350px;
+    }
+
+    @media (max-width: 1080px) {
+      h2 { font-size: 36px; width: 100%; }
+    }
+
+    @media (max-width: 768px) {
+      h3 { font-size: 24px; }
+
+      .inner { grid-gap: 40px; }
+      .inner img { width: 280px; }
+    }
+
+    @media (max-width: 567px) {
+      height: auto;
+
+      .inner {
+        display: block;
+        height: auto;
+      }
+
+      .inner img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 36px;
+      }
+    }
+  `;
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)(StyledProjectSection, {
+    "data-background-color": props.project.bgCol,
+    className: "js-color-stop section"
+  }, props.isFirst && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", {
+    className: "purple-font",
+    style: {
+      marginBottom: '100px'
+    }
+  }, "my projects"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    className: "inner"
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h3", null, props.project.name), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", null, props.project.desc), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", null, props.project.tags)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("a", {
+    href: "/",
+    className: "thumbnail-wrap"
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+    src: props.project.thumbnail,
+    alt: "Project thumbnail"
+  }))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
@@ -6186,6 +6268,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/png;base64,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");
+
+/***/ }),
+
+/***/ "./src/assets/projects/thumbnails/berryThumbnail.png":
+/*!***********************************************************!*\
+  !*** ./src/assets/projects/thumbnails/berryThumbnail.png ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/berryThumbnail-343c8cad0590d88baf62d554a498c72b.png");
+
+/***/ }),
+
+/***/ "./src/assets/projects/thumbnails/rescaleLabThumbnail.png":
+/*!****************************************************************!*\
+  !*** ./src/assets/projects/thumbnails/rescaleLabThumbnail.png ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/rescaleLabThumbnail-97b327fcbc8967ff72730aa3e3f29f9d.png");
+
+/***/ }),
+
+/***/ "./src/assets/projects/thumbnails/shillyThumbnail.png":
+/*!************************************************************!*\
+  !*** ./src/assets/projects/thumbnails/shillyThumbnail.png ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/shillyThumbnail-aa534f719661a709d5502f717dbf2106.png");
+
+/***/ }),
+
+/***/ "./src/assets/projects/thumbnails/vibingThumbnail.png":
+/*!************************************************************!*\
+  !*** ./src/assets/projects/thumbnails/vibingThumbnail.png ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/vibingThumbnail-ea41c5d66ce5b44f21ebe9caa140c34b.png");
 
 /***/ }),
 
