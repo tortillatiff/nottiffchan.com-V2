@@ -13,6 +13,11 @@ import vibingThumbnail from '../assets/projects/thumbnails/vibingThumbnail.png';
 import shillyThumbnail from '../assets/projects/thumbnails/shillyThumbnail.png';
 import rescaleLabThumbnail from '../assets/projects/thumbnails/rescaleLabThumbnail.png'
 
+import {
+  useGlobalStateContext,
+  useGlobalDispatchContext,
+} from "../context/globalContext"
+
 const StyledMainContainer = styled.main`
   counter-reset: section;
 
@@ -43,6 +48,13 @@ const projects = [
 
 
 const IndexPage = () => {
+  const dispatch = useGlobalDispatchContext()
+  const { cursorStyles } = useGlobalStateContext()
+  const onCursor = cursorType => {
+    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
+    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+  }
+
   return (
     <Layout>
       <StyledMainContainer>
@@ -56,7 +68,7 @@ const IndexPage = () => {
           data-background-color={bgWhite}
           className='js-color-stop section'
         >
-          <Hero />
+          <Hero onCursor={onCursor} />
         </div>
 
         <div
@@ -76,7 +88,7 @@ const IndexPage = () => {
           className='js-color-stop'
           style={{height: '100vh', position: 'relative'}}
         >
-          <Footer />
+          <Footer onCursor={onCursor} />
         </div>
 
       </StyledMainContainer>
@@ -85,7 +97,6 @@ const IndexPage = () => {
 }
 
 const Project = (props) => {
-
   return (
     <StyledProjectSection
       data-background-color={props.project.bgCol}

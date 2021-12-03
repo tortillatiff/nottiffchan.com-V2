@@ -16,10 +16,17 @@ const StyledHeroSection = styled.section`
         padding-bottom: 10vh;
     }
 
+    .big { display: block; }
+    .small { display: none; }
+
+    @media (max-width: 400px) {
+        .big { display: none; }
+        .small { display: block; }
+    }
+
     .getintouch {
         font-weight: 500;
         color: var(--black);
-        // cursor: none;
         animation-delay: 0.7s!important;
         display: flex;
         align-items: center;
@@ -31,6 +38,7 @@ const StyledHeroSection = styled.section`
         color: var(--purple);
         text-decoration: underline;
         margin-left: 8px;
+        transition: var(--transition);
     }
 
     .email:hover {
@@ -45,6 +53,7 @@ const HeroGif = styled.img`
 
     @media (max-width: 432px) {
         width: 100%;
+        padding-top: 24px;
     }
 `;
 
@@ -52,10 +61,14 @@ const StyledHeroText = styled.h1`
     color: var(--purple);
     line-height: 120%;
     margin: 0;
-    font-size: clamp(36px, 4.3vw, 70px);
+    font-size: clamp(36px, 5vw, 68px);
+    /* font-size: clamp(36px, 4.3vw, 70px); */
     text-align: center;
     margin-top: 48px;
-    width: 85%;
+
+    @media (max-width: 900px) {
+        width: 85%;
+    }
 
     @media (max-width: 600px) {
         width: 95%;
@@ -83,20 +96,24 @@ const StyledHeroText = styled.h1`
     }
 `;
 
-const Hero = () => {
+const Hero = ({onCursor}) => {
     return (
         <StyledHeroSection>
             <HeroGif src={herogif} alt="" />
-            <StyledHeroText>
+            <StyledHeroText className="big">
                 <span>h</span><span>o</span><span>l</span><span>a</span><span>! </span>
                 <span>i</span><span>’</span><span>m </span><span>t</span><span>i</span><span>f</span><span>f</span><span>, </span><span>a </span><span>f</span><span>r</span><span>o</span><span>n</span><span>t</span><span>-</span><span>e</span><span>n</span><span>d </span><span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r </span><span>a</span><span>n</span><span>d </span><span>u</span><span>x</span><span>u</span><span>i </span><span>d</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span><span>e</span><span>r </span><span>d</span><span>e</span><span>d</span><span>i</span><span>c</span><span>a</span><span>t</span><span>e</span><span>d </span><span>t</span><span>o </span><span>c</span><span>r</span><span>e</span><span>a</span><span>t</span><span>i</span><span>n</span><span>g </span><span>u</span><span>n</span><span>i</span><span>q</span><span>u</span><span>e </span><span>u</span><span>s</span><span>e</span><span>r </span><span>e</span><span>x</span><span>p</span><span>e</span><span>r</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span><span>s</span><span>.</span>
             </StyledHeroText>
 
+            <StyledHeroText className="small">
+                hola! i'm tiff, and i design and build unique user experiences.
+            </StyledHeroText>
+
             <p className="getintouch">Get in touch
                 <Icon name="ArrowRight" />
-                <a className="email" href="mailto:hi@nottiffchan.com">hi@nottiffchan.com</a>
+                <a onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} className="email" href="mailto:hi@nottiffchan.com">hi@nottiffchan.com</a>
             </p>
-        </StyledHeroSection> 
+        </StyledHeroSection>
     )
 }
 

@@ -4392,14 +4392,29 @@ const Cursor = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
     background: var(--pink);
     border-radius: 100%;
     transform: translate(-50%, -50%);
-    transition: all 1s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transition-property: width, height, border;
     will-change: width, height, transform, border;
     pointer-events: none;
-    z-index: 999;
+    z-index: 9999;
+
+    &.hovered {
+        background: transparent !important;
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--pink);
+    }
+    &.pointer {
+
+    }
 `;
 
 const CustomCursor = () => {
+  let aimX = 0;
+  let aimY = 0;
+  const {
+    cursorType
+  } = (0,_context_globalContext__WEBPACK_IMPORTED_MODULE_1__.useGlobalStateContext)();
   const {
     0: mousePosition,
     1: setMousePosition
@@ -4426,6 +4441,7 @@ const CustomCursor = () => {
     };
   }, []);
   return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(Cursor, {
+    className: `${!!cursorType ? 'hovered' : ''} ${cursorType}`,
     style: {
       left: `${mousePosition.x}px`,
       top: `${mousePosition.y}px`
@@ -5428,7 +5444,7 @@ const Nav = ({
     url,
     name
   }) => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    onMouseEnter: () => onCursor("hovered"),
+    onMouseEnter: () => onCursor("pointer"),
     onMouseLeave: onCursor,
     key: name,
     className: "link",

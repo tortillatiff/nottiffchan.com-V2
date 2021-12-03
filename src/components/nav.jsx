@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import logo from '../assets/iconlogo.png';
 import { keyframes } from 'styled-components';
 import Menu from './menu';
+import CV from '../assets/TiffanyChan.pdf';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -79,6 +80,7 @@ const Logo = styled.div`
     align-items: center;
     border-radius: 50%;
     height: 64px;
+    margin-left: 8px;
 
     a img {
         height: 64px;
@@ -119,7 +121,9 @@ const Nav = ({onCursor}) => {
                         onMouseLeave={onCursor} key={name} className="link" to={url}>{name}</Link>
                     ))}
                 </ol>
-                <button className="contact-button tiff-btn btn-sec">résumé</button>
+                <a onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor}
+                    href={CV} target="_blank" rel="noreferrer"
+                    className="contact-button tiff-btn btn-sec">résumé</a>
             </StyledLinks>
             <Menu />
         </StyledHeader>

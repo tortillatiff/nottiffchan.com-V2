@@ -8,13 +8,14 @@ const Cursor = styled.div`
     left: 0;
     width: 24px;
     height: 24px;
-    background: var(--pink);
+    background: rgba(249, 144, 144, 0.5);
     border-radius: 100%;
     transform: translate(-50%, -50%);
     transition: all 0.2s ease-in-out;
     transition-property: width, height, border;
     will-change: width, height, transform, border;
     pointer-events: none;
+    cursor: none;
     z-index: 9999;
 
     &.hovered {
@@ -29,9 +30,6 @@ const Cursor = styled.div`
 `;
 
 const CustomCursor = () => {
-    let aimX = 0
-    let aimY = 0
-
     const { cursorType } = useGlobalStateContext()
     const [mousePosition, setMousePosition] = useState({
         x: 400, y: 400

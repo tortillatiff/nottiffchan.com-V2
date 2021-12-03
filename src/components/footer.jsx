@@ -49,15 +49,15 @@ const StyledFooter = styled.section`
     }
 `;
 
-const Footer = () => {
+const Footer = ({onCursor}) => {
     return (
         <StyledFooter>
             <p className="boldtext">
                 check out my 
-                <a href={CV} target="_blank" rel="noreferrer"> resume</a> and <a href="https://github.com/nottiffchan" target="_blank" rel="noreferrer">github</a>
+                <a onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} href={CV} target="_blank" rel="noreferrer"> resume</a> and <a onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} href="https://github.com/nottiffchan" target="_blank" rel="noreferrer">github</a>
                 <br /> <br />
-                say hi on <a href="https://www.linkedin.com/in/nottiffchan/" target="_blank" rel="noreferrer">linkedin</a> or 
-                <a href="mailto:hi@nottiffchan.com"> email</a>!
+                say hi on <a  onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor}href="https://www.linkedin.com/in/nottiffchan/" target="_blank" rel="noreferrer">linkedin</a> or 
+                <a onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} href="mailto:hi@nottiffchan.com"> email</a>!
             </p>
 
             <p className="smalltext">© Designed & built by scratch by Tiffany 2021</p>
