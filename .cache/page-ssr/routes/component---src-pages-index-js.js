@@ -4389,13 +4389,14 @@ const Cursor = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
     left: 0;
     width: 24px;
     height: 24px;
-    background: var(--pink);
+    background: rgba(249, 144, 144, 0.5);
     border-radius: 100%;
     transform: translate(-50%, -50%);
     transition: all 0.2s ease-in-out;
     transition-property: width, height, border;
     will-change: width, height, transform, border;
     pointer-events: none;
+    cursor: none;
     z-index: 9999;
 
     &.hovered {
@@ -4410,8 +4411,6 @@ const Cursor = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
 `;
 
 const CustomCursor = () => {
-  let aimX = 0;
-  let aimY = 0;
   const {
     cursorType
   } = (0,_context_globalContext__WEBPACK_IMPORTED_MODULE_1__.useGlobalStateContext)();
@@ -4520,22 +4519,32 @@ const StyledFooter = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].s
     }
 `;
 
-const Footer = () => {
+const Footer = ({
+  onCursor
+}) => {
   return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)(StyledFooter, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
     className: "boldtext"
   }, "check out my", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+    onMouseEnter: () => onCursor("pointer"),
+    onMouseLeave: onCursor,
     href: _assets_TiffanyChan_pdf__WEBPACK_IMPORTED_MODULE_1__["default"],
     target: "_blank",
     rel: "noreferrer"
   }, " resume"), " and ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+    onMouseEnter: () => onCursor("pointer"),
+    onMouseLeave: onCursor,
     href: "https://github.com/nottiffchan",
     target: "_blank",
     rel: "noreferrer"
   }, "github"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", null), " ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", null), "say hi on ", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+    onMouseEnter: () => onCursor("pointer"),
+    onMouseLeave: onCursor,
     href: "https://www.linkedin.com/in/nottiffchan/",
     target: "_blank",
     rel: "noreferrer"
   }, "linkedin"), " or", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+    onMouseEnter: () => onCursor("pointer"),
+    onMouseLeave: onCursor,
     href: "mailto:hi@nottiffchan.com"
   }, " email"), "!"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
     className: "smalltext"
@@ -4688,10 +4697,17 @@ const StyledHeroSection = styled_components__WEBPACK_IMPORTED_MODULE_3__["defaul
         padding-bottom: 10vh;
     }
 
+    .big { display: block; }
+    .small { display: none; }
+
+    @media (max-width: 400px) {
+        .big { display: none; }
+        .small { display: block; }
+    }
+
     .getintouch {
         font-weight: 500;
         color: var(--black);
-        // cursor: none;
         animation-delay: 0.7s!important;
         display: flex;
         align-items: center;
@@ -4703,6 +4719,7 @@ const StyledHeroSection = styled_components__WEBPACK_IMPORTED_MODULE_3__["defaul
         color: var(--purple);
         text-decoration: underline;
         margin-left: 8px;
+        transition: var(--transition);
     }
 
     .email:hover {
@@ -4716,16 +4733,21 @@ const HeroGif = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img`
 
     @media (max-width: 432px) {
         width: 100%;
+        padding-top: 24px;
     }
 `;
 const StyledHeroText = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h1`
     color: var(--purple);
     line-height: 120%;
     margin: 0;
-    font-size: clamp(36px, 4.3vw, 70px);
+    font-size: clamp(36px, 5vw, 68px);
+    /* font-size: clamp(36px, 4.3vw, 70px); */
     text-align: center;
     margin-top: 48px;
-    width: 85%;
+
+    @media (max-width: 900px) {
+        width: 85%;
+    }
 
     @media (max-width: 600px) {
         width: 95%;
@@ -4753,15 +4775,23 @@ const StyledHeroText = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"]
     }
 `;
 
-const Hero = () => {
+const Hero = ({
+  onCursor
+}) => {
   return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(StyledHeroSection, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(HeroGif, {
     src: _assets_herogif_gif__WEBPACK_IMPORTED_MODULE_1__["default"],
     alt: ""
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(StyledHeroText, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "h"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "l"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "! "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "\u2019"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "m "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, ", "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "-"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "v"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "l"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "p"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "x"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "g"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "g "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "q"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "x"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "p"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, ".")), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(StyledHeroText, {
+    className: "big"
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "h"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "l"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "! "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "\u2019"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "m "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, ", "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "f"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "-"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "v"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "l"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "p"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "x"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "g"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "d "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "o "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "a"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "t"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "g "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "q"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "u"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r "), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "x"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "p"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "r"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "i"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "n"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "c"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "e"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, "s"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", null, ".")), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(StyledHeroText, {
+    className: "small"
+  }, "hola! i'm tiff, and i design and build unique user experiences."), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
     className: "getintouch"
   }, "Get in touch", (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_icons__WEBPACK_IMPORTED_MODULE_2__.Icon, {
     name: "ArrowRight"
   }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+    onMouseEnter: () => onCursor("pointer"),
+    onMouseLeave: onCursor,
     className: "email",
     href: "mailto:hi@nottiffchan.com"
   }, "hi@nottiffchan.com")));
@@ -5044,6 +5074,11 @@ const StyledContent = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  * {
+    text-decoration: none;
+    cursor: none;
+  }
 `;
 
 const Layout = ({
@@ -5325,11 +5360,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 /* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 /* harmony import */ var _assets_iconlogo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/iconlogo.png */ "./src/assets/iconlogo.png");
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menu */ "./src/components/menu.jsx");
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+/* harmony import */ var _assets_TiffanyChan_pdf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/TiffanyChan.pdf */ "./src/assets/TiffanyChan.pdf");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
 
 
 
@@ -5337,7 +5373,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].header`
+
+const StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].header`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5354,7 +5391,7 @@ const StyledHeader = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].h
     transition: var(--transition);
     color: var(--purple);
 `;
-const StyledLinks = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div`
+const StyledLinks = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div`
   display: flex;
   align-items: center;
 
@@ -5393,7 +5430,7 @@ const StyledLinks = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].di
     margin-left: 15px;
   }
 `;
-const spin = styled_components__WEBPACK_IMPORTED_MODULE_4__.keyframes`
+const spin = styled_components__WEBPACK_IMPORTED_MODULE_5__.keyframes`
     from {
         transform: rotate(0deg);
     }
@@ -5402,12 +5439,13 @@ const spin = styled_components__WEBPACK_IMPORTED_MODULE_4__.keyframes`
         transform: rotate(359deg);
     }
 `;
-const Logo = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div`
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div`
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     height: 64px;
+    margin-left: 8px;
 
     a img {
         height: 64px;
@@ -5432,26 +5470,31 @@ var navLinks = [{
 const Nav = ({
   onCursor
 }) => {
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(StyledHeader, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(Logo, {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)(StyledHeader, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)(Logo, {
     onMouseEnter: () => onCursor("hovered"),
     onMouseLeave: onCursor
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
     href: "/"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
     src: _assets_iconlogo_png__WEBPACK_IMPORTED_MODULE_2__["default"],
     alt: "logo"
-  }))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(StyledLinks, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("ol", null, navLinks && navLinks.map(({
+  }))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)(StyledLinks, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)("ol", null, navLinks && navLinks.map(({
     url,
     name
-  }) => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }) => (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
     onMouseEnter: () => onCursor("pointer"),
     onMouseLeave: onCursor,
     key: name,
     className: "link",
     to: url
-  }, name))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+  }, name))), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
+    onMouseEnter: () => onCursor("pointer"),
+    onMouseLeave: onCursor,
+    href: _assets_TiffanyChan_pdf__WEBPACK_IMPORTED_MODULE_4__["default"],
+    target: "_blank",
+    rel: "noreferrer",
     className: "contact-button tiff-btn btn-sec"
-  }, "r\xE9sum\xE9")), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_5__.jsx)(_menu__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  }, "r\xE9sum\xE9")), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_6__.jsx)(_menu__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Nav);
@@ -5541,7 +5584,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/global.css */ "./src/styles/global.css");
 /* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_global_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.jsx");
 /* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/hero */ "./src/components/hero.jsx");
 /* harmony import */ var _components_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/about */ "./src/components/about.jsx");
@@ -5551,7 +5594,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_projects_thumbnails_vibingThumbnail_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/projects/thumbnails/vibingThumbnail.png */ "./src/assets/projects/thumbnails/vibingThumbnail.png");
 /* harmony import */ var _assets_projects_thumbnails_shillyThumbnail_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/projects/thumbnails/shillyThumbnail.png */ "./src/assets/projects/thumbnails/shillyThumbnail.png");
 /* harmony import */ var _assets_projects_thumbnails_rescaleLabThumbnail_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/projects/thumbnails/rescaleLabThumbnail.png */ "./src/assets/projects/thumbnails/rescaleLabThumbnail.png");
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
+/* harmony import */ var _context_globalContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../context/globalContext */ "./src/context/globalContext.js");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.esm.js");
 
 
 
@@ -5566,7 +5610,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_11__["default"].main`
+
+const StyledMainContainer = styled_components__WEBPACK_IMPORTED_MODULE_12__["default"].main`
   counter-reset: section;
 
   .section {
@@ -5612,56 +5657,73 @@ const projects = [{
 }];
 
 const IndexPage = () => {
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(StyledMainContainer, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  const dispatch = (0,_context_globalContext__WEBPACK_IMPORTED_MODULE_11__.useGlobalDispatchContext)();
+  const {
+    cursorStyles
+  } = (0,_context_globalContext__WEBPACK_IMPORTED_MODULE_11__.useGlobalStateContext)();
+
+  const onCursor = cursorType => {
+    cursorType = cursorStyles.includes(cursorType) && cursorType || false;
+    dispatch({
+      type: "CURSOR_TYPE",
+      cursorType: cursorType
+    });
+  };
+
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(StyledMainContainer, null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_scrolling_color_background__WEBPACK_IMPORTED_MODULE_6__["default"], {
     selector: ".js-color-stop[data-background-color]",
     colorDataAttribute: "data-background-color",
     initialRgb: "rgb(0, 0, 0)"
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
     "data-background-color": bgWhite,
     className: "js-color-stop section"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_hero__WEBPACK_IMPORTED_MODULE_3__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    onCursor: onCursor
+  })), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
     "data-background-color": bgWhite,
     className: "js-color-stop section"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_about__WEBPACK_IMPORTED_MODULE_4__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_about__WEBPACK_IMPORTED_MODULE_4__["default"], null)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(Project, {
     project: projects[0],
     isFirst: true
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(Project, {
     project: projects[1]
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(Project, {
     project: projects[2]
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(Project, {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(Project, {
     project: projects[3]
-  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+  }), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
     "data-background-color": "rgb(61, 51, 51)",
     className: "js-color-stop",
     style: {
       height: '100vh',
       position: 'relative'
     }
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_footer_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null))));
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_footer_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    onCursor: onCursor
+  }))));
 };
 
 const Project = props => {
-  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)(StyledProjectSection, {
+  return (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)(StyledProjectSection, {
     "data-background-color": props.project.bgCol,
     className: "js-color-stop section"
-  }, props.isFirst && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", {
+  }, props.isFirst && (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("h2", {
     className: "purple-font",
     style: {
       marginBottom: '100px'
     }
-  }, "my projects"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+  }, "my projects"), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
     className: "inner"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("h3", null, props.project.name), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", null, props.project.desc), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", null, props.project.tags)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("a", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", null, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("h3", null, props.project.name), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("h2", null, props.project.desc), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", null, props.project.tags)), (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
     href: "/",
     className: "thumbnail-wrap"
-  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+  }, (0,_emotion_react__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
     src: props.project.thumbnail,
     alt: "Project thumbnail"
   }))));
 };
 
-const StyledProjectSection = styled_components__WEBPACK_IMPORTED_MODULE_11__["default"].div`
+const StyledProjectSection = styled_components__WEBPACK_IMPORTED_MODULE_12__["default"].div`
 padding: 48px 20px;
 flex-direction: column;
 max-width: 1200px;

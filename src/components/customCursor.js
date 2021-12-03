@@ -6,26 +6,49 @@ const Cursor = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 24px;
-    height: 24px;
-    background: rgba(249, 144, 144, 0.5);
+    width: 8px;
+    height: 8px;
+    background: rgba(249, 144, 144, 1);
     border-radius: 100%;
     transform: translate(-50%, -50%);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-out;
+    transition-delay: 100ms;
     transition-property: width, height, border;
     will-change: width, height, transform, border;
     pointer-events: none;
     cursor: none;
     z-index: 9999;
+    display: block;
 
-    &.hovered {
+    span {
+        display: none;
+    }
+
+    &.pointer {
         background: transparent !important;
         width: 32px;
         height: 32px;
         border: 3px solid var(--pink);
     }
-    &.pointer {
 
+    &.viewCase {
+        width: 80px;
+        height: 80px;
+        background: rgba(249, 144, 144, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 `;
 
@@ -34,7 +57,6 @@ const CustomCursor = () => {
     const [mousePosition, setMousePosition] = useState({
         x: 400, y: 400
     })
-
     const onMouseMove = event => {
         const {pageX: x, pageY: y} = event;
         setMousePosition({x, y})
@@ -51,6 +73,7 @@ const CustomCursor = () => {
         <Cursor
             className={`${!!cursorType ? 'hovered' : ''} ${cursorType}`}
             style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px`}}>
+                <span>view case</span>
         </Cursor>
     )
 }

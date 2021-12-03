@@ -78,10 +78,10 @@ const IndexPage = () => {
           <About />
         </div>
 
-        <Project project={projects[0]} isFirst={true}/>
-        <Project project={projects[1]}/>
-        <Project project={projects[2]}/>
-        <Project project={projects[3]}/>
+        <Project onCursor={onCursor} project={projects[0]} isFirst={true}/>
+        <Project onCursor={onCursor} project={projects[1]}/>
+        <Project onCursor={onCursor} project={projects[2]}/>
+        <Project onCursor={onCursor} project={projects[3]}/>
 
         <div
           data-background-color='rgb(61, 51, 51)'
@@ -112,7 +112,7 @@ const Project = (props) => {
         </div>
 
         <a href="/" className="thumbnail-wrap">
-          <img src={props.project.thumbnail} alt="Project thumbnail" />
+          <img onMouseEnter={() => props.onCursor("viewCase")} onMouseLeave={props.onCursor} src={props.project.thumbnail} alt="Project thumbnail" />
         </a>
       </div>
     </StyledProjectSection>
