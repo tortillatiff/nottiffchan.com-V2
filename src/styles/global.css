@@ -2,7 +2,7 @@ body {
     font-family: var(--font-family-sans-serif);
     background-color: var(--bg-color);
     font-size: var(--text-body);
-    /* cursor: none!important; */
+    cursor: none!important;
     color: var(--black);
     overflow-x: hidden;
     /* max-width: 1200px;

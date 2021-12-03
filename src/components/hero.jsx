@@ -31,8 +31,8 @@ const StyledHeroSection = styled.section`
         color: var(--purple);
         text-decoration: underline;
         margin-left: 8px;
-    } 
-      
+    }
+
     .email:hover {
         color: var(--pink);
     }
@@ -40,6 +40,7 @@ const StyledHeroSection = styled.section`
 
 const HeroGif = styled.img`
     width: 432px;
+    pointer-events: none;
     user-select: none;
 
     @media (max-width: 432px) {
@@ -68,15 +69,15 @@ const StyledHeroText = styled.h1`
     span:nth-child(1n):hover {
         color: var(--pink);
     }
-    
+
     span:nth-child(2n):hover {
         color: var(--gold);
     }
-    
+
     span:nth-child(3n):hover {
         color: var(--pink-dark);
     }
-    
+
     span:hover {
         transition: color 0s;
     }

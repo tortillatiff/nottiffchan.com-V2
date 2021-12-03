@@ -10,6 +10,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     top: 0;
+    position: sticky;
     z-index: 11;
     padding: 0px 20px;
     width: calc(100% - 40px);
@@ -17,7 +18,7 @@ const StyledHeader = styled.header`
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     transition: var(--transition);
     color: var(--purple);
 `;
@@ -43,7 +44,7 @@ const StyledLinks = styled.div`
         text-align: center;
         padding: 0 1rem;
         text-decoration: none;
-      
+
         font-weight: 500;
         margin-right: 11px;
         color: var(--purple);
@@ -51,10 +52,10 @@ const StyledLinks = styled.div`
         font-size: var(--text-xs);
         // cursor: none;
     }
-    
+
     .link:hover {
         color: var(--pink);
-    } 
+    }
   }
 
   .contact-button {
@@ -82,7 +83,7 @@ const Logo = styled.div`
     a img {
         height: 64px;
     }
-    
+
     &:hover {
         animation: ${spin} 300ms linear;
         background: var(--yellow);
@@ -104,17 +105,18 @@ var navLinks = [
     }
 ];
 
-const Nav = () => {
+const Nav = ({onCursor}) => {
     return (
         <StyledHeader>
-            <Logo>
+            <Logo onMouseEnter={() => onCursor("hovered")} onMouseLeave={onCursor}>
                 <a href="/"><img src={logo} alt="logo" /></a>
             </Logo>
             <StyledLinks>
                 <ol>
                     {navLinks &&
                     navLinks.map(({ url, name }) => (
-                        <Link key={name} className="link" to={url}>{name}</Link>
+                        <Link onMouseEnter={() => onCursor("pointer")}
+                        onMouseLeave={onCursor} key={name} className="link" to={url}>{name}</Link>
                     ))}
                 </ol>
                 <button className="contact-button tiff-btn btn-sec">résumé</button>
