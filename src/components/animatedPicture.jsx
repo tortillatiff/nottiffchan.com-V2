@@ -8,8 +8,9 @@ const AnimatedPicture = React.forwardRef((props, ref) => {
     useEffect(()=> {
       setHoverDistort(new hoverEffect({
           parent: ref.current,
-          // parent: document.querySelector(".myPic"),
           intensity: 0.3,
+          speedIn: 2.1,
+          speedOut: 2.1,
           image1: props.before,
           image2: props.after,
           displacementImage: overlay
@@ -19,8 +20,10 @@ const AnimatedPicture = React.forwardRef((props, ref) => {
     return (
         <div
             ref={ref}
-            className="myPic"
-            style={{width: props.width ? props.width : '100%', height: props.height ? props.height : '100%' }}>
+            style={{
+                width: props.width ? props.width : '100%',
+                height: props.height ? props.height : '100%'
+            }}>
         </div>
     )
 });
