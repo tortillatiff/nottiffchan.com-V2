@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import { useGlobalStateContext } from '../context/globalContext';
+import { IconEye } from './icons';
 
 const Cursor = styled.div`
     position: absolute;
@@ -73,7 +74,7 @@ const CustomCursor = () => {
         <Cursor
             className={`${!!cursorType ? 'hovered' : ''} ${cursorType}`}
             style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px`}}>
-                <span>view case</span>
+                <span><IconEye /></span>
         </Cursor>
     )
 }

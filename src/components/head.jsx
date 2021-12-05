@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Head = ({ title, description, image }) => {  
+const Head = ({ title, description, image }) => {
   const { pathname } = useLocation()
 
   const { site } = useStaticQuery(
@@ -60,7 +60,7 @@ const Head = ({ title, description, image }) => {
     </Helmet>
   );
 };
-  
+
 export default Head;
 
 

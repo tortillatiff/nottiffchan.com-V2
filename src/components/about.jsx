@@ -1,113 +1,91 @@
-import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import React, { useRef } from 'react'
+import oldMe from '../assets/greyscaleOldMe2.jpg'
+import youngMe from '../assets/greyscaleYoungMe.jpg'
+import AnimatedPicture from './animatedPicture';
+import { IconArrowUpRight } from './icons';
 
 const StyledAboutSection = styled.section`
     max-width: 1200px;
     width: 100%;
-    @media (max-width: 1200px) {
+    @media (max-width: 1280px) {
+        padding-right: 40px;
         padding-left: 40px;
-        padding-left: 40px;
-    }
-
-    .inner {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        grid-gap: 50px;
-        line-height: 160%;
-        align-items: center;
-
-        @media (max-width: 768px) {
-            display: block;
-            padding-right: 20px;
-        }
     }
 `;
 
-const StyledPic = styled.div`
-  position: relative;
-  max-width: 300px;
+const AboutRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 
-  @media (max-width: 768px) {
-    margin: 50px 20px 0;
-    width: 70%;
+  .text-col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding-right: 32px;
   }
 
-  .wrapper {
-    transition: var(--transition);
-    display: block;
-    position: relative;
-    width: 100%;
-    border-radius: 50%;
-    background-color: var(--purple);
-    border: 4px solid var(--purple);
+  .text-col h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--purple);
+  }
 
-    &:hover,
-    &:focus {
-      background: transparent;
-      outline: 0;
+  .text-col p {
+    line-height: 180%;
+    margin-top: 0;
+  }
 
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-        border-radius: 50%;
-      }
-    }
+  .image-col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding-left: 24px;
+  }
 
-    .img {
-      position: relative;
-      border-radius: 50%;
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
-    }
+  & .myPic canvas::nth-child(odd) {
+    opacity: 0.5;
+  }
 
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: #F8E2FA;
-      mix-blend-mode: screen;
-    }
+  @media (min-width: 800px) {
+    .image-col { flex: 1; }
+    .text-col { flex: 2; }
   }
 `;
 
 const About = () => {
-    return (
-        <StyledAboutSection>
-            <h2 className="purple-font">about me</h2>
-            <div className="inner">
-                <div>
-                    <p>I’m a final year <b>Computer Science</b> student with a minor in <b>Communications</b> at the National University of Singapore (NUS).</p>
-                    <p>I have working experience in, and absolutely love doing <b>full-stack development</b> and <b>user experience and interface design</b>.</p>
-                    <p>My favorite projects are those that allow me to work at the crossroads of disciplines, combining my design and development skills to solve complex problems and create ✨ <b>beautiful experiences</b> ✨. I also happen to have an unhealthy obsession with typefaces...</p>
-                </div>
-                <StyledPic>
-                    <div className="wrapper">
-                        <StaticImage
-                            className="img"
-                            src="../assets/me.png"
-                            width={500}
-                            height={500}
-                            quality={95}
-                            formats={['AUTO', 'WEBP', 'AVIF']}
-                            alt="Headshot"
-                        />
-                    </div>
-                </StyledPic>
+  const myPhotoRef = useRef(null);
+
+  return (
+      <StyledAboutSection>
+          <h2 className="purple-font">about me</h2>
+          <AboutRow>
+            <div className="text-col col">
+              <h3>who am i?</h3>
+              <p style={{marginBottom: '64px'}}>My name is <b>Tiffany Chan</b>, and I am a <b>Full Stack Developer</b> and <b>UXUI Designer</b> in Singapore. I’m a final year <b>Computer Science</b> student with minors in Communications and Interactive Media Development at the National University of Singapore (NUS).</p>
+
+              <h3>what do i do?</h3>
+              <p style={{marginBottom: '64px'}}>I combine research, user flows, wireframing, prototyping, storytelling, visual design and development to create engaging solutions in the digital medium. With my background in both design and development, I understand technical constraints and am able to design for and build around them.</p>
+
+              <h3>what am i passionate about?</h3>
+              <p>My favorite projects are those that allow me to work at the crossroads of disciplines, combining my design and development skills to solve complex problems and create ✨ <b>beautiful experiences</b> ✨. I also happen to have an unhealthy obsession with <span style={{fontFamily: 'BioRhyme Expanded'}}>typefaces</span> and my dog Kopi 🐶.</p>
             </div>
 
-        </StyledAboutSection>
-
+            <div className="image-col col">
+              <div style={{position: 'sticky', top: '0'}}>
+                <AnimatedPicture
+                  height='300px'
+                  ref={myPhotoRef}
+                  before={oldMe}
+                  after={youngMe}
+                />
+                <div style={{display:'flex', alignItems: 'center'}}><IconArrowUpRight />hover to time travel</div>
+              </div>
+            </div>
+          </AboutRow>
+      </StyledAboutSection>
     )
 }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@700&display=swap');
+
 body {
     font-family: var(--font-family-sans-serif);
     background-color: var(--bg-color);
@@ -23,7 +25,7 @@ body {
     --bg-color: #FDF9F7;
 
     --text-display: 4.2rem;
-    --text-h1: 54px; 
+    --text-h1: 54px;
     --text-h2: 36px;
     --text-h3: 24px;
     --text-body: 18px;
@@ -84,15 +86,15 @@ body {
     font-weight: 900;
     font-style: normal;
 }
-  
+
 html {
     scroll-behavior: smooth;
 }
-  
+
 ::selection {
     background: var(--pink-light);
 }
-  
+
 .purple-font {
     color: var(--purple);
 }
