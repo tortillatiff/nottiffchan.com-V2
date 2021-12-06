@@ -39,5 +39,14 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "projects",
+        path: `${__dirname}/src/projects/`,
+      },
+      __key: "projects",
+    },
+    `gatsby-transformer-remark`,
   ],
 };
