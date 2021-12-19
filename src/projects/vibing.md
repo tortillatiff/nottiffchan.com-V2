@@ -1,5 +1,5 @@
 ---
-slug: "/projects/vibing"
+slug: "/projects/testmd"
 title: "vibing."
 description: "Creating personalized Spotify playlists for friends"
 ---

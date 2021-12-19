@@ -1,24 +1,25 @@
-import React, {useRef} from "react"
-import '../styles/global.css';
-import styled from 'styled-components';
-import Layout from '../components/layout';
-import Hero from '../components/hero';
-import About from '../components/about';
-import Footer from '../components/footer.jsx';
+import React, { useRef } from "react";
+import { Link } from "gatsby";
+import "../styles/global.css";
+import styled from "styled-components";
+import Layout from "../components/layout";
+import Hero from "../components/hero";
+import About from "../components/about";
+import Footer from "../components/footer.jsx";
 
-import ScrollingColorBackground from 'react-scrolling-color-background';
-import berryThumbnail from '../assets/projects/thumbnails/berryThumbnailSquare.png'
-import vibingThumbnail from '../assets/projects/thumbnails/vibingThumbnailSquare.png';
-import rescaleLabThumbnail from '../assets/projects/thumbnails/rescaleLabThumbnailSquare.png'
-import shillyThumbnail from '../assets/projects/thumbnails/shillyThumbnailSquare.png'
+import ScrollingColorBackground from "react-scrolling-color-background";
+import berryThumbnail from "../assets/projects/thumbnails/berryThumbnailSquare.png";
+import vibingThumbnail from "../assets/projects/thumbnails/vibingThumbnailSquare.png";
+import rescaleLabThumbnail from "../assets/projects/thumbnails/rescaleLabThumbnailSquare.png";
+import shillyThumbnail from "../assets/projects/thumbnails/shillyThumbnailSquare.png";
 import AnimatedPicture from "../components/animatedPicture";
 
 import {
   useGlobalStateContext,
   useGlobalDispatchContext,
-} from "../context/globalContext"
+} from "../context/globalContext";
 
-import useWindowSize from '../hooks/useWindowSize';
+import useWindowSize from "../hooks/useWindowSize";
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -31,73 +32,106 @@ const StyledMainContainer = styled.main`
   }
 
   @media (max-width: 768px) {
-    .section { height: auto; }
+    .section {
+      height: auto;
+    }
   }
 `;
 
-const bgPink = 'rgb(252, 233, 238)';
-const bgGrey = 'rgb(228, 236, 241)';
-const bgGreen = 'rgb(224, 245, 236)';
-const bgPurple = 'rgb(235, 222, 237)';
-const bgWhite = 'rgb(253, 249, 247)';
+const bgPink = "rgb(252, 233, 238)";
+const bgGrey = "rgb(228, 236, 241)";
+const bgGreen = "rgb(224, 245, 236)";
+const bgPurple = "rgb(235, 222, 237)";
+const bgWhite = "rgb(253, 249, 247)";
 
 const projects = [
-  {name: "Shilly", desc: "Social platform connecting influencers and crypto coins", tags: "web, design, development", thumbnail: shillyThumbnail, bgCol: bgPink},
-  {name: "vibing.", desc: "Creating personalized Spotify playlists for friends", tags: "web, design, development", thumbnail: vibingThumbnail, bgCol: bgGrey},
-  {name: "Rescale Lab", desc: "SaaS platform for entrepreneurs", tags: "web, design, development", thumbnail: rescaleLabThumbnail, bgCol: bgGreen},
-  {name: "berry", desc: "Tile-style shopping list mobile app", tags: "mobile, design, development", thumbnail: berryThumbnail, bgCol: bgPurple},
+  {
+    name: "Shilly",
+    desc: "Social platform connecting influencers and crypto coins",
+    tags: "web, design, development",
+    thumbnail: shillyThumbnail,
+    bgCol: bgPink,
+    link: "/",
+  },
+  {
+    name: "vibing.",
+    desc: "Creating personalized Spotify playlists for friends",
+    tags: "web, design, development",
+    thumbnail: vibingThumbnail,
+    bgCol: bgGrey,
+    link: "/projects/vibing/",
+  },
+  {
+    name: "Rescale Lab",
+    desc: "SaaS platform for entrepreneurs",
+    tags: "web, design, development",
+    thumbnail: rescaleLabThumbnail,
+    bgCol: bgGreen,
+    link: "/projects/rescaleLab/",
+  },
+  {
+    name: "berry",
+    desc: "Tile-style shopping list mobile app",
+    tags: "mobile, design, development",
+    thumbnail: berryThumbnail,
+    bgCol: bgPurple,
+    link: "/projects/berry/",
+  },
 ];
 
-
 const IndexPage = () => {
-  const dispatch = useGlobalDispatchContext()
-  const { cursorStyles } = useGlobalStateContext()
-  const onCursor = cursorType => {
-    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
-    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
-  }
+  const dispatch = useGlobalDispatchContext();
+  const { cursorStyles } = useGlobalStateContext();
+  const onCursor = (cursorType) => {
+    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
+    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
+  };
 
   return (
     <Layout>
       <StyledMainContainer>
-
         <ScrollingColorBackground
-          selector='.js-color-stop[data-background-color]'
-          colorDataAttribute='data-background-color'
-          initialRgb='rgb(0, 0, 0)'
+          selector=".js-color-stop[data-background-color]"
+          colorDataAttribute="data-background-color"
+          initialRgb="rgb(0, 0, 0)"
         />
 
-        <div data-background-color={bgWhite} className='js-color-stop section'>
+        <div data-background-color={bgWhite} className="js-color-stop section">
           <Hero onCursor={onCursor} />
         </div>
 
-        <div data-background-color={bgWhite} className='js-color-stop section'>
+        <div
+          id="about"
+          data-background-color={bgWhite}
+          className="js-color-stop section"
+        >
           <About />
         </div>
 
-        <Project onCursor={onCursor} project={projects[0]} isFirst={true}/>
-        <Project onCursor={onCursor} project={projects[1]}/>
-        <Project onCursor={onCursor} project={projects[2]}/>
-        <Project onCursor={onCursor} project={projects[3]}/>
+        <div id="projects"></div>
+        <Project onCursor={onCursor} project={projects[0]} isFirst={true} />
+        <Project onCursor={onCursor} project={projects[1]} />
+        <Project onCursor={onCursor} project={projects[2]} />
+        <Project onCursor={onCursor} project={projects[3]} />
 
         <div
           data-background-color={bgPurple}
-          className='js-color-stop'
-          style={{height: '10vh', position: 'relative'}}
+          className="js-color-stop"
+          style={{ height: "10vh", position: "relative" }}
         ></div>
 
         <div
-          data-background-color='rgb(61, 51, 51)'
-          className='js-color-stop'
-          style={{height: '100vh', position: 'relative'}}
+          id="contact"
+          data-background-color="rgb(61, 51, 51)"
+          className="js-color-stop"
+          style={{ height: "100vh", position: "relative" }}
         >
           <Footer onCursor={onCursor} />
         </div>
-
       </StyledMainContainer>
     </Layout>
-  )
-}
+  );
+};
 
 const Project = (props) => {
   const thumbnailRef = useRef(null);
@@ -106,9 +140,13 @@ const Project = (props) => {
   return (
     <StyledProjectSection
       data-background-color={props.project.bgCol}
-      className='js-color-stop section'
+      className="js-color-stop section"
     >
-      {props.isFirst && <h2 className="purple-font" style={{marginBottom: '100px'}}>my projects</h2>}
+      {props.isFirst && (
+        <h2 className="purple-font" style={{ marginBottom: "100px" }}>
+          my projects
+        </h2>
+      )}
 
       <div className="inner">
         <div>
@@ -117,20 +155,28 @@ const Project = (props) => {
           <p>{props.project.tags}</p>
         </div>
 
-        <a href="/" className="thumbnail-wrap" onMouseEnter={() => props.onCursor("viewCase")} onMouseLeave={props.onCursor}>
+        <Link
+          to={props.project.link}
+          onMouseEnter={() => props.onCursor("viewCase")}
+          onMouseLeave={props.onCursor}
+          onClick={props.onCursor}
+        >
+          {size.width < 768 && (
+            <img src={props.project.thumbnail} alt="Project thumbnail" />
+          )}
 
-          {(size.width < 768) && <img src={props.project.thumbnail} alt="Project thumbnail" />}
-
-          {(size.width >= 768) && <AnimatedPicture
-            ref={thumbnailRef}
-            height='571px'
-            before={props.project.thumbnail}
-            after={props.project.thumbnail}
-          />}
-        </a>
+          {size.width >= 768 && (
+            <AnimatedPicture
+              ref={thumbnailRef}
+              // height="571px"
+              height="770px"
+              before={props.project.thumbnail}
+              after={props.project.thumbnail}
+            />
+          )}
+        </Link>
       </div>
     </StyledProjectSection>
-
   );
 };
 
@@ -140,7 +186,9 @@ const StyledProjectSection = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  h2 { width: 80%; }
+  h2 {
+    width: 80%;
+  }
 
   img {
     transition: var(--transition);
@@ -148,13 +196,15 @@ const StyledProjectSection = styled.div`
 
   .inner {
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    /* grid-template-columns: 7fr 3fr; */
+    grid-template-columns: 7fr 4fr;
     grid-gap: 68px;
     align-items: center;
     max-width: 1200px;
   }
 
-  .inner h2, h3 {
+  .inner h2,
+  h3 {
     font-weight: 500;
   }
 
@@ -167,15 +217,23 @@ const StyledProjectSection = styled.div`
   }
 
   @media (max-width: 1080px) {
-    h2 { font-size: 36px; width: 100%; }
+    h2 {
+      font-size: 36px;
+      width: 100%;
+    }
   }
 
   @media (max-width: 768px) {
-    h3 { font-size: 24px; }
+    h3 {
+      font-size: 24px;
+    }
 
-    .inner { grid-gap: 40px; }
-    .inner img { width: 280px; }
-
+    .inner {
+      grid-gap: 40px;
+    }
+    .inner img {
+      width: 280px;
+    }
   }
 
   @media (max-width: 567px) {
@@ -195,4 +253,4 @@ const StyledProjectSection = styled.div`
   }
 `;
 
-export default IndexPage
+export default IndexPage;
