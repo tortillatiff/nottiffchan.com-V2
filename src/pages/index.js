@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { Link } from "gatsby";
 import "../styles/global.css";
 import styled from "styled-components";
 import Layout from "../components/layout";
@@ -18,8 +17,9 @@ import {
   useGlobalStateContext,
   useGlobalDispatchContext,
 } from "../context/globalContext";
-
 import useWindowSize from "../hooks/useWindowSize";
+
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -60,6 +60,7 @@ const projects = [
     thumbnail: vibingThumbnail,
     bgCol: bgGrey,
     link: "/projects/vibing/",
+    transitionCol: "#F5F5F5",
   },
   {
     name: "Rescale Lab",
@@ -68,6 +69,7 @@ const projects = [
     thumbnail: rescaleLabThumbnail,
     bgCol: bgGreen,
     link: "/projects/rescaleLab/",
+    transitionCol: "#E3F1E8",
   },
   {
     name: "berry",
@@ -76,6 +78,7 @@ const projects = [
     thumbnail: berryThumbnail,
     bgCol: bgPurple,
     link: "/projects/berry/",
+    transitionCol: "#F0E7FE",
   },
 ];
 
@@ -155,7 +158,9 @@ const Project = (props) => {
           <p>{props.project.tags}</p>
         </div>
 
-        <Link
+        <AniLink
+          paintDrip
+          hex={props.project.transitionCol}
           to={props.project.link}
           onMouseEnter={() => props.onCursor("viewCase")}
           onMouseLeave={props.onCursor}
@@ -174,7 +179,7 @@ const Project = (props) => {
               after={props.project.thumbnail}
             />
           )}
-        </Link>
+        </AniLink>
       </div>
     </StyledProjectSection>
   );

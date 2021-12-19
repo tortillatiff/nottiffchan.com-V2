@@ -140,7 +140,7 @@ const RescaleLab = () => {
       </ProjectTextSection>
 
       <ScreenshotContainer>
-        <img src={rEnd} alt="End image" />
+        <img src={rEnd} alt="Ending banner" />
       </ScreenshotContainer>
     </Layout>
   );

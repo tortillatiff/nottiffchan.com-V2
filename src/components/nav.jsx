@@ -5,6 +5,7 @@ import logo from "../assets/iconlogo.png";
 import { keyframes } from "styled-components";
 import Menu from "./menu";
 import CV from "../assets/TiffanyChan.pdf";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -82,7 +83,7 @@ const Logo = styled.div`
   height: 64px;
   margin-left: 8px;
 
-  a img {
+  img {
     height: 64px;
   }
 
@@ -110,10 +111,17 @@ var navLinks = [
 const Nav = ({ onCursor }) => {
   return (
     <StyledHeader>
-      <Logo onMouseEnter={() => onCursor("hovered")} onMouseLeave={onCursor}>
-        <a href="/">
+      <Logo
+        onMouseEnter={() => onCursor("pointer")}
+        onMouseLeave={onCursor}
+        onClick={onCursor}
+      >
+        <AniLink paintDrip hex="#5F3962" to="/">
           <img src={logo} alt="logo" />
-        </a>
+        </AniLink>
+        {/* <a href="/">
+          <img src={logo} alt="logo" />
+        </a> */}
       </Logo>
       <StyledLinks>
         <ol>
