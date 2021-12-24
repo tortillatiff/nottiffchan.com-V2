@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import "../styles/global.css";
 import styled from "styled-components";
 import Layout from "../components/layout";
@@ -18,7 +18,7 @@ import {
   useGlobalDispatchContext,
 } from "../context/globalContext";
 import useWindowSize from "../hooks/useWindowSize";
-
+import { gsap } from "gsap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const StyledMainContainer = styled.main`
@@ -90,8 +90,17 @@ const IndexPage = () => {
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
 
+  const [timeline, setTimeline] = useState(() => gsap.timeline());
+  const addAnimation = useCallback(
+    (animation, index) => {
+      console.log("index jere", index);
+      timeline.add(animation, index * 0.1);
+    },
+    [timeline]
+  );
+
   return (
-    <Layout>
+    <Layout addAnimation={addAnimation} index={1}>
       <StyledMainContainer>
         <ScrollingColorBackground
           selector=".js-color-stop[data-background-color]"
@@ -99,8 +108,12 @@ const IndexPage = () => {
           initialRgb="rgb(0, 0, 0)"
         />
 
-        <div data-background-color={bgWhite} className="js-color-stop section">
-          <Hero onCursor={onCursor} />
+        <div
+          data-background-color={bgWhite}
+          className="js-color-stop section"
+          style={{ minHeight: "calc(100vh - 100px)" }}
+        >
+          <Hero onCursor={onCursor} addAnimation={addAnimation} index={2} />
         </div>
 
         <div

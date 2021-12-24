@@ -22,6 +22,13 @@ const links = [
   { link: "/", name: "Full UX Case Study" },
 ];
 
+const styleguideLink = [
+  {
+    link: "https://zeroheight.com/596dd3e26/p/30e71b-rescale-lab",
+    name: "Full Design System",
+  },
+];
+
 const leftItems = [
   {
     imgSrc: rLeftOne,
@@ -98,8 +105,7 @@ const RescaleLab = () => {
           allow for the dev team (which included myself) to quickly plug and
           play the styles using the variables I had already defined.
           <br /> <br />
-          The link to the current version of the design system can be found
-          <a href="/">here</a>.
+          <ProjectLinkContainer links={styleguideLink}></ProjectLinkContainer>
         </p>
       </ProjectTextSection>
 
@@ -118,7 +124,7 @@ const RescaleLab = () => {
         rightItems={rightItems}
       ></ProjectSplitshow>
 
-      <ProjectTextSection style={{ marginTop: "-200px" }}>
+      <ProjectTextSection>
         <p>
           I truly enjoyed working on this project, from starting our first
           design system from scratch to coming up with user flows and page
