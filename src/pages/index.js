@@ -93,7 +93,6 @@ const IndexPage = () => {
   const [timeline, setTimeline] = useState(() => gsap.timeline());
   const addAnimation = useCallback(
     (animation, index) => {
-      console.log("index jere", index);
       timeline.add(animation, index * 0.1);
     },
     [timeline]

@@ -5,7 +5,6 @@ import styled, { keyframes } from "styled-components";
 import Menu from "./menu";
 import CV from "../assets/TiffanyChan.pdf";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { Power3 } from "gsap/gsap-core";
 import gsap from "gsap";
 
 const StyledHeader = styled.header`
