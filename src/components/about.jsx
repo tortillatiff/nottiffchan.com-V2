@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import oldMe from "../assets/greyscaleOldMe2.jpg";
 import youngMe from "../assets/greyscaleYoungMe.jpg";
 import AnimatedPicture from "./animatedPicture";
 import { IconArrowUpRight } from "./icons";
+import sr from "../utils/sr";
+import { srConfig } from "../config";
 
 const StyledAboutSection = styled.section`
   max-width: 1200px;
@@ -61,9 +63,14 @@ const AboutRow = styled.div`
 
 const About = () => {
   const myPhotoRef = useRef(null);
+  const revealContainer = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
 
   return (
-    <StyledAboutSection>
+    <StyledAboutSection ref={revealContainer}>
       <h2 className="purple-font">about me</h2>
       <AboutRow>
         <div className="text-col col">

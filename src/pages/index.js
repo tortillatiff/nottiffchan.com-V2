@@ -132,6 +132,11 @@ const IndexPage = () => {
         <div
           data-background-color={bgPurple}
           className="js-color-stop"
+          style={{ height: "4vh", position: "relative" }}
+        ></div>
+        <div
+          data-background-color="rgb(61, 51, 51)"
+          className="js-color-stop"
           style={{ height: "10vh", position: "relative" }}
         ></div>
 
