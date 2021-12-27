@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import Hero from "../components/hero";
 import About from "../components/about";
 import Footer from "../components/footer.jsx";
+import ProjectSlides from "../components/projectSlides";
 
 import ScrollingColorBackground from "react-scrolling-color-background";
 import berryThumbnail from "../assets/projects/thumbnails/berryThumbnailSquare.png";
@@ -44,43 +45,43 @@ const bgGreen = "rgb(224, 245, 236)";
 const bgPurple = "rgb(235, 222, 237)";
 const bgWhite = "rgb(253, 249, 247)";
 
-const projects = [
-  {
-    name: "Shilly",
-    desc: "Social platform connecting influencers and crypto coins",
-    tags: "web, design, development",
-    thumbnail: shillyThumbnail,
-    bgCol: bgPink,
-    link: "/",
-  },
-  {
-    name: "vibing.",
-    desc: "Creating personalized Spotify playlists for friends",
-    tags: "web, design, development",
-    thumbnail: vibingThumbnail,
-    bgCol: bgGrey,
-    link: "/projects/vibing/",
-    transitionCol: "#F5F5F5",
-  },
-  {
-    name: "Rescale Lab",
-    desc: "SaaS platform for entrepreneurs",
-    tags: "web, design, development",
-    thumbnail: rescaleLabThumbnail,
-    bgCol: bgGreen,
-    link: "/projects/rescaleLab/",
-    transitionCol: "#E3F1E8",
-  },
-  {
-    name: "berry",
-    desc: "Tile-style shopping list mobile app",
-    tags: "mobile, design, development",
-    thumbnail: berryThumbnail,
-    bgCol: bgPurple,
-    link: "/projects/berry/",
-    transitionCol: "#F0E7FE",
-  },
-];
+// const projects = [
+//   {
+//     name: "Shilly",
+//     desc: "Social platform connecting influencers and crypto coins",
+//     tags: "web, design, development",
+//     thumbnail: shillyThumbnail,
+//     bgCol: bgPink,
+//     link: "/",
+//   },
+//   {
+//     name: "vibing.",
+//     desc: "Creating personalized Spotify playlists for friends",
+//     tags: "web, design, development",
+//     thumbnail: vibingThumbnail,
+//     bgCol: bgGrey,
+//     link: "/projects/vibing/",
+//     transitionCol: "#F5F5F5",
+//   },
+//   {
+//     name: "Rescale Lab",
+//     desc: "SaaS platform for entrepreneurs",
+//     tags: "web, design, development",
+//     thumbnail: rescaleLabThumbnail,
+//     bgCol: bgGreen,
+//     link: "/projects/rescaleLab/",
+//     transitionCol: "#E3F1E8",
+//   },
+//   {
+//     name: "berry",
+//     desc: "Tile-style shopping list mobile app",
+//     tags: "mobile, design, development",
+//     thumbnail: berryThumbnail,
+//     bgCol: bgPurple,
+//     link: "/projects/berry/",
+//     transitionCol: "#F0E7FE",
+//   },
+// ];
 
 const IndexPage = () => {
   const dispatch = useGlobalDispatchContext();
@@ -101,27 +102,28 @@ const IndexPage = () => {
   return (
     <Layout addAnimation={addAnimation} index={1}>
       <StyledMainContainer>
-        <ScrollingColorBackground
+        {/* <ScrollingColorBackground
           selector=".js-color-stop[data-background-color]"
           colorDataAttribute="data-background-color"
           initialRgb="rgb(0, 0, 0)"
-        />
+        /> */}
 
-        <div
+        {/* <div
           data-background-color={bgWhite}
           className="js-color-stop section"
           style={{ minHeight: "calc(100vh - 100px)" }}
-        >
-          <Hero onCursor={onCursor} addAnimation={addAnimation} index={2} />
-        </div>
+        > */}
+        <Hero onCursor={onCursor} addAnimation={addAnimation} index={2} />
+        {/* </div>
 
         <div
           id="about"
           data-background-color={bgWhite}
           className="js-color-stop section"
-        >
-          <About />
-        </div>
+        > */}
+        <About />
+        <ProjectSlides />
+        {/* </div>
 
         <div id="projects"></div>
         <Project onCursor={onCursor} project={projects[0]} isFirst={true} />
@@ -145,9 +147,9 @@ const IndexPage = () => {
           data-background-color="rgb(61, 51, 51)"
           className="js-color-stop"
           style={{ height: "100vh", position: "relative" }}
-        >
-          <Footer onCursor={onCursor} />
-        </div>
+        > */}
+        <Footer onCursor={onCursor} />
+        {/* </div> */}
       </StyledMainContainer>
     </Layout>
   );
