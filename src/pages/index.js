@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useEffect } from "react";
 import "../styles/global.css";
 import styled from "styled-components";
 import Layout from "../components/layout";
@@ -7,11 +7,11 @@ import About from "../components/about";
 import Footer from "../components/footer.jsx";
 import ProjectSlides from "../components/projectSlides";
 
-import ScrollingColorBackground from "react-scrolling-color-background";
-import berryThumbnail from "../assets/projects/thumbnails/berryThumbnailSquare.png";
-import vibingThumbnail from "../assets/projects/thumbnails/vibingThumbnailSquare.png";
-import rescaleLabThumbnail from "../assets/projects/thumbnails/rescaleLabThumbnailSquare.png";
-import shillyThumbnail from "../assets/projects/thumbnails/shillyThumbnailSquare.png";
+// import ScrollingColorBackground from "react-scrolling-color-background";
+// import berryThumbnail from "../assets/projects/thumbnails/berryThumbnailSquare.png";
+// import vibingThumbnail from "../assets/projects/thumbnails/vibingThumbnailSquare.png";
+// import rescaleLabThumbnail from "../assets/projects/thumbnails/rescaleLabThumbnailSquare.png";
+// import shillyThumbnail from "../assets/projects/thumbnails/shillyThumbnailSquare.png";
 import AnimatedPicture from "../components/animatedPicture";
 
 import {
@@ -21,29 +21,14 @@ import {
 import useWindowSize from "../hooks/useWindowSize";
 import { gsap } from "gsap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { ScrollTrigger, snap } from "gsap/all";
+import { CSSPlugin } from "gsap/all";
 
-const StyledMainContainer = styled.main`
-  counter-reset: section;
-
-  .section {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-    .section {
-      height: auto;
-    }
-  }
-`;
-
-const bgPink = "rgb(252, 233, 238)";
-const bgGrey = "rgb(228, 236, 241)";
-const bgGreen = "rgb(224, 245, 236)";
-const bgPurple = "rgb(235, 222, 237)";
-const bgWhite = "rgb(253, 249, 247)";
+// const bgPink = "rgb(252, 233, 238)";
+// const bgGrey = "rgb(228, 236, 241)";
+// const bgGreen = "rgb(224, 245, 236)";
+// const bgPurple = "rgb(235, 222, 237)";
+// const bgWhite = "rgb(253, 249, 247)";
 
 // const projects = [
 //   {
@@ -99,8 +84,30 @@ const IndexPage = () => {
     [timeline]
   );
 
+  useEffect(() => {
+    const plugins = [CSSPlugin];
+    gsap.registerPlugin(plugins);
+    gsap.registerPlugin(ScrollTrigger);
+
+    function trigger() {
+      const tl = gsap.timeline();
+      tl.to(
+        ".hero",
+        {
+          backgroundColor: "black",
+          duration: 0.25,
+        },
+        "-=0.5"
+      );
+
+      return tl;
+    }
+
+    gsap.timeline().add(trigger());
+  }, []);
+
   return (
-    <Layout addAnimation={addAnimation} index={1}>
+    <Layout addAnimation={addAnimation} index={2}>
       <StyledMainContainer>
         {/* <ScrollingColorBackground
           selector=".js-color-stop[data-background-color]"
@@ -113,7 +120,12 @@ const IndexPage = () => {
           className="js-color-stop section"
           style={{ minHeight: "calc(100vh - 100px)" }}
         > */}
-        <Hero onCursor={onCursor} addAnimation={addAnimation} index={2} />
+        <Hero
+          onCursor={onCursor}
+          addAnimation={addAnimation}
+          index={1}
+          className="hero"
+        />
         {/* </div>
 
         <div
@@ -154,6 +166,23 @@ const IndexPage = () => {
     </Layout>
   );
 };
+
+const StyledMainContainer = styled.main`
+  counter-reset: section;
+
+  .section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      height: auto;
+    }
+  }
+`;
 
 const Project = (props) => {
   const thumbnailRef = useRef(null);

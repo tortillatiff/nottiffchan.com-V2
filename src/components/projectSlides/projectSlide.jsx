@@ -14,9 +14,10 @@ export default function ProjectSlide({
 
   useEffect(() => {
     if (onScreen) {
+      // console.log(index);
       updateActiveImage(index);
     }
-  }, [onScreen, index, updateActiveImage]);
+  }, [onScreen, index]);
 
   return (
     <StyledProjectSlide ref={ref}>
@@ -31,8 +32,9 @@ const StyledProjectSlide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
   width: 60%;
+  margin: 0 auto;
+
   h2,
   h3 {
     font-weight: 500;

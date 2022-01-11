@@ -120,25 +120,25 @@ const Nav = ({ onCursor, addAnimation, index }) => {
       .from(navLinkOne.current, {
         y: -50,
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "Power3.easeOut",
       })
       .from(navLinkTwo.current, {
         y: -50,
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "Power3.easeOut",
       })
       .from(navLinkThree.current, {
         y: -50,
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "Power3.easeOut",
       })
       .from(navLinkFour.current, {
         y: -50,
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "Power3.easeOut",
       });
     addAnimation(animation, index);

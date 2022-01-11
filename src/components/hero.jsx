@@ -48,7 +48,7 @@ const StyledHeroSection = styled.section`
 `;
 
 const HeroGif = styled.img`
-  width: 432px;
+  width: 412px;
   pointer-events: none;
   user-select: none;
 
@@ -63,9 +63,8 @@ const StyledHeroText = styled.div`
   font-weight: 600;
   line-height: 120%;
   margin: 0;
-  font-size: clamp(36px, 5.9vw, 68px);
+  font-size: clamp(36px, 5.4vw, 62px);
   text-align: center;
-  margin-top: 48px;
 
   @media (max-width: 900px) {
     width: 85%;
@@ -97,6 +96,7 @@ const StyledHeroText = styled.div`
   }
 
   .heroTextBig {
+    margin-top: 48px;
     display: block;
   }
 
@@ -105,13 +105,12 @@ const StyledHeroText = styled.div`
   }
 
   @media (max-width: 400px) {
-    margin-top: 20px;
-
     .heroTextBig {
       display: none;
     }
 
     .heroTextSmall {
+      margin-top: 20px;
       display: block;
     }
   }
