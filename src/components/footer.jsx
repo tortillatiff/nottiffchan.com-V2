@@ -5,7 +5,12 @@ import useWindowSize from "../hooks/useWindowSize";
 
 const FooterWrap = styled.section`
   width: 100%;
-  /* height: calc(100vh - 200px); */
+  height: calc(100vh - 200px);
+  position: fixed;
+  /* z-index: 0; */
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 
 const StyledFooter = styled.div`

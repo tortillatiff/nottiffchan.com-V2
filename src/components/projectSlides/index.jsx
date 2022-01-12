@@ -10,11 +10,11 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import useWindowSize from "../../hooks/useWindowSize";
 import Footer from "../footer";
 
-projectSlides.push({
-  isFooter: true,
-  transitionCol: "#3d3333",
-  imageUrl: "./greyscaleYoungMe.jpg",
-});
+// projectSlides.push({
+//   isFooter: true,
+//   transitionCol: "#3d3333",
+//   imageUrl: "./greyscaleYoungMe.jpg",
+// });
 
 function RenderImages({ activeFeatureIndex, onCursor }) {
   const size = useWindowSize();
@@ -147,19 +147,19 @@ export default function ProjectSlides({ onCursor }) {
                 ref={addToBgColRefs}
                 key={index}
               >
-                {project.isFooter && index > 4 && null}
+                {/* {project.isFooter && index > 4 && null}
                 {project.isFooter && size.width > 1200 && index === 4 ? (
                   <Footer onCursor={onCursor} />
-                ) : (
-                  <ProjectSlide
-                    updateActiveImage={setFeatureIndex}
-                    key={project.imageUrl}
-                    title={project.title}
-                    description={project.description}
-                    tags={project.tags}
-                    index={index}
-                  />
-                )}
+                ) : ( */}
+                <ProjectSlide
+                  updateActiveImage={setFeatureIndex}
+                  key={project.imageUrl}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  index={index}
+                />
+                {/* )} */}
               </div>
             ))}
           </div>

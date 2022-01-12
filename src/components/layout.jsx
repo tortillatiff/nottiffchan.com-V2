@@ -3,15 +3,19 @@ import Head from "../components/head";
 import styled from "styled-components";
 import Nav from "../components/nav";
 import Cursor from "../components/customCursor";
+import Footer from "./footer";
 import {
   useGlobalStateContext,
   useGlobalDispatchContext,
 } from "../context/globalContext";
 
 const StyledContent = styled.div`
-  display: flex;
-  flex-direction: column;
-
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+  background-color: var(--bg-color);
+  z-index: 99;
+  margin-bottom: 100vh;
   * {
     text-decoration: none;
     cursor: none;
@@ -37,6 +41,8 @@ const Layout = ({ addAnimation, index, children }) => {
           <Nav onCursor={onCursor} addAnimation={addAnimation} index={0} />
           <div id="content">{children}</div>
         </StyledContent>
+
+        <Footer onCursor={onCursor} />
       </div>
     </>
   );

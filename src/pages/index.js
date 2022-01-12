@@ -27,8 +27,6 @@ const IndexPage = () => {
 
   const size = useWindowSize();
 
-  const mainRef = useRef();
-
   const [timeline, setTimeline] = useState(() => gsap.timeline());
   const addAnimation = useCallback(
     (animation, index) => {
@@ -45,7 +43,7 @@ const IndexPage = () => {
 
   return (
     <Layout addAnimation={addAnimation} index={2}>
-      <StyledMainContainer ref={mainRef}>
+      <StyledMainContainer>
         <Hero
           onCursor={onCursor}
           addAnimation={addAnimation}
@@ -64,18 +62,14 @@ const IndexPage = () => {
             >
               featured projects
             </h2>
-            <ProjectSlides
-              onCursor={onCursor}
-              id="projects"
-              mainRef={mainRef}
-            />
+            <ProjectSlides onCursor={onCursor} id="projects" />
           </>
         ) : (
           <>
             <ResponsiveProjectSlides />
-            <Footer onCursor={onCursor} />
           </>
         )}
+        {/* <Footer onCursor={onCursor} /> */}
       </StyledMainContainer>
     </Layout>
   );
