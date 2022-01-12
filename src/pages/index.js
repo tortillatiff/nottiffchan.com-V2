@@ -6,13 +6,7 @@ import Hero from "../components/hero";
 import About from "../components/about";
 import Footer from "../components/footer.jsx";
 import ProjectSlides from "../components/projectSlides";
-
-// import ScrollingColorBackground from "react-scrolling-color-background";
-// import berryThumbnail from "../assets/projects/thumbnails/berryThumbnailSquare.png";
-// import vibingThumbnail from "../assets/projects/thumbnails/vibingThumbnailSquare.png";
-// import rescaleLabThumbnail from "../assets/projects/thumbnails/rescaleLabThumbnailSquare.png";
-// import shillyThumbnail from "../assets/projects/thumbnails/shillyThumbnailSquare.png";
-import AnimatedPicture from "../components/animatedPicture";
+import ResponsiveProjectSlides from "../components/projectSlides/responsiveProjectSlides";
 
 import {
   useGlobalStateContext,
@@ -20,15 +14,8 @@ import {
 } from "../context/globalContext";
 import useWindowSize from "../hooks/useWindowSize";
 import { gsap } from "gsap";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { ScrollTrigger, snap } from "gsap/all";
+import { ScrollTrigger } from "gsap/all";
 import { CSSPlugin } from "gsap/all";
-
-// const bgPink = "rgb(252, 233, 238)";
-// const bgGrey = "rgb(228, 236, 241)";
-// const bgGreen = "rgb(224, 245, 236)";
-// const bgPurple = "rgb(235, 222, 237)";
-// const bgWhite = "rgb(253, 249, 247)";
 
 const IndexPage = () => {
   const dispatch = useGlobalDispatchContext();
@@ -37,13 +24,15 @@ const IndexPage = () => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
-  const heroRef = useRef();
-  const layoutRef = useRef();
+
+  const size = useWindowSize();
+
+  const mainRef = useRef();
 
   const [timeline, setTimeline] = useState(() => gsap.timeline());
   const addAnimation = useCallback(
     (animation, index) => {
-      timeline.add(animation, index * 0.1);
+      setTimeline(timeline.add(animation, index * 0.1));
     },
     [timeline]
   );
@@ -55,62 +44,38 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <Layout addAnimation={addAnimation} index={2} ref={layoutRef}>
-      <StyledMainContainer>
-        {/* <ScrollingColorBackground
-          selector=".js-color-stop[data-background-color]"
-          colorDataAttribute="data-background-color"
-          initialRgb="rgb(0, 0, 0)"
-        /> */}
-
-        {/* <div
-          data-background-color={bgWhite}
-          className="js-color-stop section"
-          style={{ minHeight: "calc(100vh - 100px)" }}
-        > */}
+    <Layout addAnimation={addAnimation} index={2}>
+      <StyledMainContainer ref={mainRef}>
         <Hero
           onCursor={onCursor}
           addAnimation={addAnimation}
           index={1}
           className="hero"
-          ref={heroRef}
         />
-        {/* </div>
-
-        <div
-          id="about"
-          data-background-color={bgWhite}
-          className="js-color-stop section"
-        > */}
         <About />
-        <ProjectSlides onCursor={onCursor} id="projects" />
-        {/* </div>
 
-        <div id="projects"></div>
-        <Project onCursor={onCursor} project={projects[0]} isFirst={true} />
-        <Project onCursor={onCursor} project={projects[1]} />
-        <Project onCursor={onCursor} project={projects[2]} />
-        <Project onCursor={onCursor} project={projects[3]} />
+        {/* <ResponsiveProjectSlides /> */}
 
-        <div
-          data-background-color={bgPurple}
-          className="js-color-stop"
-          style={{ height: "4vh", position: "relative" }}
-        ></div>
-        <div
-          data-background-color="rgb(61, 51, 51)"
-          className="js-color-stop"
-          style={{ height: "10vh", position: "relative" }}
-        ></div>
-
-        <div
-          id="contact"
-          data-background-color="rgb(61, 51, 51)"
-          className="js-color-stop"
-          style={{ height: "100vh", position: "relative" }}
-        > */}
-        <Footer onCursor={onCursor} />
-        {/* </div> */}
+        {size.width > 1200 ? (
+          <>
+            <h2
+              className="purple-font"
+              style={{ marginBottom: 0, margin: "auto", maxWidth: "1200px" }}
+            >
+              featured projects
+            </h2>
+            <ProjectSlides
+              onCursor={onCursor}
+              id="projects"
+              mainRef={mainRef}
+            />
+          </>
+        ) : (
+          <>
+            <ResponsiveProjectSlides />
+            <Footer onCursor={onCursor} />
+          </>
+        )}
       </StyledMainContainer>
     </Layout>
   );
@@ -129,128 +94,6 @@ const StyledMainContainer = styled.main`
   @media (max-width: 768px) {
     .section {
       height: auto;
-    }
-  }
-`;
-
-const Project = (props) => {
-  const thumbnailRef = useRef(null);
-  const size = useWindowSize();
-
-  return (
-    <StyledProjectSection
-      data-background-color={props.project.bgCol}
-      className="js-color-stop section"
-    >
-      {props.isFirst && (
-        <h2 className="purple-font" style={{ marginBottom: "100px" }}>
-          my projects
-        </h2>
-      )}
-
-      <div className="inner">
-        <div>
-          <h3>{props.project.name}</h3>
-          <h2>{props.project.desc}</h2>
-          <p>{props.project.tags}</p>
-        </div>
-
-        <AniLink
-          paintDrip
-          hex={props.project.transitionCol}
-          to={props.project.link}
-          onMouseEnter={() => props.onCursor("viewCase")}
-          onMouseLeave={props.onCursor}
-          onClick={props.onCursor}
-        >
-          {size.width < 768 && (
-            <img src={props.project.thumbnail} alt="Project thumbnail" />
-          )}
-
-          {size.width >= 768 && (
-            <AnimatedPicture
-              ref={thumbnailRef}
-              // height="571px"
-              height="770px"
-              before={props.project.thumbnail}
-              after={props.project.thumbnail}
-            />
-          )}
-        </AniLink>
-      </div>
-    </StyledProjectSection>
-  );
-};
-
-const StyledProjectSection = styled.div`
-  padding: 48px 20px;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  h2 {
-    width: 80%;
-  }
-
-  img {
-    transition: var(--transition);
-  }
-
-  .inner {
-    display: grid;
-    /* grid-template-columns: 7fr 3fr; */
-    grid-template-columns: 7fr 4fr;
-    grid-gap: 68px;
-    align-items: center;
-    max-width: 1200px;
-  }
-
-  .inner h2,
-  h3 {
-    font-weight: 500;
-  }
-
-  .inner p {
-    color: var(--grey);
-  }
-
-  .inner img {
-    width: 350px;
-  }
-
-  @media (max-width: 1080px) {
-    h2 {
-      font-size: 36px;
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    h3 {
-      font-size: 24px;
-    }
-
-    .inner {
-      grid-gap: 40px;
-    }
-    .inner img {
-      width: 280px;
-    }
-  }
-
-  @media (max-width: 567px) {
-    height: auto;
-
-    .inner {
-      display: block;
-      height: auto;
-    }
-
-    .inner img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 36px;
     }
   }
 `;

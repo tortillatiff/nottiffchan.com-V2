@@ -17,7 +17,7 @@ const AnimatedPicture = React.forwardRef((props, ref) => {
         displacementImage: overlay,
       })
     );
-  }, []);
+  }, [props.after, props.before, ref]);
 
   return (
     <div

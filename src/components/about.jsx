@@ -6,8 +6,10 @@ import AnimatedPicture from "./animatedPicture";
 import { IconArrowUpRight } from "./icons";
 import sr from "../utils/sr";
 import { srConfig } from "../config";
+import useWindowSize from "../hooks/useWindowSize";
 
 const About = () => {
+  const width = useWindowSize().width;
   const myPhotoRef = useRef(null);
   const revealContainer = useRef(null);
 
@@ -51,18 +53,22 @@ const About = () => {
         </div>
 
         <div className="image-col col">
-          <div>
-            <AnimatedPicture
-              height="380px"
-              ref={myPhotoRef}
-              before={oldMe}
-              after={youngMe}
-            />
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <IconArrowUpRight />
-              hover to time travel
+          {width > 768 ? (
+            <div>
+              <AnimatedPicture
+                height="380px"
+                ref={myPhotoRef}
+                before={oldMe}
+                after={youngMe}
+              />
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <IconArrowUpRight />
+                hover to time travel
+              </div>
             </div>
-          </div>
+          ) : (
+            <img className="mobileImgMe" src={oldMe} alt="" />
+          )}
         </div>
       </AboutRow>
     </StyledAboutSection>
@@ -71,16 +77,31 @@ const About = () => {
 
 const StyledAboutSection = styled.section`
   max-width: 1200px;
-  width: 100%;
+  /* width: 100%; */
+
+  .mobileImgMe {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 40px auto;
+  }
+
   @media (max-width: 1280px) {
     padding-right: 40px;
     padding-left: 40px;
+  }
+
+  @media (max-width: 400px) {
+    .mobileImgMe {
+      margin: 0;
+      width: 100%;
+    }
   }
 `;
 
 const AboutRow = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   flex-wrap: wrap;
   width: 100%;
 
@@ -113,12 +134,19 @@ const AboutRow = styled.div`
     opacity: 0.5;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    flex-direction: row;
     .image-col {
       flex: 1;
     }
     .text-col {
       flex: 2;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .image-col {
+      padding: 0;
     }
   }
 `;

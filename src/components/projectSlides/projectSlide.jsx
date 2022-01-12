@@ -14,7 +14,6 @@ export default function ProjectSlide({
 
   useEffect(() => {
     if (onScreen) {
-      // console.log(index);
       updateActiveImage(index);
     }
   }, [onScreen, index, updateActiveImage]);
@@ -35,11 +34,27 @@ const StyledProjectSlide = styled.div`
   width: 70%;
   margin: 0 auto;
 
-  h2,
-  h3 {
+  h2 {
     font-weight: 500;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 22px;
   }
   p {
     color: var(--grey);
+  }
+
+  @media (max-width: 1080px) {
+    h2 {
+      font-size: 36px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 24px;
+    }
   }
 `;

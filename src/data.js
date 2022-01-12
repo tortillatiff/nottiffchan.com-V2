@@ -1,11 +1,13 @@
 const projectSlides = [
   {
-    title: "PomoPals",
+    title: "PomoPals (Hack&Roll'22 Most Beautiful Hack)",
     description: "Pomodoro timer for remote teams",
     tags: "web, design, development",
-    transitionCol: "#000000",
+
+    transitionCol: "#FFF2F0",
     link: "/",
     imageUrl: "./thumbnails/pomopalsThumbnail.png",
+    squareImageUrl: "./thumbnails/pomopalsThumbnailSquare.png",
   },
   {
     title: "vibing.",
@@ -13,8 +15,9 @@ const projectSlides = [
     tags: "web, design, development",
 
     link: "/projects/vibing/",
-    transitionCol: "#F5F5F5",
+    transitionCol: "#EFF6FB",
     imageUrl: "./thumbnails/vibingThumbnail.png",
+    squareImageUrl: "./thumbnails/vibingThumbnailSquare.png",
   },
   {
     title: "Rescale Lab",
@@ -22,8 +25,9 @@ const projectSlides = [
     tags: "web, design, development",
 
     link: "/projects/rescaleLab/",
-    transitionCol: "#E3F1E8",
+    transitionCol: "#EBF5F0",
     imageUrl: "./thumbnails/rescaleLabThumbnail.png",
+    squareImageUrl: "./thumbnails/rescaleLabThumbnailSquare.png",
   },
   {
     title: "berry",
@@ -31,33 +35,10 @@ const projectSlides = [
     tags: "mobile, design, development",
 
     link: "/projects/berry/",
-    transitionCol: "#F0E7FE",
+    transitionCol: "#F8F0FA",
     imageUrl: "./thumbnails/berryThumbnail.png",
+    squareImageUrl: "./thumbnails/berryThumbnailSquare.png",
   },
 ];
 
-const featureSlides = [
-  {
-    title: "Complete control",
-    description:
-      "Every decision, from how you monetize your story to how long it stays online, is up to you.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1615617396130-db493d04e2c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
-  },
-  {
-    title: "On Brand",
-    description:
-      "With the ability to command every pixel, each story can be designed to fit your brand.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1561532089-cb18d10f86b4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
-  },
-  {
-    title: "Immersive",
-    description:
-      "Web Stories allow you to feature full screen video, photos, and audio, seamlessly.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1548366565-6bbab241282d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
-  },
-];
-
-export { projectSlides, featureSlides };
+export { projectSlides };

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
 const StyledMenu = styled.div`
   display: none;
@@ -47,14 +47,15 @@ const StyledHamburgerButton = styled.button`
     background-color: var(--purple);
     transition-duration: 0.22s;
     transition-property: transform;
-    transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-    transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+    transition-delay: ${(props) => (props.menuOpen ? `0.12s` : `0s`)};
+    transform: rotate(${(props) => (props.menuOpen ? `225deg` : `0deg`)});
     transition-timing-function: cubic-bezier(
-      ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
+      ${(props) =>
+        props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`}
     );
     &:before,
     &:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       left: auto;
@@ -68,17 +69,18 @@ const StyledHamburgerButton = styled.button`
       transition-property: transform;
     }
     &:before {
-      width: ${props => (props.menuOpen ? `100%` : `120%`)};
-      top: ${props => (props.menuOpen ? `0` : `-10px`)};
-      opacity: ${props => (props.menuOpen ? 0 : 1)};
+      width: ${(props) => (props.menuOpen ? `100%` : `120%`)};
+      top: ${(props) => (props.menuOpen ? `0` : `-10px`)};
+      opacity: ${(props) => (props.menuOpen ? 0 : 1)};
       transition: ${({ menuOpen }) =>
-    menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
+        menuOpen ? "var(--ham-before-active)" : "var(--ham-before)"};
     }
     &:after {
-      width: ${props => (props.menuOpen ? `100%` : `80%`)};
-      bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-      transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-      transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
+      width: ${(props) => (props.menuOpen ? `100%` : `80%`)};
+      bottom: ${(props) => (props.menuOpen ? `0` : `-10px`)};
+      transform: rotate(${(props) => (props.menuOpen ? `-90deg` : `0`)});
+      transition: ${({ menuOpen }) =>
+        menuOpen ? "var(--ham-after-active)" : "var(--ham-after)"};
     }
   }
 `;
@@ -95,13 +97,13 @@ const StyledSidebar = styled.aside`
     bottom: 0;
     right: 0;
     padding: 50px 10px;
-    width 100vw;
+    width: 100vw;
     height: 100vh;
     outline: 0;
     background-color: var(--pink-light);
     z-index: 9;
-    transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
-    visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
+    transform: translateX(${(props) => (props.menuOpen ? 0 : 100)}vw);
+    visibility: ${(props) => (props.menuOpen ? "visible" : "hidden")};
     transition: var(--transition);
   }
 
@@ -120,72 +122,73 @@ const StyledSidebar = styled.aside`
     margin: 0;
     list-style: none;
     width: 100%;
-    
-    li { padding: 20px; }
+  }
+  li {
+    padding: 20px;
+  }
 
-    .link {
-        text-align: center;
-        padding: 0 1rem;
-        text-decoration: none;
-        font-weight: 500;
-        color: var(--purple);
-        transition: var(--transition);
-        font-size: var(--text-xs);
-        // cursor: none;
-        padding: 20px;
-        width: 100%;
+  .link {
+    text-align: center;
+    padding: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--purple);
+    transition: var(--transition);
+    font-size: var(--text-xs);
+    // cursor: none;
+    padding: 20px;
+    width: 100%;
 
-        position: relative;
-        margin: 0 auto 20px;
-        font-size: clamp(var(--text-sm), 4vw, var(--text-lg));
-  
-        @media (max-width: 600px) {
-          margin: 0 auto 10px;
-        }
+    position: relative;
+    margin: 0 auto 20px;
+    font-size: clamp(var(--text-sm), 4vw, var(--text-lg));
+
+    @media (max-width: 600px) {
+      margin: 0 auto 10px;
     }
-    
-    .link:hover {
-        color: var(--pink);
-    } 
+  }
+
+  .link:hover {
+    color: var(--pink);
+  }
 `;
 
 const Menu = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
-    const buttonRef = useRef(null);
-    const navRef = useRef(null);
+  const buttonRef = useRef(null);
+  const navRef = useRef(null);
 
-    var navLinks = [
-      {
-        name: 'about',
-        url: '/#about',
-      },
-      {
-        name: 'projects',
-        url: '/#jobs',
-      },
-      {
-        name: 'contact',
-        url: '/#projects',
-      }
-    ];
+  var navLinks = [
+    {
+      name: "about",
+      url: "/#about",
+    },
+    {
+      name: "projects",
+      url: "/#jobs",
+    },
+    {
+      name: "contact",
+      url: "/#projects",
+    },
+  ];
 
-  const onResize = e => {
+  const onResize = (e) => {
     if (e.currentTarget.innerWidth > 768) {
       setMenuOpen(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
 
     return () => {
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
-
 
   return (
     <StyledMenu>
@@ -194,19 +197,28 @@ const Menu = () => {
           onClick={toggleMenu}
           menuOpen={menuOpen}
           ref={buttonRef}
-          aria-label="Menu">
+          aria-label="Menu"
+        >
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>
         </StyledHamburgerButton>
 
-        <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
+        <StyledSidebar
+          menuOpen={menuOpen}
+          aria-hidden={!menuOpen}
+          tabIndex={menuOpen ? 1 : -1}
+        >
           <nav ref={navRef}>
             {navLinks && (
               <ol>
                 {navLinks.map(({ url, name }, i) => (
                   <li key={i}>
-                    <Link className="link" to={url} onClick={() => setMenuOpen(false)}>
+                    <Link
+                      className="link"
+                      to={url}
+                      onClick={() => setMenuOpen(false)}
+                    >
                       {name}
                     </Link>
                   </li>
@@ -214,8 +226,8 @@ const Menu = () => {
               </ol>
             )}
 
-            <button className="tiff-btn btn-sec" style={{marginTop: '20px'}}>
-            résumé
+            <button className="tiff-btn btn-sec" style={{ marginTop: "20px" }}>
+              résumé
             </button>
           </nav>
         </StyledSidebar>
