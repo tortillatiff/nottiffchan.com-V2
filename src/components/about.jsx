@@ -18,7 +18,7 @@ const About = () => {
   }, []);
 
   return (
-    <StyledAboutSection ref={revealContainer}>
+    <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="purple-font">about me</h2>
       <AboutRow>
         <div className="text-col col">

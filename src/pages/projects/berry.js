@@ -7,6 +7,7 @@ import ProjectTextSection from "../../components/projects/projectTextSection";
 import ScreenshotContainer from "../../components/projects/projectScreenshotContainer";
 import ProjectLinkContainer from "../../components/projects/projectLinkContainer";
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
+import ProjectNextCase from "../../components/projects/projectNextCase";
 
 import berryDemo from "../../assets/projects/berry/berryDemo.mp4";
 import berryLeftOne from "../../assets/projects/berry/berryLeftOne.png";
@@ -87,6 +88,8 @@ const Berry = () => {
         src="../../assets/projects/berry/berryEnd.png"
         alt="End image"
       />
+
+      <ProjectNextCase text="Back to main" link="/" />
     </Layout>
   );
 };

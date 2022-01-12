@@ -2,6 +2,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 import React from "react";
 import Header from "../../components/projects/projectHeader";
+import ProjectNextCase from "../../components/projects/projectNextCase";
 
 export default function Pomopals() {
   return (
@@ -11,6 +12,7 @@ export default function Pomopals() {
         projDesc="Coming Soon"
       />
       <StaticImage src="../../assets/projects/pomopals/hero.png" alt="Hero" />
+      <ProjectNextCase link="/projects/vibing" />
     </Layout>
   );
 }

@@ -7,6 +7,7 @@ import ProjectTextSection from "../../components/projects/projectTextSection";
 import ScreenshotContainer from "../../components/projects/projectScreenshotContainer";
 import ProjectLinkContainer from "../../components/projects/projectLinkContainer";
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
+import ProjectNextCase from "../../components/projects/projectNextCase";
 
 import vibingDemo from "../../assets/projects/vibing/vibingDemo.mp4";
 import vibingLeftOne from "../../assets/projects/vibing/vibingLeftOne.png";
@@ -114,6 +115,7 @@ const Vibing = () => {
           myself. ok thanks for listening to my ted talk
         </p>
       </ProjectTextSection>
+      <ProjectNextCase link="/projects/rescaleLab" />
     </Layout>
   );
 };

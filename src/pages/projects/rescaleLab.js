@@ -7,6 +7,7 @@ import ProjectTextSection from "../../components/projects/projectTextSection";
 import ScreenshotContainer from "../../components/projects/projectScreenshotContainer";
 import ProjectLinkContainer from "../../components/projects/projectLinkContainer";
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
+import ProjectNextCase from "../../components/projects/projectNextCase";
 
 import rDemo from "../../assets/projects/RescaleLab/rDemo.mp4";
 import rDesignSystem from "../../assets/projects/RescaleLab/rDesignSystem.png";
@@ -148,6 +149,8 @@ const RescaleLab = () => {
       <ScreenshotContainer>
         <img src={rEnd} alt="Ending banner" />
       </ScreenshotContainer>
+
+      <ProjectNextCase link="/projects/berry" />
     </Layout>
   );
 };

@@ -10,8 +10,6 @@ import {
 } from "../context/globalContext";
 
 const StyledContent = styled.div`
-  /* display: flex;
-  flex-direction: column; */
   position: relative;
   background-color: var(--bg-color);
   z-index: 99;
@@ -22,7 +20,7 @@ const StyledContent = styled.div`
   }
 `;
 
-const Layout = ({ addAnimation, index, children }) => {
+const Layout = ({ addAnimation, children }) => {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
 
@@ -33,7 +31,7 @@ const Layout = ({ addAnimation, index, children }) => {
 
   return (
     <>
-      <Head />
+      <Head image="./banner.png" />
       <Cursor />
 
       <div id="root">

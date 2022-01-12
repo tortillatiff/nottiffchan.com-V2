@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import herogif from "../assets/herogif.gif";
 import styled from "styled-components";
 import { Icon } from "../components/icons";
-import useWindowSize from "../hooks/useWindowSize";
 
 const StyledHeroSection = styled.section`
   display: flex;
@@ -117,8 +116,6 @@ const StyledHeroText = styled.div`
 `;
 
 const Hero = ({ onCursor, addAnimation, index }) => {
-  const size = useWindowSize();
-
   // let split = new SplitText(".heroTextBig", {
   //   type: "words, chars, lines",
   //   // charsClass: "character",

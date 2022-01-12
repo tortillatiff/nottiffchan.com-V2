@@ -5,7 +5,7 @@ const projectSlides = [
     tags: "web, design, development",
 
     transitionCol: "#FFF2F0",
-    link: "/",
+    link: "/projects/pomopals",
     imageUrl: "./thumbnails/pomopalsThumbnail.png",
     squareImageUrl: "./thumbnails/pomopalsThumbnailSquare.png",
   },

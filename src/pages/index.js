@@ -1,10 +1,9 @@
-import React, { useRef, useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "../styles/global.css";
 import styled from "styled-components";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import About from "../components/about";
-import Footer from "../components/footer.jsx";
 import ProjectSlides from "../components/projectSlides";
 import ResponsiveProjectSlides from "../components/projectSlides/responsiveProjectSlides";
 
@@ -52,24 +51,23 @@ const IndexPage = () => {
         />
         <About />
 
-        {/* <ResponsiveProjectSlides /> */}
-
         {size.width > 1200 ? (
-          <>
+          <div id="projects">
             <h2
               className="purple-font"
               style={{ marginBottom: 0, margin: "auto", maxWidth: "1200px" }}
             >
               featured projects
             </h2>
-            <ProjectSlides onCursor={onCursor} id="projects" />
-          </>
+            <ProjectSlides onCursor={onCursor} />
+          </div>
         ) : (
-          <>
+          <div id="projects">
             <ResponsiveProjectSlides />
-          </>
+          </div>
         )}
-        {/* <Footer onCursor={onCursor} /> */}
+
+        <div id="contact"></div>
       </StyledMainContainer>
     </Layout>
   );

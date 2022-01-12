@@ -1,11 +1,11 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
+import { useStaticQuery, graphql } from "gatsby";
 
 const Head = ({ title, description, image }) => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   const { site } = useStaticQuery(
     graphql`
@@ -19,15 +19,11 @@ const Head = ({ title, description, image }) => {
           }
         }
       }
-    `,
+    `
   );
 
-  const {
-    defaultTitle,
-    defaultDescription,
-    siteUrl,
-    defaultImage
-  } = site.siteMetadata;
+  const { defaultTitle, defaultDescription, siteUrl, defaultImage } =
+    site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -37,10 +33,10 @@ const Head = ({ title, description, image }) => {
   };
 
   return (
-    <Helmet title={seo.title} titleTemplate={`%s · ${seo.title}`}>
+    <Helmet title={seo.title} titleTemplate={`${seo.title}`}>
       <html lang="en" />
-      <title>Tiffany Chan</title>
-      <meta name="icon" href="../assets/favicon.png"/>
+      {/* <title>Tiffany Chan</title> */}
+      <meta name="icon" href="../assets/favicon.png" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {/* <meta name="keywords" content={seo.keywords}/> */}
@@ -63,7 +59,6 @@ const Head = ({ title, description, image }) => {
 
 export default Head;
 
-
 Head.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
@@ -75,4 +70,3 @@ Head.defaultProps = {
   description: null,
   image: null,
 };
-

@@ -6,36 +6,23 @@ import ProjectSlide from "./projectSlide";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-// import AnimatedPicture from "../animatedPicture";
 import useWindowSize from "../../hooks/useWindowSize";
-import Footer from "../footer";
-
-// projectSlides.push({
-//   isFooter: true,
-//   transitionCol: "#3d3333",
-//   imageUrl: "./greyscaleYoungMe.jpg",
-// });
+// import AnimatedPicture from "../animatedPicture";
 
 function RenderImages({ activeFeatureIndex, onCursor }) {
-  const size = useWindowSize();
-
   return projectSlides.map((project, index) => {
     // const thumbnailRef = createRef(null);
-    console.log(project);
-
     return (
-      <>
-        {index < 4 && (
-          <AniLink
-            paintDrip
-            key={projectSlides[index].link}
-            hex={projectSlides[activeFeatureIndex].transitionCol}
-            to={projectSlides[activeFeatureIndex].link}
-            onMouseEnter={() => onCursor("viewCase")}
-            onMouseLeave={onCursor}
-            onClick={onCursor}
-          >
-            {/* <div
+      <AniLink
+        paintDrip
+        key={projectSlides[index].link}
+        hex={projectSlides[activeFeatureIndex].transitionCol}
+        to={projectSlides[activeFeatureIndex].link}
+        onMouseEnter={() => onCursor("viewCase")}
+        onMouseLeave={onCursor}
+        onClick={onCursor}
+      >
+        {/* <div
               className={
                 (cn({ "as-primary": activeFeatureIndex === index }), "animPic")
               }
@@ -49,29 +36,15 @@ function RenderImages({ activeFeatureIndex, onCursor }) {
                 key={project.imageUrl}
               />
             </div> */}
-            <StyledThumbnail
-              className={cn({ "as-primary": activeFeatureIndex === index })}
-              // key={project.imageUrl}
-              color={project.transitionCol}
-              style={{
-                backgroundImage: `url(${project.imageUrl})`,
-              }}
-              alt=""
-            ></StyledThumbnail>
-          </AniLink>
-        )}
-        {index === 4 && (
-          <StyledThumbnail
-            className={cn({ "as-primary": activeFeatureIndex === index })}
-            // key={project.imageUrl}
-            color={project.transitionCol}
-            style={{
-              backgroundImage: `url(${project.imageUrl})`,
-            }}
-            alt=""
-          ></StyledThumbnail>
-        )}
-      </>
+        <StyledThumbnail
+          className={cn({ "as-primary": activeFeatureIndex === index })}
+          color={project.transitionCol}
+          style={{
+            backgroundImage: `url(${project.imageUrl})`,
+          }}
+          alt=""
+        ></StyledThumbnail>
+      </AniLink>
     );
   });
 }
@@ -80,7 +53,7 @@ export default function ProjectSlides({ onCursor }) {
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
   const projectSliderRef = useRef();
   const projectSliderRightRef = useRef();
-  const size = useWindowSize();
+  const width = useWindowSize().width;
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -116,7 +89,7 @@ export default function ProjectSlides({ onCursor }) {
   // image transitons
   useEffect(() => {
     function stopTrigger() {
-      if (projectSliderRef && projectSliderRightRef) {
+      if (width > 1200 && projectSliderRef.current && projectSliderRightRef) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: projectSliderRightRef.current,
@@ -130,11 +103,11 @@ export default function ProjectSlides({ onCursor }) {
       }
     }
 
-    const master = gsap.timeline();
-    master.add(stopTrigger()); //with a gap of 2 seconds
-  }, [projectSliderRef, projectSliderRightRef]);
-
-  console.log("projectSlides: ", projectSlides);
+    if (width > 1200) {
+      const master = gsap.timeline();
+      master.add(stopTrigger()); //with a gap of 2 seconds
+    }
+  }, [projectSliderRef, projectSliderRightRef, width]);
 
   return (
     <>
@@ -147,10 +120,6 @@ export default function ProjectSlides({ onCursor }) {
                 ref={addToBgColRefs}
                 key={index}
               >
-                {/* {project.isFooter && index > 4 && null}
-                {project.isFooter && size.width > 1200 && index === 4 ? (
-                  <Footer onCursor={onCursor} />
-                ) : ( */}
                 <ProjectSlide
                   updateActiveImage={setFeatureIndex}
                   key={project.imageUrl}
@@ -159,7 +128,6 @@ export default function ProjectSlides({ onCursor }) {
                   tags={project.tags}
                   index={index}
                 />
-                {/* )} */}
               </div>
             ))}
           </div>
@@ -171,9 +139,6 @@ export default function ProjectSlides({ onCursor }) {
           </StyledSlidesRight>
         </SlidesContainer>
       </StyledProjectSection>
-      {/* <div ref={footerRef}>
-        <Footer onCursor={onCursor} />
-      </div> */}
     </>
   );
 }
@@ -190,14 +155,12 @@ const StyledProjectSection = styled.section`
 
 const StyledSlidesRight = styled.div`
   height: 100vh;
-  /* height: 100%; */
   width: 100%;
   overflow: hidden;
   position: relative;
 
   .as-primary {
     opacity: 1;
-    /* transform: scale(1.1); */
   }
 `;
 
