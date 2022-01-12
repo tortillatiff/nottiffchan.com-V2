@@ -3,7 +3,7 @@ const projectSlides = [
     title: "PomoPals",
     description: "Pomodoro timer for remote teams",
     tags: "web, design, development",
-
+    transitionCol: "#000000",
     link: "/",
     imageUrl: "./thumbnails/pomopalsThumbnail.png",
   },

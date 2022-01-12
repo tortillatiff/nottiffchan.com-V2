@@ -17,7 +17,7 @@ export default function ProjectSlide({
       // console.log(index);
       updateActiveImage(index);
     }
-  }, [onScreen, index]);
+  }, [onScreen, index, updateActiveImage]);
 
   return (
     <StyledProjectSlide ref={ref}>
@@ -32,7 +32,7 @@ const StyledProjectSlide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
 
   h2,

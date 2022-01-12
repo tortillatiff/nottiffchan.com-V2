@@ -108,44 +108,46 @@ const Nav = ({ onCursor, addAnimation, index }) => {
   let navItemsRef = useRef();
 
   useEffect(() => {
-    const animation = gsap
-      .timeline()
-      .from(logoRef.current, {
-        y: -50,
-        delay: 0.3,
-        duration: 0.3,
-        opacity: 0,
-        ease: "Power3.easeOut",
-      })
-      .from(navLinkOne.current, {
-        y: -50,
-        opacity: 0,
-        duration: 0.1,
-        ease: "Power3.easeOut",
-      })
-      .from(navLinkTwo.current, {
-        y: -50,
-        opacity: 0,
-        duration: 0.1,
-        ease: "Power3.easeOut",
-      })
-      .from(navLinkThree.current, {
-        y: -50,
-        opacity: 0,
-        duration: 0.1,
-        ease: "Power3.easeOut",
-      })
-      .from(navLinkFour.current, {
-        y: -50,
-        opacity: 0,
-        duration: 0.1,
-        ease: "Power3.easeOut",
-      });
-    addAnimation(animation, index);
+    if (addAnimation) {
+      const animation = gsap
+        .timeline()
+        .from(logoRef.current, {
+          y: -50,
+          delay: 0.3,
+          duration: 0.3,
+          opacity: 0,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkOne.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkTwo.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkThree.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkFour.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        });
+      addAnimation(animation, index);
 
-    return () => {
-      animation.progress(0).kill();
-    };
+      return () => {
+        animation.progress(0).kill();
+      };
+    }
   }, [addAnimation, index]);
 
   return (

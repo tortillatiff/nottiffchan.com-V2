@@ -30,44 +30,6 @@ import { CSSPlugin } from "gsap/all";
 // const bgPurple = "rgb(235, 222, 237)";
 // const bgWhite = "rgb(253, 249, 247)";
 
-// const projects = [
-//   {
-//     name: "Shilly",
-//     desc: "Social platform connecting influencers and crypto coins",
-//     tags: "web, design, development",
-//     thumbnail: shillyThumbnail,
-//     bgCol: bgPink,
-//     link: "/",
-//   },
-//   {
-//     name: "vibing.",
-//     desc: "Creating personalized Spotify playlists for friends",
-//     tags: "web, design, development",
-//     thumbnail: vibingThumbnail,
-//     bgCol: bgGrey,
-//     link: "/projects/vibing/",
-//     transitionCol: "#F5F5F5",
-//   },
-//   {
-//     name: "Rescale Lab",
-//     desc: "SaaS platform for entrepreneurs",
-//     tags: "web, design, development",
-//     thumbnail: rescaleLabThumbnail,
-//     bgCol: bgGreen,
-//     link: "/projects/rescaleLab/",
-//     transitionCol: "#E3F1E8",
-//   },
-//   {
-//     name: "berry",
-//     desc: "Tile-style shopping list mobile app",
-//     tags: "mobile, design, development",
-//     thumbnail: berryThumbnail,
-//     bgCol: bgPurple,
-//     link: "/projects/berry/",
-//     transitionCol: "#F0E7FE",
-//   },
-// ];
-
 const IndexPage = () => {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
@@ -75,6 +37,8 @@ const IndexPage = () => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
+  const heroRef = useRef();
+  const layoutRef = useRef();
 
   const [timeline, setTimeline] = useState(() => gsap.timeline());
   const addAnimation = useCallback(
@@ -88,26 +52,10 @@ const IndexPage = () => {
     const plugins = [CSSPlugin];
     gsap.registerPlugin(plugins);
     gsap.registerPlugin(ScrollTrigger);
-
-    function trigger() {
-      const tl = gsap.timeline();
-      tl.to(
-        ".hero",
-        {
-          backgroundColor: "black",
-          duration: 0.25,
-        },
-        "-=0.5"
-      );
-
-      return tl;
-    }
-
-    gsap.timeline().add(trigger());
   }, []);
 
   return (
-    <Layout addAnimation={addAnimation} index={2}>
+    <Layout addAnimation={addAnimation} index={2} ref={layoutRef}>
       <StyledMainContainer>
         {/* <ScrollingColorBackground
           selector=".js-color-stop[data-background-color]"
@@ -125,6 +73,7 @@ const IndexPage = () => {
           addAnimation={addAnimation}
           index={1}
           className="hero"
+          ref={heroRef}
         />
         {/* </div>
 
@@ -134,7 +83,7 @@ const IndexPage = () => {
           className="js-color-stop section"
         > */}
         <About />
-        <ProjectSlides />
+        <ProjectSlides onCursor={onCursor} id="projects" />
         {/* </div>
 
         <div id="projects"></div>
