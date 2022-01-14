@@ -9,7 +9,7 @@
   <a href="https://github.com/nottiffchan/nottiffchan.com" target="_blank">v1</a>
 </p>
 <p align="center">
-  <a href="https://app.netlify.com/sites/nostalgic-pasteur-0d572b/deploys" target="_blank">
+  <a href="https://app.netlify.com/sites/nottiffchan/deploys" target="_blank">
     <img src="https://api.netlify.com/api/v1/badges/803e814b-feb5-4a33-8e27-67416b61b140/deploy-status" alt="Netlify Status" />
   </a>
 </p>
