@@ -12,7 +12,7 @@ import ProjectNextCase from "../../components/projects/projectNextCase";
 import vibingDemo from "../../images/vibing/vibingDemo.mp4";
 import vibingLeftOne from "../../images/vibing/vibingLeftOne.png";
 import vibingLeftTwo from "../../images/vibing/vibingLeftTwo.png";
-import vibingLeftThree from "../../images/vibing/vibingleftThree.png";
+import vibingLeftThree from "../../images/vibing/vibingLeftThree.png";
 import vibingRightOne from "../../images/vibing/vibingRightOne.png";
 import vibingRightTwo from "../../images/vibing/vibingRightTwo.png";
 import vibingRightThree from "../../images/vibing/vibingRightThree.png";

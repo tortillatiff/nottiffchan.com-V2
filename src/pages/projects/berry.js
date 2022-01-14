@@ -12,7 +12,7 @@ import ProjectNextCase from "../../components/projects/projectNextCase";
 import berryDemo from "../../images/berry/berryDemo.mp4";
 import berryLeftOne from "../../images/berry/berryLeftOne.png";
 import berryLeftTwo from "../../images/berry/berryLeftTwo.png";
-import berryLeftThree from "../../images/berry/berryleftThree.png";
+import berryLeftThree from "../../images/berry/berryLeftThree.png";
 import berryRightOne from "../../images/berry/berryRightOne.png";
 import berryRightTwo from "../../images/berry/berryRightTwo.png";
 

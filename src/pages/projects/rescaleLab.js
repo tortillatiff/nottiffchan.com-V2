@@ -14,7 +14,7 @@ import rDesignSystem from "../../images/RescaleLab/rDesignSystem.png";
 import rEnd from "../../images/RescaleLab/rEnd.png";
 import rLeftOne from "../../images/RescaleLab/rLeftOne.png";
 import rLeftTwo from "../../images/RescaleLab/rLeftTwo.png";
-import rLeftThree from "../../images/RescaleLab/rleftThree.png";
+import rLeftThree from "../../images/RescaleLab/rLeftThree.png";
 import rRightOne from "../../images/RescaleLab/rRightOne.png";
 import rRightTwo from "../../images/RescaleLab/rRightTwo.png";
 
