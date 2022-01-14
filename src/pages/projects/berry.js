@@ -89,7 +89,7 @@ const Berry = () => {
         alt="End image"
       />
 
-      <ProjectNextCase text="Back to main" link="/" />
+      <ProjectNextCase text="Back to main" link="/" transitionCol="#3d3333" />
     </Layout>
   );
 };

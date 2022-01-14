@@ -12,7 +12,7 @@ export default function Pomopals() {
         projDesc="Coming Soon"
       />
       <StaticImage src="../../assets/projects/pomopals/hero.png" alt="Hero" />
-      <ProjectNextCase link="/projects/vibing" />
+      <ProjectNextCase link="/projects/vibing" transitionCol="#EFF6FB" />
     </Layout>
   );
 }

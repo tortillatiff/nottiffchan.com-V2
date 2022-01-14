@@ -20,7 +20,7 @@ import rRightTwo from "../../assets/projects/RescaleLab/rRightTwo.png";
 
 const links = [
   { link: "https://www.rescalelab.com/", name: "Live Site" },
-  { link: "/", name: "Full UX Case Study" },
+  // { link: "/", name: "Full UX Case Study" },
 ];
 
 const styleguideLink = [
@@ -150,7 +150,7 @@ const RescaleLab = () => {
         <img src={rEnd} alt="Ending banner" />
       </ScreenshotContainer>
 
-      <ProjectNextCase link="/projects/berry" />
+      <ProjectNextCase link="/projects/berry" transitionCol="#F8F0FA" />
     </Layout>
   );
 };

@@ -1,12 +1,16 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import {
   useGlobalStateContext,
   useGlobalDispatchContext,
 } from "../../context/globalContext";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-export default function ProjectNextCase({ link, text = "Next case" }) {
+export default function ProjectNextCase({
+  link,
+  text = "Next case",
+  transitionCol,
+}) {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
   const onCursor = (cursorType) => {
@@ -16,14 +20,16 @@ export default function ProjectNextCase({ link, text = "Next case" }) {
 
   return (
     <NextCaseWrap>
-      <Link
+      <AniLink
+        paintDrip
+        hex={transitionCol}
         to={link}
         onMouseEnter={() => onCursor("viewCase")}
         onMouseLeave={onCursor}
         onClick={onCursor}
       >
         <h1>{text}</h1>
-      </Link>
+      </AniLink>
     </NextCaseWrap>
   );
 }
