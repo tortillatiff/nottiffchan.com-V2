@@ -53,7 +53,6 @@ export default function ProjectSlides({ onCursor }) {
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
   const projectSliderRef = useRef();
   const projectSliderRightRef = useRef();
-  const [screenWidth, setScreenWidth] = useState(useWindowSize().width);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -88,26 +87,24 @@ export default function ProjectSlides({ onCursor }) {
 
   // image transitons
   useEffect(() => {
-    if (screenWidth > 1200) {
-      function stopTrigger() {
-        if (projectSliderRef.current && projectSliderRightRef) {
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: projectSliderRightRef.current,
-              start: "top top",
-              end: () => `+=${projectSliderRef.current.offsetHeight}`,
-              scrub: true,
-              pin: true,
-            },
-          });
-          return tl;
-        }
+    function stopTrigger() {
+      if (projectSliderRef.current && projectSliderRightRef) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: projectSliderRightRef.current,
+            start: "top top",
+            end: () => `+=${projectSliderRef.current.offsetHeight}`,
+            scrub: true,
+            pin: true,
+          },
+        });
+        return tl;
       }
-
-      const master = gsap.timeline();
-      master.add(stopTrigger()); //with a gap of 2 seconds
     }
-  }, [projectSliderRef, projectSliderRightRef, screenWidth]);
+
+    const master = gsap.timeline();
+    master.add(stopTrigger()); //with a gap of 2 seconds
+  }, [projectSliderRef, projectSliderRightRef]);
 
   return (
     <>
