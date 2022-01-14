@@ -4,7 +4,7 @@ import logo from "../assets/iconlogo.png";
 import styled, { keyframes } from "styled-components";
 import Menu from "./menu";
 import CV from "../assets/TiffanyChan.pdf";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+// import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
 
 const StyledHeader = styled.header`
@@ -152,19 +152,18 @@ const Nav = ({ onCursor, addAnimation, index }) => {
 
   return (
     <StyledHeader>
-      <Logo
-        onMouseEnter={() => onCursor("pointer")}
-        onMouseLeave={onCursor}
-        onClick={onCursor}
-        ref={logoRef}
-      >
-        <AniLink paintDrip hex="#5F3962" to="/">
+      {/* <AniLink paintDrip hex="#5F3962" to="/"> */}
+      <a href="/">
+        <Logo
+          onMouseEnter={() => onCursor("pointer")}
+          onMouseLeave={onCursor}
+          onClick={onCursor}
+          ref={logoRef}
+        >
           <img src={logo} alt="logo" />
-        </AniLink>
-        {/* <a href="/">
-          <img src={logo} alt="logo" />
-        </a> */}
-      </Logo>
+        </Logo>
+      </a>
+      {/* </AniLink> */}
       <StyledLinks>
         <ol ref={navItemsRef}>
           <li>

@@ -10,6 +10,7 @@ export default function ProjectNextCase({
   link,
   text = "Next case",
   transitionCol,
+  atag,
 }) {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
@@ -19,17 +20,20 @@ export default function ProjectNextCase({
   };
 
   return (
-    <NextCaseWrap>
-      <AniLink
-        paintDrip
-        hex={transitionCol}
-        to={link}
-        onMouseEnter={() => onCursor("viewCase")}
-        onMouseLeave={onCursor}
-        onClick={onCursor}
-      >
-        <h1>{text}</h1>
-      </AniLink>
+    <NextCaseWrap
+      onMouseEnter={() => onCursor("viewCase")}
+      onMouseLeave={onCursor}
+      onClick={onCursor}
+    >
+      {!atag ? (
+        <AniLink paintDrip hex={transitionCol} to={link}>
+          <h1>{text}</h1>
+        </AniLink>
+      ) : (
+        <a href={link}>
+          <h1>{text}</h1>
+        </a>
+      )}
     </NextCaseWrap>
   );
 }
