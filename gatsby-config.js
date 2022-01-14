@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://nottiffchan.com",
@@ -22,13 +24,19 @@ module.exports = {
         icon: "src/assets/favicon.png",
       },
     },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "images",
+    //     path: "./src/images/",
+    //   },
+    //   __key: "images",
+    // },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        path: path.join(__dirname, `src`, `images`),
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",

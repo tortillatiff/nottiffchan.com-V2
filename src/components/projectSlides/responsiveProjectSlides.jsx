@@ -1,63 +1,40 @@
 import React from "react";
 import styled from "styled-components";
 import { projectSlides } from "../../data";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 export default function ResponsiveProjectSlides() {
   return (
     <FeaturedItems>
       <h2 className="purple-font">featured projects</h2>
-
       <div className="row">
-        <div className="column">
-          <FeaturedItem>
-            <a href={projectSlides[0].link}>
-              <img src={projectSlides[0].squareImageUrl} alt="" />
-            </a>
-            <div className="caption">
-              <b>{projectSlides[0].title}</b>
-              <p>{projectSlides[0].description}</p>
-            </div>
-          </FeaturedItem>
-        </div>
-        <div className="column">
-          <FeaturedItem>
-            <a href={projectSlides[1].link}>
-              <img src={projectSlides[1].squareImageUrl} alt="" />
-            </a>
-            <div className="caption">
-              <b>{projectSlides[1].title}</b>
-              <p>{projectSlides[1].description}</p>
-            </div>
-          </FeaturedItem>
-        </div>
+        <FeaturedItem index={0} />
+        <FeaturedItem index={1} />
       </div>
       <div className="row">
-        <div className="column">
-          <FeaturedItem>
-            <a href={projectSlides[2].link}>
-              <img src={projectSlides[2].squareImageUrl} alt="" />
-            </a>
-            <div className="caption">
-              <b>{projectSlides[2].title}</b>
-              <p>{projectSlides[2].description}</p>
-            </div>
-          </FeaturedItem>
-        </div>
-        <div className="column">
-          <FeaturedItem>
-            <a href={projectSlides[3].link}>
-              <img src={projectSlides[3].squareImageUrl} alt="" />
-            </a>
-            <div className="caption">
-              <b>{projectSlides[3].title}</b>
-              <p>{projectSlides[3].description}</p>
-            </div>
-          </FeaturedItem>
-        </div>
+        <FeaturedItem index={2} />
+        <FeaturedItem index={3} />
       </div>
     </FeaturedItems>
   );
 }
+
+const FeaturedItem = ({ index }) => {
+  const proj = projectSlides[index];
+  return (
+    <div className="column">
+      <StyledFeaturedItem>
+        <AniLink paintDrip hex={proj.transitionCol} to={proj.link}>
+          <img src={proj.squareImageUrl} alt="" />
+        </AniLink>
+        <div className="caption">
+          <b>{proj.title}</b>
+          <p>{proj.description}</p>
+        </div>
+      </StyledFeaturedItem>
+    </div>
+  );
+};
 
 const FeaturedItems = styled.div`
   max-width: 1200px;
@@ -84,7 +61,7 @@ const FeaturedItems = styled.div`
   }
 `;
 
-const FeaturedItem = styled.div`
+const StyledFeaturedItem = styled.div`
   padding: 40px 0;
   cursor: pointer;
 
@@ -106,14 +83,6 @@ const FeaturedItem = styled.div`
     max-width: 100%;
     border-radius: 40px;
   }
-
-  /* @media (min-width: 450px) {
-    a {
-      width: 450px;
-      height: 450px;
-      padding-bottom: 0;
-    }
-  } */
 
   @media (min-width: 480px) {
     display: inline-block;

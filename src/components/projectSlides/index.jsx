@@ -6,7 +6,6 @@ import ProjectSlide from "./projectSlide";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import useWindowSize from "../../hooks/useWindowSize";
 // import AnimatedPicture from "../animatedPicture";
 
 function RenderImages({ activeFeatureIndex, onCursor }) {
@@ -53,7 +52,6 @@ export default function ProjectSlides({ onCursor }) {
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
   const projectSliderRef = useRef();
   const projectSliderRightRef = useRef();
-  const width = useWindowSize().width;
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -89,15 +87,12 @@ export default function ProjectSlides({ onCursor }) {
   // image transitons
   useEffect(() => {
     function stopTrigger() {
-      if (width > 1200 && projectSliderRef.current && projectSliderRightRef) {
+      if (projectSliderRef.current && projectSliderRightRef) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: projectSliderRightRef.current,
             start: "top top",
-            end:
-              projectSliderRef.current.offsetHeight && width > 1200
-                ? () => `+=${projectSliderRef.current.offsetHeight}`
-                : null,
+            end: () => `+=${projectSliderRef.current.offsetHeight}`,
             scrub: true,
             pin: true,
           },
@@ -106,11 +101,9 @@ export default function ProjectSlides({ onCursor }) {
       }
     }
 
-    if (width > 1200) {
-      const master = gsap.timeline();
-      master.add(stopTrigger()); //with a gap of 2 seconds
-    }
-  }, [width]);
+    const master = gsap.timeline();
+    master.add(stopTrigger()); //with a gap of 2 seconds
+  }, [projectSliderRef, projectSliderRightRef]);
 
   return (
     <>

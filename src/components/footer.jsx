@@ -29,7 +29,7 @@ const StyledFooter = styled.div`
 
   a {
     text-decoration: none;
-    color: #3d3333;
+    color: var(--brown);
     transition: var(--transition);
     text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color),
       -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
@@ -69,7 +69,7 @@ const Footer = ({ onCursor }) => {
   return (
     <FooterWrap
       style={{
-        backgroundColor: width > 1200 ? "none" : "#3d3333",
+        backgroundColor: width > 1200 ? "none" : "var(--brown)",
         height: width > 1200 ? "auto" : "calc(100vh - 200px)",
       }}
     >

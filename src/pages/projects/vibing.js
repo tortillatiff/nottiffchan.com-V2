@@ -9,13 +9,13 @@ import ProjectLinkContainer from "../../components/projects/projectLinkContainer
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
 import ProjectNextCase from "../../components/projects/projectNextCase";
 
-import vibingDemo from "../../assets/projects/vibing/vibingDemo.mp4";
-import vibingLeftOne from "../../assets/projects/vibing/vibingLeftOne.png";
-import vibingLeftTwo from "../../assets/projects/vibing/vibingLeftTwo.png";
-import vibingLeftThree from "../../assets/projects/vibing/vibingleftThree.png";
-import vibingRightOne from "../../assets/projects/vibing/vibingRightOne.png";
-import vibingRightTwo from "../../assets/projects/vibing/vibingRightTwo.png";
-import vibingRightThree from "../../assets/projects/vibing/vibingRightThree.png";
+import vibingDemo from "../../images/vibing/vibingDemo.mp4";
+import vibingLeftOne from "../../images/vibing/vibingLeftOne.png";
+import vibingLeftTwo from "../../images/vibing/vibingLeftTwo.png";
+import vibingLeftThree from "../../images/vibing/vibingleftThree.png";
+import vibingRightOne from "../../images/vibing/vibingRightOne.png";
+import vibingRightTwo from "../../images/vibing/vibingRightTwo.png";
+import vibingRightThree from "../../images/vibing/vibingRightThree.png";
 
 const links = [
   { link: "https://v-ibing.herokuapp.com/", name: "Live Site" },
@@ -53,10 +53,7 @@ const Vibing = () => {
         projName="vibing."
         projDesc="Personalized Spotify playlists for friends"
       />
-      <StaticImage
-        src="../../assets/projects/vibing/hero.png"
-        alt="Hero image"
-      />
+      <StaticImage src="../../images/vibing/hero.png" alt="Hero image" />
 
       <ProjectTextSection>
         <h3>Background</h3>
@@ -115,7 +112,7 @@ const Vibing = () => {
           myself. ok thanks for listening to my ted talk
         </p>
       </ProjectTextSection>
-      <ProjectNextCase link="/projects/rescaleLab" />
+      <ProjectNextCase link="/projects/rescaleLab" transitionCol="#EBF5F0" />
     </Layout>
   );
 };

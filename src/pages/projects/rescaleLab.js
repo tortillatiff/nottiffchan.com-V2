@@ -9,18 +9,18 @@ import ProjectLinkContainer from "../../components/projects/projectLinkContainer
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
 import ProjectNextCase from "../../components/projects/projectNextCase";
 
-import rDemo from "../../assets/projects/RescaleLab/rDemo.mp4";
-import rDesignSystem from "../../assets/projects/RescaleLab/rDesignSystem.png";
-import rEnd from "../../assets/projects/RescaleLab/rEnd.png";
-import rLeftOne from "../../assets/projects/RescaleLab/rLeftOne.png";
-import rLeftTwo from "../../assets/projects/RescaleLab/rLeftTwo.png";
-import rLeftThree from "../../assets/projects/RescaleLab/rleftThree.png";
-import rRightOne from "../../assets/projects/RescaleLab/rRightOne.png";
-import rRightTwo from "../../assets/projects/RescaleLab/rRightTwo.png";
+import rDemo from "../../images/RescaleLab/rDemo.mp4";
+import rDesignSystem from "../../images/RescaleLab/rDesignSystem.png";
+import rEnd from "../../images/RescaleLab/rEnd.png";
+import rLeftOne from "../../images/RescaleLab/rLeftOne.png";
+import rLeftTwo from "../../images/RescaleLab/rLeftTwo.png";
+import rLeftThree from "../../images/RescaleLab/rleftThree.png";
+import rRightOne from "../../images/RescaleLab/rRightOne.png";
+import rRightTwo from "../../images/RescaleLab/rRightTwo.png";
 
 const links = [
   { link: "https://www.rescalelab.com/", name: "Live Site" },
-  { link: "/", name: "Full UX Case Study" },
+  // { link: "/", name: "Full UX Case Study" },
 ];
 
 const styleguideLink = [
@@ -61,7 +61,7 @@ const RescaleLab = () => {
         projName="Rescale Lab"
         projDesc="SaaS platform for entrepreneurs"
       />
-      <StaticImage src="../../assets/projects/RescaleLab/hero.png" alt="Hero" />
+      <StaticImage src="../../images/RescaleLab/hero.png" alt="Hero" />
 
       <ProjectTextSection>
         <h3>Background</h3>
@@ -150,7 +150,7 @@ const RescaleLab = () => {
         <img src={rEnd} alt="Ending banner" />
       </ScreenshotContainer>
 
-      <ProjectNextCase link="/projects/berry" />
+      <ProjectNextCase link="/projects/berry" transitionCol="#F8F0FA" />
     </Layout>
   );
 };
