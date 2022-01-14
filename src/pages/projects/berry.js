@@ -9,12 +9,12 @@ import ProjectLinkContainer from "../../components/projects/projectLinkContainer
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
 import ProjectNextCase from "../../components/projects/projectNextCase";
 
-import berryDemo from "../../assets/projects/berry/berryDemo.mp4";
-import berryLeftOne from "../../assets/projects/berry/berryLeftOne.png";
-import berryLeftTwo from "../../assets/projects/berry/berryLeftTwo.png";
-import berryLeftThree from "../../assets/projects/berry/berryleftThree.png";
-import berryRightOne from "../../assets/projects/berry/berryRightOne.png";
-import berryRightTwo from "../../assets/projects/berry/berryRightTwo.png";
+import berryDemo from "../../images/berry/berryDemo.mp4";
+import berryLeftOne from "../../images/berry/berryLeftOne.png";
+import berryLeftTwo from "../../images/berry/berryLeftTwo.png";
+import berryLeftThree from "../../images/berry/berryleftThree.png";
+import berryRightOne from "../../images/berry/berryRightOne.png";
+import berryRightTwo from "../../images/berry/berryRightTwo.png";
 
 const links = [
   { link: "https://github.com/nottiffchan/berry", name: "Github Repo" },
@@ -38,10 +38,7 @@ const Berry = () => {
   return (
     <Layout>
       <Header projName="berry" projDesc="Tile-style shopping list mobile app" />
-      <StaticImage
-        src="../../assets/projects/berry/hero.png"
-        alt="Hero image"
-      />
+      <StaticImage src="../../images/berry/hero.png" alt="Hero image" />
 
       <ProjectTextSection>
         <h3>Background</h3>
@@ -84,10 +81,7 @@ const Berry = () => {
         rightItems={rightItems}
       ></ProjectSplitshow>
 
-      <StaticImage
-        src="../../assets/projects/berry/berryEnd.png"
-        alt="End image"
-      />
+      <StaticImage src="../../images/berry/berryEnd.png" alt="End image" />
 
       <ProjectNextCase text="Back to main" link="/" transitionCol="#3d3333" />
     </Layout>

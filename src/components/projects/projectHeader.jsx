@@ -9,6 +9,11 @@ const Header = (props) => {
           <h1>{props.projName}</h1>
         </div>
         <h2 className="projDesc">{props.projDesc}</h2>
+        {props.caption && (
+          <p style={{ color: "var(--grey)", fontSize: "16px" }}>
+            {props.caption}
+          </p>
+        )}
       </TopHeadContainer>
     </StyledHeader>
   );
@@ -59,7 +64,7 @@ const TopHeadContainer = styled.div`
     font-size: 28px;
     letter-spacing: 0.03em;
     font-weight: 500;
-    margin: 0;
+    margin: 0 0 15px 0;
     color: var(--purple);
   }
 

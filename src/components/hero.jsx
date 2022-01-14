@@ -283,6 +283,18 @@ const Hero = ({ onCursor, addAnimation, index }) => {
           hi@nottiffchan.com
         </a>
       </p>
+
+      <p
+        style={{
+          position: "absolute",
+          top: "92vh",
+          left: "28px",
+          fontSize: "16px",
+          color: "var(--grey)",
+        }}
+      >
+        SCROLL DOWN
+      </p>
     </StyledHeroSection>
   );
 };
