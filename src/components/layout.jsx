@@ -31,7 +31,7 @@ const Layout = ({ addAnimation, children }) => {
 
   return (
     <>
-      <Head image="./banner.png" />
+      <Head image="/banner.png" />
       <Cursor />
 
       <div id="root">
