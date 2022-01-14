@@ -1,6 +1,5 @@
 import ScrollReveal from "scrollreveal";
 
-const isSSR = typeof window === "undefined";
-const sr = isSSR ? null : ScrollReveal();
+const sr = typeof window === "undefined" ? null : ScrollReveal();
 
 export default sr;

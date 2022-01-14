@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-image",
-    "react-scrolling-color-background",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -39,14 +38,14 @@ module.exports = {
       },
       __key: "pages",
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "projects",
-        path: `${__dirname}/src/projects/`,
-      },
-      __key: "projects",
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "projects",
+    //     path: `${__dirname}/src/projects/`,
+    //   },
+    //   __key: "projects",
+    // },
     `gatsby-transformer-remark`,
     `gatsby-plugin-transition-link`,
   ],

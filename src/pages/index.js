@@ -38,7 +38,7 @@ const IndexPage = () => {
     const plugins = [CSSPlugin];
     gsap.registerPlugin(plugins);
     gsap.registerPlugin(ScrollTrigger);
-  }, []);
+  });
 
   return (
     <Layout addAnimation={addAnimation} index={2}>

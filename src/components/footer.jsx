@@ -118,7 +118,7 @@ const Footer = ({ onCursor }) => {
           </a>
           !
         </p>
-        <p className="smalltext">© Designed & coded by me!</p>
+        <p className="smalltext">© Designed & coded with ❤️ by tiff</p>
       </StyledFooter>
     </FooterWrap>
   );

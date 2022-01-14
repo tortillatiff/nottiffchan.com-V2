@@ -94,7 +94,10 @@ export default function ProjectSlides({ onCursor }) {
           scrollTrigger: {
             trigger: projectSliderRightRef.current,
             start: "top top",
-            end: () => `+=${projectSliderRef.current.offsetHeight}`,
+            end:
+              projectSliderRef.current.offsetHeight && width > 1200
+                ? () => `+=${projectSliderRef.current.offsetHeight}`
+                : null,
             scrub: true,
             pin: true,
           },
@@ -107,7 +110,7 @@ export default function ProjectSlides({ onCursor }) {
       const master = gsap.timeline();
       master.add(stopTrigger()); //with a gap of 2 seconds
     }
-  }, [projectSliderRef, projectSliderRightRef, width]);
+  }, [width]);
 
   return (
     <>

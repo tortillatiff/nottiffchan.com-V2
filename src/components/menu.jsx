@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
+import CV from "../assets/TiffanyChan.pdf";
 import styled from "styled-components";
 
 const StyledMenu = styled.div`
@@ -168,11 +169,11 @@ const Menu = () => {
     },
     {
       name: "projects",
-      url: "/#jobs",
+      url: "/#projects",
     },
     {
       name: "contact",
-      url: "/#projects",
+      url: "/#contact",
     },
   ];
 
@@ -183,11 +184,13 @@ const Menu = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", onResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", onResize);
 
-    return () => {
-      window.removeEventListener("resize", onResize);
-    };
+      return () => {
+        window.removeEventListener("resize", onResize);
+      };
+    }
   }, []);
 
   return (
@@ -226,9 +229,19 @@ const Menu = () => {
               </ol>
             )}
 
-            <button className="tiff-btn btn-sec" style={{ marginTop: "20px" }}>
+            {/* <button className="tiff-btn btn-sec" style={{ marginTop: "20px" }}>
               résumé
-            </button>
+            </button> */}
+
+            <a
+              style={{ marginTop: "20px" }}
+              href={CV}
+              target="_blank"
+              rel="noreferrer"
+              className="contact-button tiff-btn btn-sec"
+            >
+              résumé
+            </a>
           </nav>
         </StyledSidebar>
       </div>
