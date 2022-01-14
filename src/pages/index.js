@@ -6,7 +6,6 @@ import Hero from "../components/hero";
 import About from "../components/about";
 import ProjectSlides from "../components/projectSlides";
 import ResponsiveProjectSlides from "../components/projectSlides/responsiveProjectSlides";
-
 import {
   useGlobalStateContext,
   useGlobalDispatchContext,

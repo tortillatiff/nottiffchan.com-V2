@@ -83,7 +83,12 @@ const Berry = () => {
 
       <StaticImage src="../../images/berry/berryEnd.png" alt="End image" />
 
-      <ProjectNextCase text="Back to main" link="/" transitionCol="#3d3333" />
+      <ProjectNextCase
+        text="Back to main"
+        link="/"
+        transitionCol="#3d3333"
+        atag={true}
+      />
     </Layout>
   );
 };

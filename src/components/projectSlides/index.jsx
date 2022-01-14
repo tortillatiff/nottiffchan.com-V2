@@ -6,7 +6,6 @@ import ProjectSlide from "./projectSlide";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import useWindowSize from "../../hooks/useWindowSize";
 // import AnimatedPicture from "../animatedPicture";
 
 function RenderImages({ activeFeatureIndex, onCursor }) {
