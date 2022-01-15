@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "gatsby";
 import logo from "../assets/iconlogo.png";
 import styled, { keyframes } from "styled-components";
-import Menu from "./menu";
+// import Menu from "./menu";
 import CV from "../assets/TiffanyChan.pdf";
 // import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
@@ -92,12 +92,6 @@ const Logo = styled.div`
     background: var(--yellow);
   }
 `;
-
-// var navLinks = [
-//   { name: "about", url: "/#about" },
-//   { name: "projects", url: "/#projects" },
-//   { name: "contact", url: "/#contact" },
-// ];
 
 const Nav = ({ onCursor, addAnimation, index }) => {
   let logoRef = useRef();
@@ -202,19 +196,6 @@ const Nav = ({ onCursor, addAnimation, index }) => {
               contact
             </Link>
           </li>
-
-          {/* {navLinks &&
-            navLinks.map(({ url, name }) => (
-              <Link
-                onMouseEnter={() => onCursor("pointer")}
-                onMouseLeave={onCursor}
-                key={name}
-                className="link"
-                to={url}
-              >
-                {name}
-              </Link>
-            ))} */}
         </ol>
         <a
           ref={navLinkFour}
@@ -228,7 +209,7 @@ const Nav = ({ onCursor, addAnimation, index }) => {
           résumé
         </a>
       </StyledLinks>
-      <Menu />
+      {/* <Menu /> */}
     </StyledHeader>
   );
 };

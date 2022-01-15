@@ -8,6 +8,8 @@ import {
   useGlobalStateContext,
   useGlobalDispatchContext,
 } from "../context/globalContext";
+import useWindowSize from "../hooks/useWindowSize";
+import Menu from "./menu";
 
 const StyledContent = styled.div`
   position: relative;
@@ -23,6 +25,7 @@ const StyledContent = styled.div`
 const Layout = ({ addAnimation, children }) => {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
+  const size = useWindowSize();
 
   const onCursor = (cursorType) => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
@@ -35,10 +38,16 @@ const Layout = ({ addAnimation, children }) => {
       <Cursor />
 
       <div id="root">
-        <StyledContent>
-          <Nav onCursor={onCursor} addAnimation={addAnimation} index={0} />
-          <div id="content">{children}</div>
-        </StyledContent>
+        {size.width && (
+          <StyledContent>
+            {size.width > 768 ? (
+              <Nav onCursor={onCursor} addAnimation={addAnimation} index={0} />
+            ) : (
+              <Menu />
+            )}
+            <div id="content">{children}</div>
+          </StyledContent>
+        )}
 
         <Footer onCursor={onCursor} />
       </div>

@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { projectSlides } from "../../data";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import sr from "../../utils/sr";
+import { srConfig } from "../../config";
 
 export default function ResponsiveProjectSlides() {
+  const revealTitle = useRef(null);
+  const proj0 = useRef(null);
+  const proj1 = useRef(null);
+  const proj2 = useRef(null);
+  const proj3 = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig());
+    sr.reveal(proj0.current, srConfig(100));
+    sr.reveal(proj1.current, srConfig(200));
+    sr.reveal(proj2.current, srConfig(300));
+    sr.reveal(proj3.current, srConfig(400));
+  }, []);
+
   return (
     <FeaturedItems>
-      <h2 className="purple-font">featured projects</h2>
+      <h2 className="purple-font" ref={revealTitle}>
+        featured projects
+      </h2>
       <div className="row">
-        <FeaturedItem index={0} />
-        <FeaturedItem index={1} />
+        <div ref={proj0}>
+          <FeaturedItem index={0} />
+        </div>
+        <div ref={proj1}>
+          <FeaturedItem index={1} />
+        </div>
       </div>
       <div className="row">
-        <FeaturedItem index={2} />
-        <FeaturedItem index={3} />
+        <div ref={proj2}>
+          <FeaturedItem index={2} />
+        </div>
+        <div ref={proj3}>
+          <FeaturedItem index={3} />
+        </div>
       </div>
     </FeaturedItems>
   );
