@@ -41,33 +41,36 @@ const IndexPage = () => {
 
   return (
     <Layout addAnimation={addAnimation} index={2}>
-      <StyledMainContainer>
-        <Hero
-          onCursor={onCursor}
-          addAnimation={addAnimation}
-          index={1}
-          className="hero"
-        />
-        <About />
+      {size.width && (
+        <StyledMainContainer>
+          <Hero
+            onCursor={onCursor}
+            addAnimation={addAnimation}
+            index={1}
+            className="hero"
+            isMobile={size.width <= 400}
+          />
+          <About />
 
-        {size.width > 1200 ? (
-          <div id="projects">
-            <h2
-              className="purple-font"
-              style={{ marginBottom: 0, margin: "auto", maxWidth: "1200px" }}
-            >
-              featured projects
-            </h2>
-            <ProjectSlides onCursor={onCursor} />
-          </div>
-        ) : (
-          <div id="projects">
-            <ResponsiveProjectSlides />
-          </div>
-        )}
+          {size.width > 1200 ? (
+            <div id="projects">
+              <h2
+                className="purple-font"
+                style={{ marginBottom: 0, margin: "auto", maxWidth: "1200px" }}
+              >
+                featured projects
+              </h2>
+              <ProjectSlides onCursor={onCursor} />
+            </div>
+          ) : (
+            <div id="projects">
+              <ResponsiveProjectSlides />
+            </div>
+          )}
 
-        <div id="contact"></div>
-      </StyledMainContainer>
+          <div id="contact"></div>
+        </StyledMainContainer>
+      )}
     </Layout>
   );
 };

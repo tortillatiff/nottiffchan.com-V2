@@ -1,6 +1,100 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import logo from "../assets/iconlogo.png";
+
+const Menu = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const buttonRef = useRef(null);
+  const navRef = useRef(null);
+
+  var navLinks = [
+    {
+      name: "about",
+      url: "/#about",
+    },
+    {
+      name: "projects",
+      url: "/#jobs",
+    },
+    {
+      name: "contact",
+      url: "/#projects",
+    },
+  ];
+
+  const onResize = (e) => {
+    if (e.currentTarget.innerWidth > 768) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  return (
+    <StyledHeader>
+      <a href="/">
+        <Logo>
+          <img src={logo} alt="logo" />
+        </Logo>
+      </a>
+      <StyledMenu>
+        <div>
+          <StyledHamburgerButton
+            onClick={toggleMenu}
+            menuOpen={menuOpen}
+            ref={buttonRef}
+            aria-label="Menu"
+          >
+            <div className="ham-box">
+              <div className="ham-box-inner" />
+            </div>
+          </StyledHamburgerButton>
+          <StyledSidebar
+            menuOpen={menuOpen}
+            aria-hidden={!menuOpen}
+            tabIndex={menuOpen ? 1 : -1}
+          >
+            <nav ref={navRef}>
+              {navLinks && (
+                <ol>
+                  {navLinks.map(({ url, name }, i) => (
+                    <li key={i}>
+                      <Link
+                        className="link"
+                        to={url}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              )}
+              <button
+                className="tiff-btn btn-sec"
+                style={{ marginTop: "20px" }}
+              >
+                résumé
+              </button>
+            </nav>
+          </StyledSidebar>
+        </div>
+      </StyledMenu>
+    </StyledHeader>
+  );
+};
+
+export default Menu;
 
 const StyledMenu = styled.div`
   display: none;
@@ -8,6 +102,37 @@ const StyledMenu = styled.div`
   @media (max-width: 768px) {
     display: block;
   }
+`;
+
+const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 64px;
+  margin-left: 8px;
+
+  img {
+    height: 64px;
+  }
+`;
+
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  position: sticky;
+  z-index: 11;
+  padding: 0px 20px;
+  width: calc(100% - 40px);
+  height: 100px;
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  backdrop-filter: blur(1px);
+  transition: var(--transition);
+  color: var(--purple);
 `;
 
 const StyledHamburgerButton = styled.button`
@@ -152,88 +277,3 @@ const StyledSidebar = styled.aside`
     color: var(--pink);
   }
 `;
-
-const Menu = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  const buttonRef = useRef(null);
-  const navRef = useRef(null);
-
-  var navLinks = [
-    {
-      name: "about",
-      url: "/#about",
-    },
-    {
-      name: "projects",
-      url: "/#jobs",
-    },
-    {
-      name: "contact",
-      url: "/#projects",
-    },
-  ];
-
-  const onResize = (e) => {
-    if (e.currentTarget.innerWidth > 768) {
-      setMenuOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      window.removeEventListener("resize", onResize);
-    };
-  }, []);
-
-  return (
-    <StyledMenu>
-      <div>
-        <StyledHamburgerButton
-          onClick={toggleMenu}
-          menuOpen={menuOpen}
-          ref={buttonRef}
-          aria-label="Menu"
-        >
-          <div className="ham-box">
-            <div className="ham-box-inner" />
-          </div>
-        </StyledHamburgerButton>
-
-        <StyledSidebar
-          menuOpen={menuOpen}
-          aria-hidden={!menuOpen}
-          tabIndex={menuOpen ? 1 : -1}
-        >
-          <nav ref={navRef}>
-            {navLinks && (
-              <ol>
-                {navLinks.map(({ url, name }, i) => (
-                  <li key={i}>
-                    <Link
-                      className="link"
-                      to={url}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {name}
-                    </Link>
-                  </li>
-                ))}
-              </ol>
-            )}
-
-            <button className="tiff-btn btn-sec" style={{ marginTop: "20px" }}>
-              résumé
-            </button>
-          </nav>
-        </StyledSidebar>
-      </div>
-    </StyledMenu>
-  );
-};
-
-export default Menu;

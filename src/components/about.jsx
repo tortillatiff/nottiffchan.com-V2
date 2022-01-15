@@ -10,49 +10,66 @@ import useWindowSize from "../hooks/useWindowSize";
 
 const About = () => {
   const width = useWindowSize().width;
+  const revealTitle = useRef(null);
+  const revealPhoto = useRef(null);
+  const revealPara1 = useRef(null);
+  const revealPara2 = useRef(null);
+  const revealPara3 = useRef(null);
+
   const myPhotoRef = useRef(null);
-  const revealContainer = useRef(null);
 
   useEffect(() => {
-    sr.reveal(revealContainer.current, srConfig());
+    sr.reveal(revealTitle.current, srConfig());
+    sr.reveal(revealPhoto.current, srConfig());
+    sr.reveal(revealPara1.current, srConfig());
+    sr.reveal(revealPara2.current, srConfig());
+    sr.reveal(revealPara3.current, srConfig());
   }, []);
 
   return (
-    <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="purple-font">about me</h2>
+    <StyledAboutSection id="about">
+      <h2 className="purple-font" ref={revealTitle}>
+        about me
+      </h2>
       <AboutRow>
         <div className="text-col col">
-          <h3>who am i?</h3>
-          <p style={{ marginBottom: "60px" }}>
-            My name is <b>Tiffany Chan</b>, and I am a{" "}
-            <b>Full Stack Developer</b> and <b>UXUI Designer</b> in Singapore.
-            I’m a final year <b>Computer Science</b> student with minors in
-            Communications and Interactive Media Development at the National
-            University of Singapore (NUS).
-          </p>
+          <div ref={revealPara1}>
+            <h3>who am i?</h3>
+            <p style={{ marginBottom: "60px" }}>
+              My name is <b>Tiffany Chan</b>, and I am a{" "}
+              <b>Full Stack Developer</b> and <b>UXUI Designer</b> in Singapore.
+              I’m a final year <b>Computer Science</b> student with minors in
+              Communication and Interactive Media Development at the National
+              University of Singapore (NUS).
+            </p>
+          </div>
 
-          <h3>what do i do?</h3>
-          <p style={{ marginBottom: "60px" }}>
-            I combine research, user flows, wireframing, prototyping,
-            storytelling, visual design and development to create engaging
-            solutions in the digital medium. With my background in both design
-            and development, I understand technical constraints and am able to
-            design for and build around them.
-          </p>
+          <div ref={revealPara2}>
+            <h3>what do i do?</h3>
+            <p style={{ marginBottom: "60px" }}>
+              I combine research, user flows, wireframing, prototyping,
+              storytelling, visual design and development to create engaging
+              solutions in the digital medium. With my background in both design
+              and development, I understand both technical and design
+              constraints and am able to design for and build around them.
+            </p>
+          </div>
 
-          <h3>what am i passionate about?</h3>
-          <p>
-            My favorite projects are those that allow me to work at the
-            crossroads of disciplines, combining my design and development
-            skills to solve complex problems and create ✨{" "}
-            <b>beautiful experiences</b> ✨. I also happen to have an unhealthy
-            obsession with{" "}
-            <span style={{ fontFamily: "BioRhyme Expanded" }}>typefaces</span>{" "}
-            and my dog Kopi 🐶.
-          </p>
+          <div ref={revealPara3}>
+            <h3>what am i passionate about?</h3>
+            <p>
+              My favorite projects are those that allow me to work at the
+              crossroads of disciplines, combining my design and development
+              skills to solve complex problems and create ✨{" "}
+              <b>beautiful experiences</b> ✨. I also happen to have an
+              unhealthy obsession with{" "}
+              <span style={{ fontFamily: "BioRhyme Expanded" }}>typefaces</span>{" "}
+              and my family dog Kopi 🐶.
+            </p>
+          </div>
         </div>
 
-        <div className="image-col col">
+        <div className="image-col col" ref={revealPhoto}>
           {width > 768 ? (
             <div>
               <AnimatedPicture

@@ -11,7 +11,7 @@ const StyledHeroSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100% - 100px);
+  min-height: calc(100vh - 100px);
   width: 100%;
   max-width: 1200px;
   padding: 0;
@@ -115,7 +115,7 @@ const StyledHeroText = styled.div`
   }
 `;
 
-const Hero = ({ onCursor, addAnimation, index }) => {
+const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
   // let split = new SplitText(".heroTextBig", {
   //   type: "words, chars, lines",
   //   // charsClass: "character",
@@ -125,42 +125,70 @@ const Hero = ({ onCursor, addAnimation, index }) => {
 
   let heroRef = useRef();
   let bigHeroTextRef = useRef();
+  let smallHeroTextRef = useRef();
   let ctaRef = useRef();
   let girlHeadRef = useRef();
 
   useEffect(() => {
-    const desktopAnimation = gsap
-      .timeline()
-      .from(girlHeadRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        y: 100,
-        delay: 1.5,
-        ease: "Power3.easeOut",
-      })
-      // .from(words, {
-      //   opacity: 0,
-      //   duration: 0.4,
-      //   y: 50,
-      //   stagger: 0.3,
-      //   ease: "easeInOut",
-      // })
-      .from(bigHeroTextRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        y: 40,
-        ease: "Power3.easeOut",
-      })
-      .from(ctaRef.current, {
-        opacity: 0,
-        duration: 0.2,
-        y: 20,
-        ease: "Power3.easeOut",
-      });
-    addAnimation(desktopAnimation, index);
+    if (isMobile) {
+      const mobileAnimation = gsap
+        .timeline()
+        .from(girlHeadRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          y: 100,
+          delay: 0.4,
+          ease: "Power3.easeOut",
+        })
+        .from(smallHeroTextRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          y: 40,
+          ease: "Power3.easeOut",
+        })
+        .from(ctaRef.current, {
+          opacity: 0,
+          duration: 0.2,
+          y: 20,
+          ease: "Power3.easeOut",
+        });
+      addAnimation(mobileAnimation, index);
 
-    return () => desktopAnimation.progress(0).kill();
-  }, [addAnimation, index]);
+      return () => mobileAnimation.progress(0).kill();
+    } else {
+      const desktopAnimation = gsap
+        .timeline()
+        .from(girlHeadRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          y: 100,
+          delay: 1.5,
+          ease: "Power3.easeOut",
+        })
+        // .from(words, {
+        //   opacity: 0,
+        //   duration: 0.4,
+        //   y: 50,
+        //   stagger: 0.3,
+        //   ease: "easeInOut",
+        // })
+        .from(bigHeroTextRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          y: 40,
+          ease: "Power3.easeOut",
+        })
+        .from(ctaRef.current, {
+          opacity: 0,
+          duration: 0.2,
+          y: 20,
+          ease: "Power3.easeOut",
+        });
+      addAnimation(desktopAnimation, index);
+
+      return () => desktopAnimation.progress(0).kill();
+    }
+  }, [addAnimation, index, isMobile]);
 
   return (
     <StyledHeroSection ref={heroRef}>
@@ -266,7 +294,7 @@ const Hero = ({ onCursor, addAnimation, index }) => {
       {/* // )} */}
 
       <StyledHeroText>
-        <div className="heroTextSmall">
+        <div className="heroTextSmall" ref={smallHeroTextRef}>
           hola! i'm tiff, and i design and build unique user experiences.
         </div>
       </StyledHeroText>
