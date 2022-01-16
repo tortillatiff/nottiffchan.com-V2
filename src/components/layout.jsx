@@ -39,17 +39,22 @@ const Layout = ({ addAnimation, children }) => {
 
       <div id="root">
         {size.width && (
-          <StyledContent>
-            {size.width > 768 ? (
-              <Nav onCursor={onCursor} addAnimation={addAnimation} index={0} />
-            ) : (
-              <Menu />
-            )}
-            <div id="content">{children}</div>
-          </StyledContent>
+          <>
+            <StyledContent>
+              {size.width > 768 ? (
+                <Nav
+                  onCursor={onCursor}
+                  addAnimation={addAnimation}
+                  index={0}
+                />
+              ) : (
+                <Menu />
+              )}
+              <div id="content">{children}</div>
+            </StyledContent>
+            <Footer onCursor={onCursor} />
+          </>
         )}
-
-        <Footer onCursor={onCursor} />
       </div>
     </>
   );
