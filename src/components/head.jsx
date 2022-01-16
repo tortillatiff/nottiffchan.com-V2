@@ -26,8 +26,8 @@ const Head = ({ title, description, image }) => {
     site.siteMetadata;
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
+    title: title ? title : defaultTitle,
+    description: description ? description : defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
   };

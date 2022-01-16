@@ -56,7 +56,7 @@ const rightItems = [
 
 const RescaleLab = () => {
   return (
-    <Layout>
+    <Layout title="Rescale Lab">
       <Header
         projName="Rescale Lab"
         projDesc="SaaS platform for entrepreneurs"

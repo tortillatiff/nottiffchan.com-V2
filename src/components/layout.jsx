@@ -22,7 +22,7 @@ const StyledContent = styled.div`
   }
 `;
 
-const Layout = ({ addAnimation, children }) => {
+const Layout = ({ addAnimation, children, ...props }) => {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
   const size = useWindowSize();
@@ -34,7 +34,7 @@ const Layout = ({ addAnimation, children }) => {
 
   return (
     <>
-      <Head image="/banner.png" />
+      <Head image="/banner.png" title={props.title} />
       <Cursor />
 
       <div id="root">
