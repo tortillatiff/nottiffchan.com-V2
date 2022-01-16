@@ -36,7 +36,7 @@ const rightItems = [
 
 const Berry = () => {
   return (
-    <Layout>
+    <Layout title="berry">
       <Header projName="berry" projDesc="Tile-style shopping list mobile app" />
       <StaticImage src="../../images/berry/hero.png" alt="Hero image" />
 

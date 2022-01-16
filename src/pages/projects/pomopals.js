@@ -16,7 +16,7 @@ const links = [
 
 export default function Pomopals() {
   return (
-    <Layout>
+    <Layout title="PomoPals">
       <Header
         projName="PomoPals"
         projDesc="Pomodoro timer for remote teams"

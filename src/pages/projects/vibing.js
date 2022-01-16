@@ -48,7 +48,7 @@ const rightItems = [
 
 const Vibing = () => {
   return (
-    <Layout>
+    <Layout title="vibing.">
       <Header
         projName="vibing."
         projDesc="Personalized Spotify playlists for friends"
