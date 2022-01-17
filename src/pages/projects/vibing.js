@@ -112,7 +112,7 @@ const Vibing = () => {
           myself. ok thanks for listening to my ted talk
         </p>
       </ProjectTextSection>
-      <ProjectNextCase link="/projects/rescaleLab" transitionCol="#EBF5F0" />
+      <ProjectNextCase link="/projects/nusmodplanner" transitionCol="#EBF5F0" />
     </Layout>
   );
 };

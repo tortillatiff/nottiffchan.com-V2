@@ -4,7 +4,7 @@ const projectSlides = [
     description: "Pomodoro timer for remote teams",
     tags: "web, design, development",
 
-    transitionCol: "#FFF2F0",
+    transitionCol: "#FFF0F0",
     link: "/projects/pomopals",
     imageUrl: "./thumbnails/pomopalsThumbnail.png",
     squareImageUrl: "./thumbnails/pomopalsThumbnailSquare.png",
@@ -18,6 +18,16 @@ const projectSlides = [
     transitionCol: "#EFF6FB",
     imageUrl: "./thumbnails/vibingThumbnail.png",
     squareImageUrl: "./thumbnails/vibingThumbnailSquare.png",
+  },
+  {
+    title: "NUSModPlanner",
+    description: "Improving the module planning process in NUS",
+    tags: "ux design, ui design",
+
+    link: "/projects/nusmodplanner/",
+    transitionCol: "#FEEEE7",
+    imageUrl: "./thumbnails/nusmodplannerThumbnail.png",
+    squareImageUrl: "./thumbnails/nusmodplannerThumbnailSquare.png",
   },
   {
     title: "Rescale Lab",

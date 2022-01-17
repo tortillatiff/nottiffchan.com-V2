@@ -11,6 +11,7 @@ export default function ResponsiveProjectSlides() {
   const proj1 = useRef(null);
   const proj2 = useRef(null);
   const proj3 = useRef(null);
+  const proj4 = useRef(null);
 
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
@@ -18,6 +19,7 @@ export default function ResponsiveProjectSlides() {
     sr.reveal(proj1.current, srConfig(200));
     sr.reveal(proj2.current, srConfig(300));
     sr.reveal(proj3.current, srConfig(400));
+    sr.reveal(proj4.current, srConfig(500));
   }, []);
 
   return (
@@ -40,6 +42,12 @@ export default function ResponsiveProjectSlides() {
         <div ref={proj3}>
           <FeaturedItem index={3} />
         </div>
+      </div>
+      <div className="row">
+        <div ref={proj4}>
+          <FeaturedItem index={4} />
+        </div>
+        <div></div>
       </div>
     </FeaturedItems>
   );

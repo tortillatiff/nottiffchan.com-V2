@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
+import pdfCaseStudy from "../../assets/RescaleLabCaseStudy.pdf";
 
 import Header from "../../components/projects/projectHeader";
 import ProjectTextSection from "../../components/projects/projectTextSection";
@@ -20,7 +21,7 @@ import rRightTwo from "../../images/RescaleLab/rRightTwo.png";
 
 const links = [
   { link: "https://www.rescalelab.com/", name: "Live Site" },
-  // { link: "/", name: "Full UX Case Study" },
+  { link: pdfCaseStudy, name: "Full Case Study" },
 ];
 
 const styleguideLink = [
