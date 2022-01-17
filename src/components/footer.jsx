@@ -3,66 +3,6 @@ import styled from "styled-components";
 import CV from "../assets/TiffanyChan.pdf";
 import useWindowSize from "../hooks/useWindowSize";
 
-const FooterWrap = styled.section`
-  width: 100%;
-  height: calc(100vh - 200px);
-  position: fixed;
-  /* z-index: 0; */
-  left: 0;
-  right: 0;
-  bottom: 0;
-`;
-
-const StyledFooter = styled.div`
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
-  padding: 0 40px;
-  margin: auto;
-
-  .boldtext {
-    color: var(--bg-color);
-    font-size: 70px;
-    font-weight: 800;
-    width: 90%;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--brown);
-    transition: var(--transition);
-    text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color),
-      -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
-  }
-
-  a:hover {
-    color: var(--bg-color);
-    text-shadow: none;
-  }
-
-  .smalltext {
-    position: absolute;
-    bottom: 0;
-    color: var(--bg-color);
-    font-size: var(--text-xs);
-  }
-
-  @media (max-width: 768px) {
-    .boldtext {
-      font-size: 60px;
-    }
-  }
-
-  @media (max-width: 550px) {
-    .boldtext {
-      font-size: 50px;
-    }
-    .smalltext {
-      font-size: 16px;
-    }
-  }
-`;
-
 const Footer = ({ onCursor }) => {
   const width = useWindowSize().width;
 
@@ -70,10 +10,11 @@ const Footer = ({ onCursor }) => {
     <FooterWrap
       style={{
         backgroundColor: width > 1200 ? "none" : "var(--brown)",
-        height: width > 1200 ? "auto" : "calc(100vh - 200px)",
+        height: width > 1200 ? "auto" : "100vh",
       }}
     >
       <StyledFooter>
+        <div></div>
         <p className="boldtext">
           check out my
           <a
@@ -118,10 +59,67 @@ const Footer = ({ onCursor }) => {
           </a>
           !
         </p>
-        <p className="smalltext">© Designed & coded with ❤️ by tiff</p>
+        <p className="smalltext">© designed & built with 🤍 by tiff</p>
       </StyledFooter>
     </FooterWrap>
   );
 };
 
 export default Footer;
+
+const FooterWrap = styled.section`
+  width: 100%;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
+const StyledFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: auto;
+
+  .boldtext {
+    color: var(--bg-color);
+    font-size: 70px;
+    font-weight: 800;
+    width: 90%;
+  }
+  a {
+    text-decoration: none;
+    color: var(--brown);
+    transition: var(--transition);
+    text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color),
+      -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
+  }
+  a:hover {
+    color: var(--bg-color);
+    text-shadow: none;
+  }
+  .smalltext {
+    /* position: absolute;
+    bottom: 0; */
+    color: var(--bg-color);
+    font-size: var(--text-xs);
+  }
+  @media (max-width: 768px) {
+    .boldtext {
+      font-size: 60px;
+    }
+  }
+  @media (max-width: 550px) {
+    .boldtext {
+      font-size: 50px;
+    }
+    .smalltext {
+      font-size: 16px;
+    }
+  }
+`;
