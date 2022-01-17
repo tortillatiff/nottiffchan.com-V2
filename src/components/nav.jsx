@@ -1,18 +1,18 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "gatsby";
 import logo from "../assets/iconlogo.png";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 // import Menu from "./menu";
 import CV from "../assets/TiffanyChan.pdf";
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
+import useScrollDirection from "../hooks/useScrollDirection";
 
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   top: 0;
-  position: sticky;
+  position: fixed;
   z-index: 11;
   padding: 0px 20px;
   width: calc(100% - 40px);
@@ -23,6 +23,22 @@ const StyledHeader = styled.header`
   backdrop-filter: blur(1px);
   transition: var(--transition);
   color: var(--purple);
+
+  ${(props) =>
+    props.scrollDirection === "up" &&
+    !props.scrolledToTop &&
+    css`
+      height: 70px;
+      transform: translateY(0px);
+    `};
+
+  ${(props) =>
+    props.scrollDirection === "down" &&
+    !props.scrolledToTop &&
+    css`
+      height: 70px;
+      transform: translateY(-70px);
+    `};
 `;
 
 const StyledLinks = styled.div`
@@ -94,12 +110,26 @@ const Logo = styled.div`
 `;
 
 const Nav = ({ onCursor, addAnimation, index }) => {
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
   let logoRef = useRef();
   let navLinkOne = useRef(null);
   let navLinkTwo = useRef(null);
   let navLinkThree = useRef(null);
   let navLinkFour = useRef(null);
   let navItemsRef = useRef();
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (addAnimation) {
@@ -145,7 +175,10 @@ const Nav = ({ onCursor, addAnimation, index }) => {
   }, [addAnimation, index]);
 
   return (
-    <StyledHeader>
+    <StyledHeader
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+    >
       {/* <AniLink paintDrip hex="#5F3962" to="/"> */}
       <a href="/">
         <Logo

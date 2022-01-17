@@ -134,7 +134,7 @@ const StyledFooter = styled.div`
       font-size: 50px;
     }
     .smalltext {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 `;
