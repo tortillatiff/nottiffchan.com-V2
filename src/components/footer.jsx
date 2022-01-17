@@ -10,7 +10,6 @@ const Footer = ({ onCursor }) => {
     <FooterWrap
       style={{
         backgroundColor: width > 1200 ? "none" : "var(--brown)",
-        // height: width > 1200 ? "auto" : "100vh",
       }}
     >
       <StyledFooter>
@@ -135,7 +134,7 @@ const StyledFooter = styled.div`
       font-size: 50px;
     }
     .smalltext {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 `;

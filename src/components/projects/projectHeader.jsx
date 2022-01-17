@@ -26,6 +26,7 @@ const StyledHeader = styled.header`
   height: calc(55vh - 100px);
   min-height: 200px;
   z-index: 1;
+  padding-top: 100px;
 
   @media (min-width: 768px) {
     min-height: 370px;
