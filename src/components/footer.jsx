@@ -10,7 +10,6 @@ const Footer = ({ onCursor }) => {
     <FooterWrap
       style={{
         backgroundColor: width > 1200 ? "none" : "var(--brown)",
-        height: width > 1200 ? "auto" : "100vh",
       }}
     >
       <StyledFooter>
@@ -78,6 +77,7 @@ export default Footer;
 
 const FooterWrap = styled.section`
   width: 100%;
+  height: 100vh;
   padding: 0;
   position: fixed;
   left: 0;
