@@ -18,6 +18,7 @@ const Footer = ({ onCursor }) => {
         <p className="boldtext">
           check out my
           <a
+            className="link"
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
             href={CV}
@@ -29,6 +30,7 @@ const Footer = ({ onCursor }) => {
           </a>{" "}
           and{" "}
           <a
+            className="link"
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
             href="https://github.com/nottiffchan"
@@ -42,6 +44,7 @@ const Footer = ({ onCursor }) => {
           <a
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
+            className="link"
             href="https://www.linkedin.com/in/nottiffchan/"
             target="_blank"
             rel="noreferrer"
@@ -52,6 +55,7 @@ const Footer = ({ onCursor }) => {
           <a
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
+            className="link"
             href="mailto:hi@nottiffchan.com"
           >
             {" "}
@@ -59,7 +63,12 @@ const Footer = ({ onCursor }) => {
           </a>
           !
         </p>
-        <p className="smalltext">© Designed & coded with ❤️ by tiff</p>
+        <a
+          href="https://github.com/nottiffchan/nottiffchan.com-V2"
+          className="smalltext"
+        >
+          © Designed & built with 🤍 by Tiffany Chan
+        </a>
       </StyledFooter>
     </FooterWrap>
   );
@@ -92,23 +101,29 @@ const StyledFooter = styled.div`
     font-weight: 800;
     width: 90%;
   }
-  a {
+  .link {
     text-decoration: none;
     color: var(--brown);
     transition: var(--transition);
     text-shadow: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color),
       -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
   }
-  a:hover {
+  .link:hover {
     color: var(--bg-color);
     text-shadow: none;
   }
   .smalltext {
-    /* position: absolute;
-    bottom: 0; */
     color: var(--bg-color);
-    font-size: var(--text-xs);
+    opacity: 0.65;
+    transition: var(--transition);
+    font-size: 16px;
+    text-decoration: none;
+    padding-bottom: 8px;
   }
+  .smalltext:hover {
+    opacity: 1;
+  }
+
   @media (max-width: 768px) {
     .boldtext {
       font-size: 60px;
