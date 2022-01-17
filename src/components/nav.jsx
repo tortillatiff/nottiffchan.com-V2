@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { Link } from "gatsby";
 import logo from "../assets/iconlogo.png";
 import styled, { keyframes, css } from "styled-components";
-// import Menu from "./menu";
 import CV from "../assets/TiffanyChan.pdf";
 import gsap from "gsap";
 import useScrollDirection from "../hooks/useScrollDirection";

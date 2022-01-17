@@ -1,13 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import CV from "../assets/TiffanyChan.pdf";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import logo from "../assets/iconlogo.png";
+import useScrollDirection from "../hooks/useScrollDirection";
 
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const buttonRef = useRef(null);
   const navRef = useRef(null);
@@ -42,7 +56,10 @@ const Menu = () => {
   }, []);
 
   return (
-    <StyledHeader>
+    <StyledHeader
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+    >
       <a href="/">
         <Logo>
           <img src={logo} alt="logo" />
@@ -126,7 +143,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   top: 0;
-  position: sticky;
+  position: fixed;
   z-index: 11;
   padding: 0px 20px;
   width: calc(100% - 40px);
@@ -137,6 +154,22 @@ const StyledHeader = styled.header`
   backdrop-filter: blur(1px);
   transition: var(--transition);
   color: var(--purple);
+
+  ${(props) =>
+    props.scrollDirection === "up" &&
+    !props.scrolledToTop &&
+    css`
+      height: 70px;
+      transform: translateY(0px);
+    `};
+
+  ${(props) =>
+    props.scrollDirection === "down" &&
+    !props.scrolledToTop &&
+    css`
+      height: 70px;
+      transform: translateY(-70px);
+    `};
 `;
 
 const StyledHamburgerButton = styled.button`
