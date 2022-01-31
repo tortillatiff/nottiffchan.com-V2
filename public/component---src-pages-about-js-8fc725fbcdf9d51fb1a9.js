@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknottiffchan_com=self.webpackChunknottiffchan_com||[]).push([[682],{5518:function(n,t,e){e.r(t),e.d(t,{default:function(){return a}});var c=e(7294),f=e(8068),u=e(2785);function a(){return c.createElement(u.Z,{title:"About Me – Tiffany Chan"},c.createElement(f.Z,null))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-8fc725fbcdf9d51fb1a9.js.map
