@@ -22,7 +22,7 @@ const links = [
 
 export default function NusModPlanner() {
   return (
-    <Layout title="NUSModPlanner">
+    <Layout title="NUSModPlanner – Tiffany Chan">
       <Header
         projName="NUSModPlanner"
         projDesc="Improving the module planning process in NUS"

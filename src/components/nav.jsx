@@ -6,6 +6,158 @@ import CV from "../assets/TiffanyChan.pdf";
 import gsap from "gsap";
 import useScrollDirection from "../hooks/useScrollDirection";
 
+const Nav = ({ onCursor, addAnimation, index }) => {
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
+  let logoRef = useRef();
+  let navLinkOne = useRef(null);
+  let navLinkTwo = useRef(null);
+  let navLinkThree = useRef(null);
+  let navLinkFour = useRef(null);
+  let navItemsRef = useRef();
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (addAnimation) {
+      const animation = gsap
+        .timeline()
+        .from(logoRef.current, {
+          y: -50,
+          delay: 0.3,
+          duration: 0.3,
+          opacity: 0,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkOne.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkTwo.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkThree.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        })
+        .from(navLinkFour.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.1,
+          ease: "Power3.easeOut",
+        });
+      addAnimation(animation, index);
+
+      return () => {
+        animation.progress(0).kill();
+      };
+    }
+  }, [addAnimation, index]);
+
+  return (
+    <StyledHeader
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+    >
+      {/* <AniLink paintDrip hex="#5F3962" to="/"> */}
+      <a href="/">
+        <Logo
+          onMouseEnter={() => onCursor("pointer")}
+          onMouseLeave={onCursor}
+          onClick={onCursor}
+          ref={logoRef}
+        >
+          <img src={logo} alt="logo" />
+        </Logo>
+      </a>
+      {/* </AniLink> */}
+      <StyledLinks>
+        <ol ref={navItemsRef}>
+          <li>
+            <Link
+              ref={navLinkOne}
+              onMouseEnter={() => onCursor("pointer")}
+              onMouseLeave={onCursor}
+              key="home"
+              className="link"
+              to="/"
+            >
+              home
+            </Link>
+          </li>
+          <li>
+            <Link
+              ref={navLinkTwo}
+              onMouseEnter={() => onCursor("pointer")}
+              onMouseLeave={onCursor}
+              key="about"
+              className="link"
+              to="/about"
+            >
+              about
+            </Link>
+          </li>
+          <li>
+            <Link
+              ref={navLinkThree}
+              onMouseEnter={() => onCursor("pointer")}
+              onMouseLeave={onCursor}
+              key="projects"
+              className="link"
+              to="/projects"
+            >
+              projects
+            </Link>
+          </li>
+          {/* <li>
+            <Link
+              ref={navLinkThree}
+              onMouseEnter={() => onCursor("pointer")}
+              onMouseLeave={onCursor}
+              key="contact"
+              className="link"
+              to="/#contact"
+            >
+              contact
+            </Link>
+          </li> */}
+        </ol>
+        <a
+          ref={navLinkFour}
+          onMouseEnter={() => onCursor("pointer")}
+          onMouseLeave={onCursor}
+          href={CV}
+          target="_blank"
+          rel="noreferrer"
+          className="contact-button tiff-btn btn-sec"
+        >
+          résumé
+        </a>
+      </StyledLinks>
+      {/* <Menu /> */}
+    </StyledHeader>
+  );
+};
+
+export default Nav;
+
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
@@ -107,143 +259,3 @@ const Logo = styled.div`
     background: var(--yellow);
   }
 `;
-
-const Nav = ({ onCursor, addAnimation, index }) => {
-  const scrollDirection = useScrollDirection("down");
-  const [scrolledToTop, setScrolledToTop] = useState(true);
-
-  let logoRef = useRef();
-  let navLinkOne = useRef(null);
-  let navLinkTwo = useRef(null);
-  let navLinkThree = useRef(null);
-  let navLinkFour = useRef(null);
-  let navItemsRef = useRef();
-
-  const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (addAnimation) {
-      const animation = gsap
-        .timeline()
-        .from(logoRef.current, {
-          y: -50,
-          delay: 0.3,
-          duration: 0.3,
-          opacity: 0,
-          ease: "Power3.easeOut",
-        })
-        .from(navLinkOne.current, {
-          y: -50,
-          opacity: 0,
-          duration: 0.1,
-          ease: "Power3.easeOut",
-        })
-        .from(navLinkTwo.current, {
-          y: -50,
-          opacity: 0,
-          duration: 0.1,
-          ease: "Power3.easeOut",
-        })
-        .from(navLinkThree.current, {
-          y: -50,
-          opacity: 0,
-          duration: 0.1,
-          ease: "Power3.easeOut",
-        })
-        .from(navLinkFour.current, {
-          y: -50,
-          opacity: 0,
-          duration: 0.1,
-          ease: "Power3.easeOut",
-        });
-      addAnimation(animation, index);
-
-      return () => {
-        animation.progress(0).kill();
-      };
-    }
-  }, [addAnimation, index]);
-
-  return (
-    <StyledHeader
-      scrollDirection={scrollDirection}
-      scrolledToTop={scrolledToTop}
-    >
-      {/* <AniLink paintDrip hex="#5F3962" to="/"> */}
-      <a href="/">
-        <Logo
-          onMouseEnter={() => onCursor("pointer")}
-          onMouseLeave={onCursor}
-          onClick={onCursor}
-          ref={logoRef}
-        >
-          <img src={logo} alt="logo" />
-        </Logo>
-      </a>
-      {/* </AniLink> */}
-      <StyledLinks>
-        <ol ref={navItemsRef}>
-          <li>
-            <Link
-              ref={navLinkOne}
-              onMouseEnter={() => onCursor("pointer")}
-              onMouseLeave={onCursor}
-              key="about"
-              className="link"
-              to="/#about"
-            >
-              about
-            </Link>
-          </li>
-          <li>
-            <Link
-              ref={navLinkTwo}
-              onMouseEnter={() => onCursor("pointer")}
-              onMouseLeave={onCursor}
-              key="projects"
-              className="link"
-              to="/#projects"
-            >
-              projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              ref={navLinkThree}
-              onMouseEnter={() => onCursor("pointer")}
-              onMouseLeave={onCursor}
-              key="contact"
-              className="link"
-              to="#contact"
-            >
-              contact
-            </Link>
-          </li>
-        </ol>
-        <a
-          ref={navLinkFour}
-          onMouseEnter={() => onCursor("pointer")}
-          onMouseLeave={onCursor}
-          href={CV}
-          target="_blank"
-          rel="noreferrer"
-          className="contact-button tiff-btn btn-sec"
-        >
-          résumé
-        </a>
-      </StyledLinks>
-      {/* <Menu /> */}
-    </StyledHeader>
-  );
-};
-
-export default Nav;

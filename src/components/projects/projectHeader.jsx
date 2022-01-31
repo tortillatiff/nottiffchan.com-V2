@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Header = (props) => {
   return (
-    <StyledHeader>
+    <StyledHeader projName={props.projName}>
       <TopHeadContainer>
         <div className="header">
           <h1>{props.projName}</h1>
@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
 
   @media (min-width: 768px) {
     min-height: 370px;
-    height: calc(80vh - 100px);
+    height: ${(props) => (props.projName ? "calc(80vh - 100px)" : "")};
   }
   @media (min-width: 360px) {
     min-height: 356px;

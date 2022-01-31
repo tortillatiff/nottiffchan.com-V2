@@ -57,7 +57,7 @@ const rightItems = [
 
 const RescaleLab = () => {
   return (
-    <Layout title="Rescale Lab">
+    <Layout title="Rescale Lab – Tiffany Chan">
       <Header
         projName="Rescale Lab"
         projDesc="SaaS platform for entrepreneurs"

@@ -53,7 +53,7 @@ const rightItems = [
 
 export default function Pomopals() {
   return (
-    <Layout title="PomoPals">
+    <Layout title="PomoPals – Tiffany Chan">
       <Header
         projName="PomoPals"
         projDesc="Pomodoro timer for remote teams"

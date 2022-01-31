@@ -52,6 +52,8 @@ const Layout = ({ addAnimation, children, ...props }) => {
               )}
               <div id="content">{children}</div>
             </StyledContent>
+            <div id="contact"></div>
+
             <Footer onCursor={onCursor} />
           </>
         )}
