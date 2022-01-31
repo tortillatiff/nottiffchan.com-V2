@@ -84,7 +84,7 @@ const TopHeadContainer = styled.div`
 `;
 
 const Container = styled.section`
-  padding: 120px 0;
+  padding: 100px 0;
   padding-bottom: 60px;
 
   h3 {
@@ -95,8 +95,16 @@ const Container = styled.section`
     font-weight: 500;
   }
 
+  h4 {
+    margin: 0;
+    margin-bottom: 30px;
+    color: var(--purple);
+    font-size: 28px;
+    font-weight: 500;
+  }
+
   @media (min-width: 360px) {
-    padding: 170px 0;
+    /* padding: 120px 0; */
     padding-bottom: 85px;
 
     h3 {
@@ -104,11 +112,11 @@ const Container = styled.section`
     }
   }
   @media (min-width: 768px) {
-    padding: 240px 0;
+    /* padding: 240px 0; */
     padding-bottom: 150px;
 
     h3 {
-      font-size: 60px;
+      font-size: 48px;
     }
   }
   @media (min-width: 1350px) {

@@ -36,11 +36,11 @@ const About = () => {
           <div ref={revealPara1}>
             <h3>who am i?</h3>
             <p style={{ marginBottom: "60px" }}>
-              My name is <b>Tiffany Chan</b>, and I am a{" "}
-              <b>Full Stack Developer</b> and <b>UXUI Designer</b> in Singapore.
-              I’m a final year <b>Computer Science</b> student with minors in
-              Communication and Interactive Media Development at the National
-              University of Singapore (NUS).
+              My name is <b>Tiffany Chan</b>, and I am a multi-disciplinary
+              developer (front-end) and designer (ux, interaction, visual) in
+              Singapore. I’m a final year <b>Computer Science</b> student with
+              minors in Interactive Media Development at the National University
+              of Singapore (NUS).
             </p>
           </div>
 

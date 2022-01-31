@@ -5,12 +5,14 @@ import {
   useGlobalDispatchContext,
 } from "../../context/globalContext";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { allProjects } from "../../data";
 
 export default function ProjectNextCase({
-  link,
-  text = "Next case",
-  transitionCol,
-  atag,
+  location,
+  // link,
+  // text = "Next case",
+  // transitionCol,
+  // atag,
 }) {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
@@ -18,14 +20,11 @@ export default function ProjectNextCase({
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
+  const url = typeof window !== "undefined" ? window.location.pathname : "";
 
   return (
-    <NextCaseWrap
-      onMouseEnter={() => onCursor("viewCase")}
-      onMouseLeave={onCursor}
-      onClick={onCursor}
-    >
-      {!atag ? (
+    <NextCaseWrap>
+      {/* {!atag ? (
         <AniLink paintDrip hex={transitionCol} to={link}>
           <h1>{text}</h1>
         </AniLink>
@@ -33,7 +32,34 @@ export default function ProjectNextCase({
         <a href={link}>
           <h1>{text}</h1>
         </a>
-      )}
+      )} */}
+      <AniLink
+        paintDrip
+        onMouseEnter={() => onCursor("pointer")}
+        onMouseLeave={onCursor}
+        onClick={onCursor}
+        to="/projects"
+        hex="#5f3962"
+      >
+        <h3>All</h3>
+      </AniLink>
+      {allProjects.map((proj) => {
+        return (
+          <AniLink
+            paintDrip
+            hex={proj.transitionCol}
+            to={proj.link}
+            style={{ paddingLeft: "20px" }}
+            onMouseEnter={() => onCursor("pointer")}
+            onMouseLeave={onCursor}
+            onClick={onCursor}
+          >
+            <h3 class={url.includes(proj.link) ? "active" : ""}>
+              {proj.title}
+            </h3>
+          </AniLink>
+        );
+      })}
     </NextCaseWrap>
   );
 }
@@ -49,6 +75,16 @@ const NextCaseWrap = styled.div`
     font-size: 54px;
     color: var(--black);
     text-decoration: underline;
+  }
+
+  h3 {
+    color: var(--grey);
+    opacity: 0.4;
+  }
+
+  .active {
+    color: var(--purple);
+    opacity: 1;
   }
 
   @media (max-width: 768px) {

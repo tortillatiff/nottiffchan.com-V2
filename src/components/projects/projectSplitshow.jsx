@@ -1,30 +1,47 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  useGlobalStateContext,
+  useGlobalDispatchContext,
+} from "../../context/globalContext";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const ProjectSplitshow = (props) => {
-  const mappedLeftItems = props.leftItems.map((item, i) => (
-    <StyledSplitshowItem key={i}>
-      <div className="img-wrapper">
-        <img src={item.imgSrc} alt="Supporting" />
-      </div>
-      <div className="caption">{item.caption}</div>
-    </StyledSplitshowItem>
-  ));
+  const dispatch = useGlobalDispatchContext();
+  const { cursorStyles } = useGlobalStateContext();
+  const onCursor = (cursorType) => {
+    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
+    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
+  };
 
-  const mappedRightItems = props.rightItems.map((item, i) => (
-    <StyledSplitshowItem key={i}>
-      <div className="img-wrapper">
-        <img src={item.imgSrc} alt="Supporting" />
-      </div>
-      <div className="caption">{item.caption}</div>
-    </StyledSplitshowItem>
-  ));
   return (
     <SplitshowSection>
       <div className="container">
         <div className="items">
-          <div className="left-col">{mappedLeftItems}</div>
-          <div className="right-col">{mappedRightItems}</div>
+          <div className="left-col">
+            {props.leftItems.map((item, i) => {
+              return (
+                <SplitshowItem
+                  item={item}
+                  i={i}
+                  clickable={props.clickable}
+                  onCursor={onCursor}
+                />
+              );
+            })}
+          </div>
+          <div className="right-col">
+            {props.rightItems.map((item, i) => {
+              return (
+                <SplitshowItem
+                  item={item}
+                  i={i}
+                  clickable={props.clickable}
+                  onCursor={onCursor}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </SplitshowSection>
@@ -33,9 +50,49 @@ const ProjectSplitshow = (props) => {
 
 export default ProjectSplitshow;
 
+const SplitshowItem = ({ item, i, clickable, onCursor }) => {
+  return (
+    <StyledSplitshowItem key={i}>
+      {clickable ? (
+        <AniLink
+          paintDrip
+          onMouseEnter={() => onCursor("viewCase")}
+          onMouseLeave={onCursor}
+          onClick={onCursor}
+          className="img-wrapper"
+          to={item.link}
+        >
+          <img src={item.imgSrc} alt="Supporting" />
+        </AniLink>
+      ) : (
+        <div className="img-wrapper">
+          <img src={item.imgSrc} alt="Supporting" />
+        </div>
+      )}
+      <div className="caption">{item.caption}</div>
+      {clickable && (
+        <>
+          <b>{item.description}</b>
+          <div
+            style={{
+              color: "var(--grey)",
+              paddingTop: "8px",
+              fontSize: "var(--text-xs)",
+            }}
+          >
+            {item.tags}
+          </div>
+        </>
+      )}
+    </StyledSplitshowItem>
+  );
+};
+
 const StyledSplitshowItem = styled.div`
   display: block;
   margin: 12px -14px;
+  text-align: center;
+  padding-bottom: 40px;
 
   .img-wrapper {
     padding-bottom: 100%;
@@ -57,7 +114,8 @@ const StyledSplitshowItem = styled.div`
   .caption {
     display: block;
     margin: 0 auto;
-    padding: 19px 0;
+    padding-top: 40px;
+    padding-bottom: 8px;
     max-width: 270px;
     font-size: 20px;
     line-height: 150%;
@@ -67,16 +125,16 @@ const StyledSplitshowItem = styled.div`
   @media (min-width: 360px) {
     margin: 14px -23px;
 
-    .caption {
+    /* .caption {
       padding: 23px 0 36px 0;
-    }
+    } */
   }
 
   @media (min-width: 768px) {
     margin: 14px 12px;
 
     .caption {
-      padding: 25px 0 44px 0;
+      /* padding: 25px 0 44px 0; */
       max-width: 220px;
       font-size: 16px;
     }
@@ -86,7 +144,7 @@ const StyledSplitshowItem = styled.div`
     margin: 34px 17px;
 
     .caption {
-      padding: 34px 0 53px 0;
+      /* padding: 34px 0 53px 0; */
       max-width: 284px;
       font-size: 18px;
     }
@@ -96,7 +154,7 @@ const StyledSplitshowItem = styled.div`
     margin: 40px 20px;
 
     .caption {
-      padding: 40px 0 60px 0;
+      /* padding: 40px 0 60px 0; */
       max-width: 318px;
       font-size: 22px;
     }

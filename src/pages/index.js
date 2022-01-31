@@ -50,13 +50,17 @@ const IndexPage = () => {
             className="hero"
             isMobile={size.width <= 400}
           />
-          <About />
 
           {size.width > 1200 ? (
             <div id="projects">
               <h2
                 className="purple-font"
-                style={{ marginBottom: 0, margin: "auto", maxWidth: "1200px" }}
+                style={{
+                  marginBottom: 0,
+                  margin: "auto",
+                  maxWidth: "1200px",
+                  marginTop: "200px",
+                }}
               >
                 featured projects
               </h2>
@@ -67,8 +71,9 @@ const IndexPage = () => {
               <ResponsiveProjectSlides />
             </div>
           )}
+          {/* <About /> */}
 
-          <div id="contact"></div>
+          {/* <div id="contact"></div> */}
         </StyledMainContainer>
       )}
     </Layout>

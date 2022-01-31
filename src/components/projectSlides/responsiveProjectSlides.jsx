@@ -1,17 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { projectSlides } from "../../data";
+import { projectSlides, allProjects } from "../../data";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import sr from "../../utils/sr";
 import { srConfig } from "../../config";
 
-export default function ResponsiveProjectSlides() {
+export default function ResponsiveProjectSlides({ allProjects = false }) {
   const revealTitle = useRef(null);
   const proj0 = useRef(null);
   const proj1 = useRef(null);
   const proj2 = useRef(null);
   const proj3 = useRef(null);
   const proj4 = useRef(null);
+  const proj5 = useRef(null);
 
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
@@ -20,13 +21,15 @@ export default function ResponsiveProjectSlides() {
     sr.reveal(proj2.current, srConfig(300));
     sr.reveal(proj3.current, srConfig(400));
     sr.reveal(proj4.current, srConfig(500));
+    sr.reveal(proj5.current, srConfig(500));
   }, []);
 
   return (
     <FeaturedItems>
       <h2 className="purple-font" ref={revealTitle}>
-        featured projects
+        {allProjects ? "all projects" : "featured projects"}
       </h2>
+
       <div className="row">
         <div ref={proj0}>
           <FeaturedItem index={0} />
@@ -43,18 +46,22 @@ export default function ResponsiveProjectSlides() {
           <FeaturedItem index={3} />
         </div>
       </div>
-      <div className="row">
-        <div ref={proj4}>
-          <FeaturedItem index={4} />
+      {allProjects && (
+        <div className="row">
+          <div ref={proj4}>
+            <FeaturedItem index={4} />
+          </div>
+          <div ref={proj5}>
+            <FeaturedItem index={5} />
+          </div>
         </div>
-        <div></div>
-      </div>
+      )}
     </FeaturedItems>
   );
 }
 
 const FeaturedItem = ({ index }) => {
-  const proj = projectSlides[index];
+  const proj = allProjects ? allProjects[index] : projectSlides[index];
   return (
     <div className="column">
       <StyledFeaturedItem>
@@ -74,11 +81,13 @@ const FeaturedItems = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
+  padding-top: 100px;
 
   .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
   }
 
