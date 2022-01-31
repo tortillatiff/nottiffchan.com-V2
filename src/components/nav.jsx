@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import logo from "../assets/iconlogo.png";
 import styled, { keyframes, css } from "styled-components";
 import CV from "../assets/TiffanyChan.pdf";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
 import useScrollDirection from "../hooks/useScrollDirection";
 
@@ -94,15 +93,13 @@ const Nav = ({ onCursor, addAnimation, index }) => {
           <li>
             <Link
               ref={navLinkOne}
-              // paintDrip
-              // hex="#5f3962"
               onMouseEnter={() => onCursor("pointer")}
               onMouseLeave={onCursor}
-              key="projects"
+              key="home"
               className="link"
-              to="/projects"
+              to="/"
             >
-              projects
+              home
             </Link>
           </li>
           <li>
@@ -122,13 +119,25 @@ const Nav = ({ onCursor, addAnimation, index }) => {
               ref={navLinkThree}
               onMouseEnter={() => onCursor("pointer")}
               onMouseLeave={onCursor}
+              key="projects"
+              className="link"
+              to="/projects"
+            >
+              projects
+            </Link>
+          </li>
+          {/* <li>
+            <Link
+              ref={navLinkThree}
+              onMouseEnter={() => onCursor("pointer")}
+              onMouseLeave={onCursor}
               key="contact"
               className="link"
               to="/#contact"
             >
               contact
             </Link>
-          </li>
+          </li> */}
         </ol>
         <a
           ref={navLinkFour}
