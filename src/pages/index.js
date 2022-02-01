@@ -3,7 +3,6 @@ import "../styles/global.css";
 import styled from "styled-components";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
-import About from "../components/about";
 import ProjectSlides from "../components/projectSlides";
 import ResponsiveProjectSlides from "../components/projectSlides/responsiveProjectSlides";
 import {
@@ -14,6 +13,8 @@ import useWindowSize from "../hooks/useWindowSize";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { CSSPlugin } from "gsap/all";
+import { IconArrowRight } from "../components/icons";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const IndexPage = () => {
   const dispatch = useGlobalDispatchContext();
@@ -71,9 +72,21 @@ const IndexPage = () => {
               <ResponsiveProjectSlides />
             </div>
           )}
-          {/* <About /> */}
-
-          {/* <div id="contact"></div> */}
+          <div style={{ width: "100%", paddingBottom: "100px" }}>
+            <AniLink paintDrip hex="#5f3962" to="/projects">
+              <button
+                onMouseEnter={() => onCursor("pointer")}
+                onMouseLeave={onCursor}
+                onClick={onCursor}
+                target="_blank"
+                rel="noreferrer"
+                className="tiff-btn btn-sec"
+              >
+                View all projects
+                <IconArrowRight />
+              </button>
+            </AniLink>
+          </div>
         </StyledMainContainer>
       )}
     </Layout>
@@ -82,6 +95,11 @@ const IndexPage = () => {
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
+
+  .tiff-btn {
+    display: flex;
+    margin: auto;
+  }
 
   .section {
     min-height: 100vh;

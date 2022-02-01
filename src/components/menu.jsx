@@ -27,16 +27,16 @@ const Menu = () => {
 
   var navLinks = [
     {
+      name: "home",
+      url: "/",
+    },
+    {
       name: "about",
-      url: "/#about",
+      url: "/about",
     },
     {
       name: "projects",
-      url: "/#jobs",
-    },
-    {
-      name: "contact",
-      url: "/#projects",
+      url: "/projects",
     },
   ];
 
