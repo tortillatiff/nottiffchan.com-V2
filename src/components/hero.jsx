@@ -216,31 +216,13 @@ const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
           <span>f</span>
           <span>, </span>
           <span>a </span>
-          <span>f</span>
+          <span>p</span>
           <span>r</span>
           <span>o</span>
-          <span>n</span>
-          <span>t</span>
-          <span>-</span>
-          <span>e</span>
-          <span>n</span>
-          <span>d </span>
           <span>d</span>
-          <span>e</span>
-          <span>v</span>
-          <span>e</span>
-          <span>l</span>
-          <span>o</span>
-          <span>p</span>
-          <span>e</span>
-          <span>r </span>
-          <span>a</span>
-          <span>n</span>
-          <span>d </span>
           <span>u</span>
-          <span>x</span>
-          <span>u</span>
-          <span>i </span>
+          <span>c</span>
+          <span>t </span>
           <span>d</span>
           <span>e</span>
           <span>s</span>
@@ -248,7 +230,17 @@ const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
           <span>g</span>
           <span>n</span>
           <span>e</span>
+          <span>r</span>
+          <span>/</span>
+          <span>e</span>
+          <span>n</span>
+          <span>g</span>
+          <span>i</span>
+          <span>n</span>
+          <span>e</span>
+          <span>e</span>
           <span>r </span>
+
           <span>d</span>
           <span>e</span>
           <span>d</span>
@@ -296,7 +288,8 @@ const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
 
       <StyledHeroText>
         <div className="heroTextSmall" ref={smallHeroTextRef}>
-          hola! i'm tiff, and i design and build unique user experiences.
+          hola! i'm tiff, a product designer/engineer creating unique user
+          experiences.
         </div>
       </StyledHeroText>
 
