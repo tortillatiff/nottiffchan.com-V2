@@ -30,7 +30,7 @@ import larryQuizzes from "../../images/larry/larryQuizzes.mp4";
 import larryDeck from "../../images/larry/larry Deck.pdf";
 
 const links = [
-  { link: { larryDeck }, name: "Full Project Slide Deck" },
+  { link: larryDeck, name: "Full Project Slide Deck" },
   {
     link: "https://www.figma.com/proto/jsvRrDaKeiZjHTzIP4vXen/CS3240-IDE---larry?page-id=0%3A1&node-id=5%3A70&viewport=262%2C48%2C0.12&scaling=scale-down&starting-point-node-id=5%3A70",
     name: "Figma Prototype",
@@ -68,7 +68,8 @@ export default function Larry() {
       <StaticImage src="../../images/larry/hero.png" alt="Hero image" />
 
       <ProjectTextSection>
-        <h3>Background</h3>
+        <small>The Opportunity</small>
+        <h3>Empowering users to learn vocabulary</h3>
         <p>
           This case study explores the experience of learning and understanding
           new concepts and phrases by thoroughly researching how people learn
@@ -88,7 +89,8 @@ export default function Larry() {
       </ProjectTextSection>
 
       <ProjectTextSection>
-        <h3>User Research</h3>
+        <small>The Discovery</small>
+        <h3>Fast, fun, formidable</h3>
         <p>
           I conducted short interviews with 4 users who have made attempts to
           improve their lexicon of English. All interviewees had used
@@ -96,44 +98,53 @@ export default function Larry() {
           provide useful insights and feedback on their experiences.
           <br />
           <br />
-          My findings from the interviews were synthesized into an affinity
-          diagram to identify what I should focus on, and inform what kind of
-          design and learning styles users found useful.
+          My findings from the interviews were synthesized below:
           <br />
-          <br />
-          In addition, I considered the findings from 2 notable research papers,
-          namely *Desirable Difficulties in Vocabulary Learning* (Bjork & Kroll,
-          2015) **and *Test-Enhanced Learning* (Roediger & Karpicke, 2006).
         </p>
 
         <ScreenshotContainer>
           <img src={userResearch} alt="User Research" />
         </ScreenshotContainer>
-      </ProjectTextSection>
 
-      <ProjectTextSection>
-        <h3>Persona Development</h3>
         <p>
-          Using my research, I created one primary persona as the primary user
-          profile of the app.
+          These insights began pointing to a mobile app solution incorporating
+          elements like gamification and testing.
+          <br />
+          <br />
         </p>
         <ScreenshotContainer>
           <img src={userPersona} alt="User persona" />
         </ScreenshotContainer>
         <p>
+          <br />
+          <br />
           The characteristics I identified from my user interview participants
           were also mapped to a customer journey map with the relevant
           Doing/Thinking/Feeling/Saying points.
+          <br />
+          <br />
         </p>
-        <br />
-
         <ScreenshotContainer>
           <img src={userPersonaTable} alt="User Research" />
         </ScreenshotContainer>
+        <br />
+        <br />
+        <p>
+          This begged the question,{" "}
+          <b>
+            how might we help empower busy college students to stick to
+            consistently improving their vocabulary
+          </b>
+          ? My solution was larry, a mobile app created to motivate users to
+          stick to improving their command of the English lexicon.
+        </p>
       </ProjectTextSection>
 
       <ProjectTextSection>
-        <h3>Ideation</h3>
+        <small>The Develop</small>
+        <h3>Setting the design direction</h3>
+
+        <h4>Ideation</h4>
         <p>
           With the brainstorming from the user journey map compounded with the
           learnings from the research papers, I proceeded to compile a list of
@@ -142,10 +153,10 @@ export default function Larry() {
         <ScreenshotContainer>
           <img src={ideation} alt="Ideation" />
         </ScreenshotContainer>
-      </ProjectTextSection>
 
-      <ProjectTextSection>
-        <h3>Sketches</h3>
+        <br />
+        <br />
+        <h4>Sketches</h4>
         <p>
           With these ideas in mind, I began sketching ideas for how to meet the
           needs of the user personas identified. The main goal I had was to
@@ -155,12 +166,12 @@ export default function Larry() {
           with friends to challenge users to apply the words they learnt.
         </p>
         <ScreenshotContainer>
-          <img src={sketches} alt="Ideation" />
+          <img src={sketches} alt="Sketching" />
         </ScreenshotContainer>
-      </ProjectTextSection>
 
-      <ProjectTextSection>
-        <h3>Prototyping</h3>
+        <br />
+        <br />
+        <h4>Prototyping</h4>
         <p>
           Once I had a visual direction of the layout, I started to add more
           details and precisions to the sketches by turning them into
@@ -185,13 +196,14 @@ export default function Larry() {
           alignCenter
           colOne={
             <p>
-              One usability issue was that users felt on the first onboarding
-              screen was too long and tedious. The continue button was below the
-              fold and having to scroll down to find it was confusing. To
-              improve this, I collapsed and condensed the words so users would
-              have to scroll and shift their gaze less. The continue button was
-              also made more visible and conspicious to improve user knowledge
-              of what was next.
+              Users felt the first onboarding screen was too long and tedious.
+              The continue button was below the fold and having to scroll down
+              to find it was confusing.
+              <br />
+              To improve this, I collapsed and condensed the words so users
+              would have to scroll and shift their gaze less. The continue
+              button was also made more salient to improve user knowledge of
+              what was next.
             </p>
           }
           colTwo={

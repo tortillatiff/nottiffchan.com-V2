@@ -23,6 +23,13 @@ const TopHeadContainer = styled.div`
     width: 100%;
   }
 
+  small {
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--grey);
+  }
+
   .header {
     margin: 0 0 15px 0;
     perspective: 600px;
@@ -121,7 +128,7 @@ const Container = styled.section`
   }
   @media (min-width: 1350px) {
     h3 {
-      font-size: 70px;
+      font-size: 56px;
     }
   }
 `;
