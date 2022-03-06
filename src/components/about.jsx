@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import React, { useEffect, useRef } from "react";
-import oldMe from "../assets/greyscaleOldMe.jpg";
-import youngMe from "../assets/greyscaleYoungMe.jpg";
+import oldMe from "../assets/about/greyscaleOldMe.jpg";
+import youngMe from "../assets/about/greyscaleYoungMe.jpg";
 import AnimatedPicture from "./animatedPicture";
 import { IconArrowUpRight } from "./icons";
 import sr from "../utils/sr";
 import { srConfig } from "../config";
 import useWindowSize from "../hooks/useWindowSize";
+import codinggif from "../assets/about/codinggif1.gif";
+import bladingAbout from "../assets/about/blading.png";
+import sushiAbout from "../assets/about/sushi.png";
+import kopAbout from "../assets/about/kopi.png";
 
 const About = () => {
   const width = useWindowSize().width;
@@ -28,47 +32,38 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about">
-      <h2 className="purple-font" ref={revealTitle}>
-        about me
+      <h2
+        style={{ marginTop: "32px" }}
+        className="purple-font"
+        ref={revealTitle}
+      >
+        Hey there! I'm Tiff 👋🏻
       </h2>
       <AboutRow>
         <div className="text-col col">
           <div ref={revealPara1}>
-            <h3>who am i?</h3>
+            <h3>Designer, developer and plant mother.</h3>
             <p style={{ marginBottom: "60px" }}>
-              My name is <b>Tiffany Chan</b>, and I am a designer that codes.
-              <br />
-              <br />
-              I’m a final year Computer Science student at the National
-              University of Singapore (NUS), but along the way, through side
-              projects and internships, I found that I was fascinated by the
-              more human side behind the code I was writing and fell in love
-              with the art of problem solving. This lead me to my minor in
-              Interactive Media Development.
+              I’m a curious soul and product designer from <b>Singapore</b> with
+              a love for visual design, subtle details and empowering users.
             </p>
           </div>
 
           <div ref={revealPara2}>
-            <h3>what do i do?</h3>
             <p style={{ marginBottom: "60px" }}>
-              I combine research, user flows, wireframing, prototyping,
-              storytelling, visual design and development to create engaging
-              solutions in the digital medium. With my background in both design
-              and development, I understand both technical and design
-              constraints and am able to design for and build around them.
+              My design process is inspired by my engineering background. I’m in
+              my final year in the <b>National University of Singapore</b> with
+              a BComp in <b>Computer Science</b> and a minor in{" "}
+              <b>Interactive Media Development</b>, where I incorporate my
+              multidisciplinary design and technical studies into my craft.
             </p>
           </div>
 
           <div ref={revealPara3}>
-            <h3>what am i passionate about?</h3>
             <p>
-              My favorite projects are those that allow me to work at the
-              crossroads of disciplines, combining my design and development
-              skills to solve complex problems and create ✨{" "}
-              <b>beautiful experiences</b> ✨. I also happen to have an
-              unhealthy obsession with{" "}
-              <span style={{ fontFamily: "BioRhyme Expanded" }}>typefaces</span>{" "}
-              and my family dog Kopi 🐶.
+              Coming from a background in both engineering and design, I love
+              connecting the dots between business goals, technical constraints
+              and user satisfaction.
             </p>
           </div>
         </div>
@@ -92,13 +87,40 @@ const About = () => {
           )}
         </div>
       </AboutRow>
+
+      <h3
+        style={{
+          fontWeight: "500",
+          marginBottom: "20px",
+          color: "var(--purple)",
+        }}
+      >
+        When I’m not on Figma, I’m...
+      </h3>
+      <StyledAboutPicsRow>
+        <AboutPicsElem
+          imgLink={codinggif}
+          caption="Turning my designs into code 👩🏻‍💻"
+        ></AboutPicsElem>
+        <AboutPicsElem
+          imgLink={sushiAbout}
+          caption="Making sushi 🍣"
+        ></AboutPicsElem>
+        <AboutPicsElem
+          imgLink={bladingAbout}
+          caption="Roller blading 🛼"
+        ></AboutPicsElem>
+        <AboutPicsElem
+          imgLink={kopAbout}
+          caption="Dressing up my dog Kopi 🐶"
+        ></AboutPicsElem>
+      </StyledAboutPicsRow>
     </StyledAboutSection>
   );
 };
 
 const StyledAboutSection = styled.section`
   max-width: 1200px;
-  /* width: 100%; */
 
   .mobileImgMe {
     width: 300px;
@@ -125,6 +147,7 @@ const AboutRow = styled.div`
   flex-direction: column-reverse;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 150px;
 
   .text-col {
     display: flex;
@@ -142,6 +165,7 @@ const AboutRow = styled.div`
   .text-col p {
     line-height: 180%;
     margin-top: 0;
+    width: 100%;
   }
 
   .image-col {
@@ -163,6 +187,9 @@ const AboutRow = styled.div`
     .text-col {
       flex: 2;
     }
+    .text-col p {
+      width: 88%;
+    }
   }
 
   @media (max-width: 400px) {
@@ -171,5 +198,38 @@ const AboutRow = styled.div`
     }
   }
 `;
+
+const StyledAboutPicsRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+`;
+
+const StyledAboutPicsElem = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+
+  .caption {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    width: 48%;
+  }
+`;
+
+const AboutPicsElem = ({ imgLink, caption }) => {
+  return (
+    <StyledAboutPicsElem>
+      <img src={imgLink} alt={caption} />
+      <p className="caption">{caption}</p>
+    </StyledAboutPicsElem>
+  );
+};
 
 export default About;
