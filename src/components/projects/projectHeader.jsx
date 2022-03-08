@@ -10,7 +10,13 @@ const Header = (props) => {
         </div>
         <h2 className="projDesc">{props.projDesc}</h2>
         {props.caption && (
-          <p style={{ color: "var(--grey)", fontSize: "16px" }}>
+          <p
+            style={{
+              color: "var(--grey)",
+              fontSize: "16px",
+              textTransform: "uppercase",
+            }}
+          >
             {props.caption}
           </p>
         )}

@@ -9,6 +9,7 @@ import ScreenshotContainer from "../../components/projects/projectScreenshotCont
 import ProjectLinkContainer from "../../components/projects/projectLinkContainer";
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
 import ProjectNextCase from "../../components/projects/projectNextCase";
+import ProjectOverview from "../../components/projects/projectOverview";
 
 import rDemo from "../../images/RescaleLab/rDemo.mp4";
 // import rDesignSystem from "../../images/RescaleLab/rDesignSystem.png";
@@ -66,6 +67,18 @@ const rightItems = [
   },
 ];
 
+const overviewContent = {
+  role: [
+    "User Research: Quantitative Research, User Interviews, Persona Mapping, Journey Mapping",
+    "UX Design: Sketches, Wireframing, Usability Testing, Prototyping",
+    "Design System Advocate and Architect",
+    "Visual Design",
+    "Developer",
+  ],
+  context: ["January - June 2021", "Full Stack Dev Internship"],
+  tools: ["Figma", "Zeroheight"],
+};
+
 const RescaleLab = () => {
   return (
     <Layout title="Rescale Lab – Tiffany Chan">
@@ -79,6 +92,7 @@ const RescaleLab = () => {
       <ProjectTextSection>
         <small>Background</small>
         <h3>Redesigning the Rescale Lab experience for hundreds of users</h3>
+        <ProjectOverview content={overviewContent}></ProjectOverview>
         <p>
           Rescale Lab is a tech startup in Singapore that aims to provide
           aspiring entrepreneurs with the connectivity and guidance to build a
@@ -86,7 +100,6 @@ const RescaleLab = () => {
           visit the platform periodically as part of startup incubation
           programs.
         </p>
-
         {/* <ProjectLinkContainer links={links}></ProjectLinkContainer> */}
       </ProjectTextSection>
 
