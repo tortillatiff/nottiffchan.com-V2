@@ -36,7 +36,7 @@ const NotFoundPage = () => {
     //   </p>
     // </main>
     <main style={mainStyle}>
-      <img src={sadGirl} style={{ width: "180px" }} />
+      <img src={sadGirl} style={{ width: "180px" }} alt="A sad girl" />
       <h1 className="purple-font">Oops...</h1>
       <p>This page doesn't exist.</p>
       <AniLink paintDrip hex="#5F3962" to="/">

@@ -57,7 +57,7 @@ export default function Pomopals() {
       <Header
         projName="PomoPals"
         projDesc="Pomodoro timer for remote teams"
-        caption="HACK&ROLL 2022 MOST BEAUTIFUL HACK"
+        caption="HACKATHON PROJECT WINNER • VISUAL DESIGN • DEVELOPMENT"
       />
       <StaticImage src="../../images/pomopals/hero.png" alt="Hero" />
 
@@ -105,7 +105,7 @@ export default function Pomopals() {
 
       <StaticImage src="../../images/pomopals/pomoEnd.png" alt="End image" />
 
-      <ProjectNextCase link="/projects/vibing" transitionCol="#EFF6FB" />
+      <ProjectNextCase />
     </Layout>
   );
 }

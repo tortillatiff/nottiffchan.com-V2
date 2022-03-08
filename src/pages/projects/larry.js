@@ -64,7 +64,11 @@ const rightItems = [
 export default function Larry() {
   return (
     <Layout title="larry – Tiffany Chan">
-      <Header projName="larry" projDesc="Mobile app for learning vocabulary" />
+      <Header
+        projName="larry"
+        projDesc="Mobile app for learning vocabulary"
+        caption="SOLO PROJECT • UX DESIGN • PROTOTYPING"
+      />
       <StaticImage src="../../images/larry/hero.png" alt="Hero image" />
 
       <ProjectTextSection>

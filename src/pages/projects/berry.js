@@ -37,7 +37,11 @@ const rightItems = [
 const Berry = () => {
   return (
     <Layout title="berry – Tiffany Chan">
-      <Header projName="berry" projDesc="Tile-style shopping list mobile app" />
+      <Header
+        projName="berry"
+        projDesc="Tile-style shopping list mobile app"
+        caption="SOLO PROJECT • VISUAL DESIGN • DEVELOPMENT"
+      />
       <StaticImage src="../../images/berry/hero.png" alt="Hero image" />
 
       <ProjectTextSection>
@@ -83,12 +87,7 @@ const Berry = () => {
 
       <StaticImage src="../../images/berry/berryEnd.png" alt="End image" />
 
-      <ProjectNextCase
-        text="Back to home"
-        link="/"
-        transitionCol="#3d3333"
-        atag={true}
-      />
+      <ProjectNextCase />
     </Layout>
   );
 };

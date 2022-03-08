@@ -7,13 +7,7 @@ import {
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { allProjects } from "../../data";
 
-export default function ProjectNextCase({
-  location,
-  // link,
-  // text = "Next case",
-  // transitionCol,
-  // atag,
-}) {
+export default function ProjectNextCase() {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
   const onCursor = (cursorType) => {
@@ -24,15 +18,6 @@ export default function ProjectNextCase({
 
   return (
     <NextCaseWrap>
-      {/* {!atag ? (
-        <AniLink paintDrip hex={transitionCol} to={link}>
-          <h1>{text}</h1>
-        </AniLink>
-      ) : (
-        <a href={link}>
-          <h1>{text}</h1>
-        </a>
-      )} */}
       <AniLink
         paintDrip
         onMouseEnter={() => onCursor("pointer")}
@@ -70,6 +55,7 @@ const NextCaseWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 
   h1 {
     font-size: 54px;
@@ -80,6 +66,7 @@ const NextCaseWrap = styled.div`
   h3 {
     color: var(--grey);
     opacity: 0.4;
+    margin: 12px 0;
   }
 
   .active {

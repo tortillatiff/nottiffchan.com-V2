@@ -8,7 +8,7 @@ export default function Projects() {
   const leftItems = [];
   const rightItems = [];
 
-  allProjects.map(function (project, index) {
+  allProjects.map((project, index) => {
     if (index % 2 === 0) {
       leftItems.push({
         imgSrc: project.squareImageUrl,
@@ -32,13 +32,7 @@ export default function Projects() {
 
   return (
     <Layout title="Projects – Tiffany Chan">
-      {/* <h2 className="purple-font">all projects</h2> */}
-      <Header
-        // projName="PomoPals"
-        projDesc="all projects"
-        // caption="HACK&ROLL 2022 MOST BEAUTIFUL HACK"
-      />
-
+      <Header projDesc="all projects" />
       <ProjectSplitshow
         clickable
         leftItems={leftItems}

@@ -71,7 +71,7 @@ export default function NusModPlanner() {
         </p>
       </ProjectTextSection>
 
-      <ProjectNextCase link="/projects/rescaleLab" transitionCol="#EBF5F0" />
+      <ProjectNextCase />
     </Layout>
   );
 }
