@@ -52,6 +52,7 @@ const Vibing = () => {
       <Header
         projName="vibing."
         projDesc="Personalized Spotify playlists for friends"
+        caption="HACKATHON PROJECT • VISUAL DESIGN • DEVELOPMENT"
       />
       <StaticImage src="../../images/vibing/hero.png" alt="Hero image" />
 
@@ -112,7 +113,7 @@ const Vibing = () => {
           myself. ok thanks for listening to my ted talk
         </p>
       </ProjectTextSection>
-      <ProjectNextCase link="/projects/nusmodplanner" transitionCol="#EBF5F0" />
+      <ProjectNextCase />
     </Layout>
   );
 };

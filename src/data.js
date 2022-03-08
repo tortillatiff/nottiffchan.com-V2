@@ -1,7 +1,7 @@
 const larry = {
   title: "larry",
   description: "Mobile app for learning vocabulary",
-  tags: "UX design, UI design",
+  tags: "solo project • ux design • prototyping",
 
   transitionCol: "#EBF9FF",
   link: "/projects/larry",
@@ -12,7 +12,7 @@ const larry = {
 const pomopals = {
   title: "PomoPals",
   description: "Pomodoro timer for remote teams",
-  tags: "UI design, development",
+  tags: "hackathon project winner • visual design • development",
 
   transitionCol: "#FFF0F0",
   link: "/projects/pomopals",
@@ -23,7 +23,7 @@ const pomopals = {
 const vibing = {
   title: "vibing.",
   description: "Creating Spotify playlists for friends",
-  tags: "development",
+  tags: "hackathon project • visual design • development",
 
   link: "/projects/vibing/",
   transitionCol: "#EFF6FB",
@@ -34,7 +34,7 @@ const vibing = {
 const nusModPlanner = {
   title: "NUSModPlanner",
   description: "Improving the module planning process in NUS",
-  tags: "UX design, UI design",
+  tags: "team project • ux design • prototyping",
 
   link: "/projects/nusmodplanner/",
   transitionCol: "#FEEEE7",
@@ -45,7 +45,7 @@ const nusModPlanner = {
 const rescaleLab = {
   title: "Rescale Lab",
   description: "SaaS platform for entrepreneurs",
-  tags: "UX design, UI design, development",
+  tags: "internship • ux design • prototyping",
 
   link: "/projects/rescaleLab/",
   transitionCol: "#EBF5F0",
@@ -56,7 +56,7 @@ const rescaleLab = {
 const berry = {
   title: "berry",
   description: "Tile-style shopping list mobile app",
-  tags: "UI design, development",
+  tags: "solo project • visual design • development",
 
   link: "/projects/berry/",
   transitionCol: "#F8F0FA",
@@ -64,8 +64,8 @@ const berry = {
   squareImageUrl: "./thumbnails/berryThumbnailSquare.png",
 };
 
-const projectSlides = [larry, pomopals, nusModPlanner, rescaleLab];
+const projectSlides = [larry, rescaleLab, nusModPlanner, pomopals];
 
-const allProjects = [larry, pomopals, nusModPlanner, rescaleLab, berry, vibing];
+const allProjects = [larry, rescaleLab, nusModPlanner, pomopals, berry, vibing];
 
 export { projectSlides, allProjects };

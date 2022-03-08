@@ -26,6 +26,7 @@ export default function NusModPlanner() {
       <Header
         projName="NUSModPlanner"
         projDesc="Improving the module planning process in NUS"
+        caption="team project • ux design • prototyping"
       />
       <StaticImage src="../../images/nusmodplanner/hero.png" alt="Hero image" />
 
@@ -42,7 +43,8 @@ export default function NusModPlanner() {
           for NUS students. Our design streamlines the module planning process
           by providing all the information that a student might need to plan
           their semesters. This project is a full UXUI case study as part of the
-          module CS3240 Interactive Design, which achieved an A+ that semester.
+          module CS3240 Interactive Design, which achieved an A+ that semester
+          and the Huawei Award for Future Interaction Design.
         </p>
 
         <ProjectLinkContainer links={links}></ProjectLinkContainer>
@@ -71,7 +73,7 @@ export default function NusModPlanner() {
         </p>
       </ProjectTextSection>
 
-      <ProjectNextCase link="/projects/rescaleLab" transitionCol="#EBF5F0" />
+      <ProjectNextCase />
     </Layout>
   );
 }

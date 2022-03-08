@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: "https://nottiffchan.com",
     title: "Tiffany Chan",
     description:
-      "Tiffany Chan is a front-end developer and UXUI designer dedicated to creating unique user experiences.",
+      "Tiffany Chan is a product designer who loves building beautiful interfaces & experiences.",
     image: `/banner.png`,
     // keywords: 'Tiffany Chan, front-end developer, uiux designer, freelance, singapore'
   },

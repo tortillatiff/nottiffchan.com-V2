@@ -8,6 +8,7 @@ import ProjectLinkContainer from "../../components/projects/projectLinkContainer
 import ProjectSplitshow from "../../components/projects/projectSplitshow";
 import ProjectNextCase from "../../components/projects/projectNextCase";
 import TwoColLayout from "../../components/projects/twoColLayout";
+import ProjectOverview from "../../components/projects/projectOverview";
 
 import userResearch from "../../images/larry/userResearch.png";
 import userPersona from "../../images/larry/userPersona.png";
@@ -61,15 +62,31 @@ const rightItems = [
   },
 ];
 
+const overviewContent = {
+  role: [
+    "User Research: White Paper Research, User Interviews, Persona Mapping, Journey Mapping",
+    "UX Design: Sketches, Wireframing, Usability Testing, Prototyping",
+    "Visual Design",
+  ],
+  context: ["Solo class project, prompt was provided"],
+  tools: ["Figma"],
+};
+
 export default function Larry() {
   return (
     <Layout title="larry – Tiffany Chan">
-      <Header projName="larry" projDesc="Mobile app for learning vocabulary" />
+      <Header
+        projName="larry"
+        projDesc="Mobile app for learning vocabulary"
+        caption="SOLO PROJECT • UX DESIGN • PROTOTYPING"
+      />
       <StaticImage src="../../images/larry/hero.png" alt="Hero image" />
 
       <ProjectTextSection>
         <small>The Opportunity</small>
         <h3>Empowering users to learn vocabulary</h3>
+        <ProjectOverview content={overviewContent}></ProjectOverview>
+
         <p>
           This case study explores the experience of learning and understanding
           new concepts and phrases by thoroughly researching how people learn
@@ -86,6 +103,106 @@ export default function Larry() {
         </p>
 
         <ProjectLinkContainer links={links}></ProjectLinkContainer>
+      </ProjectTextSection>
+
+      <ProjectTextSection>
+        <small>The Solution</small>
+        <h3>Encouraging habit building through gamification</h3>
+      </ProjectTextSection>
+
+      <ProjectSplitshow
+        leftItems={leftItems}
+        rightItems={rightItems}
+      ></ProjectSplitshow>
+
+      <ProjectTextSection>
+        <TwoColLayout
+          colOneWidth={6}
+          alignCenter
+          colOne={
+            <>
+              <h4>Onboarding</h4>
+
+              <p>
+                In the onboarding process, users pick words that they are
+                familar with. This helps the app get a good sensing of the
+                user’s current vocabulary mastery and suggest daily words that
+                are appropriate for the user’s skill level.
+              </p>
+            </>
+          }
+          colTwo={
+            <video
+              style={{ width: "100%" }}
+              src={larryOnboarding}
+              loop
+              muted
+              autoPlay
+              playsInline
+            ></video>
+          }
+        />
+      </ProjectTextSection>
+
+      <ProjectTextSection>
+        <TwoColLayout
+          colOneWidth={4}
+          alignCenter
+          colOne={
+            <video
+              style={{ width: "100%" }}
+              src={larryHome}
+              loop
+              muted
+              autoPlay
+              playsInline
+            ></video>
+          }
+          colTwo={
+            <>
+              <h4>Home</h4>
+              <p>
+                Upon entering the app, the user will see a suggested word of the
+                day, a suggested pick of words to learn, or to revise words that
+                they have already learnt before. There are also community
+                contributed sets for them to explore vocabulary terms within
+                certain contexts.
+              </p>
+            </>
+          }
+        />
+      </ProjectTextSection>
+
+      <ProjectTextSection>
+        <TwoColLayout
+          colOneWidth={6}
+          alignCenter
+          colOne={
+            <>
+              <h4>Quizzes</h4>
+              <p>
+                From my research, testing with <b>variations</b> has been shown
+                as an effective tool for learning and future recall. For
+                learning questions, users are for example shown a{" "}
+                <b>funny GIF</b> demonstrating the definition of a word. This
+                helps users with <b>better visual association</b> and{" "}
+                <b>recall</b> while learning. As the users grasp the meaning of
+                the words within the quiz, the questions will get progressively
+                more challenging to encourage independent recall.
+              </p>
+            </>
+          }
+          colTwo={
+            <video
+              style={{ width: "100%" }}
+              src={larryQuizzes}
+              loop
+              muted
+              autoPlay
+              playsInline
+            ></video>
+          }
+        />
       </ProjectTextSection>
 
       <ProjectTextSection>
@@ -258,7 +375,7 @@ export default function Larry() {
         />
       </ScreenshotContainer>
 
-      <ProjectSplitshow
+      {/* <ProjectSplitshow
         leftItems={leftItems}
         rightItems={rightItems}
       ></ProjectSplitshow>
@@ -351,7 +468,7 @@ export default function Larry() {
             ></video>
           }
         />
-      </ProjectTextSection>
+      </ProjectTextSection> */}
 
       <ProjectTextSection>
         <h3>Final Interactive Prototype</h3>
