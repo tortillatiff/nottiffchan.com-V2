@@ -375,101 +375,6 @@ export default function Larry() {
         />
       </ScreenshotContainer>
 
-      {/* <ProjectSplitshow
-        leftItems={leftItems}
-        rightItems={rightItems}
-      ></ProjectSplitshow>
-
-      <ProjectTextSection>
-        <TwoColLayout
-          colOneWidth={6}
-          alignCenter
-          colOne={
-            <>
-              <h4>Onboarding</h4>
-
-              <p>
-                In the onboarding process, users pick words that they are
-                familar with. This helps the app get a good sensing of the
-                user’s current vocabulary mastery and suggest daily words that
-                are appropriate for the user’s skill level.
-              </p>
-            </>
-          }
-          colTwo={
-            <video
-              style={{ width: "100%" }}
-              src={larryOnboarding}
-              loop
-              muted
-              autoPlay
-              playsInline
-            ></video>
-          }
-        />
-      </ProjectTextSection>
-
-      <ProjectTextSection>
-        <TwoColLayout
-          colOneWidth={4}
-          alignCenter
-          colOne={
-            <video
-              style={{ width: "100%" }}
-              src={larryHome}
-              loop
-              muted
-              autoPlay
-              playsInline
-            ></video>
-          }
-          colTwo={
-            <>
-              <h4>Home</h4>
-              <p>
-                Upon entering the app, the user will see a suggested word of the
-                day, a suggested pick of words to learn, or to revise words that
-                they have already learnt before. There are also community
-                contributed sets for them to explore vocabulary terms within
-                certain contexts.
-              </p>
-            </>
-          }
-        />
-      </ProjectTextSection>
-
-      <ProjectTextSection>
-        <TwoColLayout
-          colOneWidth={6}
-          alignCenter
-          colOne={
-            <>
-              <h4>Quizzes</h4>
-              <p>
-                From my research, testing with <b>variations</b> has been shown
-                as an effective tool for learning and future recall. For
-                learning questions, users are for example shown a{" "}
-                <b>funny GIF</b> demonstrating the definition of a word. This
-                helps users with <b>better visual association</b> and{" "}
-                <b>recall</b> while learning. As the users grasp the meaning of
-                the words within the quiz, the questions will get progressively
-                more challenging to encourage independent recall.
-              </p>
-            </>
-          }
-          colTwo={
-            <video
-              style={{ width: "100%" }}
-              src={larryQuizzes}
-              loop
-              muted
-              autoPlay
-              playsInline
-            ></video>
-          }
-        />
-      </ProjectTextSection> */}
-
       <ProjectTextSection>
         <h3>Final Interactive Prototype</h3>
         <ScreenshotContainer>
@@ -484,30 +389,40 @@ export default function Larry() {
       </ProjectTextSection>
 
       <ProjectTextSection>
-        <h3>Reflections</h3>
-        <p>
-          This app has been personally very challenging and exciting to work on.
-          Apart from acquiring valuable experience through{" "}
-          <b>user interviews</b>, which allowed me to obtain direct user input,
-          I tried my best to
-          <b> rationalize every single design decision</b> with thorough
-          research that minimises gaps. The user research I conducted was
-          critical in <b>identifying the core features</b> of the app and it
-          helped me understand <b>user needs and pain points</b>.
-          <br />
-          <br />
-          Working through the various stages was challenging and rewarding, as I
-          learned how to <b>organize and strategize concepts</b> while
-          identifying problems and solutions. I learned the value of working
-          iteratively, <b>testing and more testing</b> to ensure the needs of
-          the user were met and there were no confusions. It was exciting to
-          watch users interacting with my app and providing real-time feedback
-          and suggestions on how I could improve it.
-          <br />
-          <br />
-          Overall, I truly enjoyed working on <b>larry</b> and learned a great
-          deal about the UX design process.
-        </p>
+        <h3>Retrospective</h3>
+        <b>Learnings</b>
+        <ul>
+          <li>
+            Incorporating white paper research and validating it with user
+            research to inform my insights and key takeaways
+          </li>
+          <li>
+            Taking a basic problem and bringing it further with personalisation
+            and expressive design
+          </li>
+        </ul>
+
+        <b>If I had more time, I would...</b>
+        <ul>
+          <li>Explore more on how to best build motivation for users</li>
+          <li>
+            Conduct usability testing with the quiz screens, explore how these
+            prototypes could be made more interactive to discover user emotions
+          </li>
+          <li>
+            Adding animations to dig deeper into the flow of the app would have
+            added another layer to the design.
+          </li>
+        </ul>
+
+        <b>Challenges</b>
+        <ul>
+          <li>
+            With the timeline of this project, I could only focus on the top
+            prioritized features to meet our project goals. I feel that I could
+            have developed, tested and iterated on the minigames section better.
+          </li>
+        </ul>
       </ProjectTextSection>
 
       <ProjectNextCase />
