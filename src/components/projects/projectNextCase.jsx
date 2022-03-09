@@ -31,6 +31,7 @@ export default function ProjectNextCase() {
       {allProjects.map((proj) => {
         return (
           <AniLink
+            key={proj.title}
             paintDrip
             hex={proj.transitionCol}
             to={proj.link}
@@ -39,7 +40,7 @@ export default function ProjectNextCase() {
             onMouseLeave={onCursor}
             onClick={onCursor}
           >
-            <h3 class={url.includes(proj.link) ? "active" : ""}>
+            <h3 className={url.includes(proj.link) ? "active" : ""}>
               {proj.title}
             </h3>
           </AniLink>
