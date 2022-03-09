@@ -4,7 +4,7 @@ import { useGlobalStateContext } from "../context/globalContext";
 import { IconEye } from "./icons";
 
 const Cursor = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 8px;
@@ -60,7 +60,7 @@ const CustomCursor = () => {
     y: 400,
   });
   const onMouseMove = (event) => {
-    const { clientX: x, clientY: y } = event;
+    const { pageX: x, pageY: y } = event;
     setMousePosition({ x, y });
   };
 

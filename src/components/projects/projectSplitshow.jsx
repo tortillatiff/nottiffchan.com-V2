@@ -22,6 +22,7 @@ const ProjectSplitshow = (props) => {
             {props.leftItems.map((item, i) => {
               return (
                 <SplitshowItem
+                  key={i}
                   item={item}
                   i={i}
                   clickable={props.clickable}
@@ -34,6 +35,7 @@ const ProjectSplitshow = (props) => {
             {props.rightItems.map((item, i) => {
               return (
                 <SplitshowItem
+                  key={i}
                   item={item}
                   i={i}
                   clickable={props.clickable}
