@@ -14,7 +14,7 @@ const pomopals = {
   description: "Pomodoro timer for remote teams",
   tags: "hackathon project winner • visual design • development",
 
-  transitionCol: "#FFF0F0",
+  transitionCol: "#F0F1FF",
   link: "/projects/pomopals",
   imageUrl: "./thumbnails/pomopalsThumbnail.png",
   squareImageUrl: "./thumbnails/pomopalsThumbnailSquare.png",

@@ -65,23 +65,90 @@ export default function ProjectSlides({ onCursor }) {
   };
 
   useEffect(() => {
-    bgColRefs.current.forEach((el, index) => {
-      var col = el.attributes.color.value;
-      gsap.to(el, {
-        scrollTrigger: {
-          id: `section-${index + 1}`,
-          trigger: el,
-          start: "top top",
-          end: "bottom - 100vh",
-          onEnter: () => gsap.to("main", { backgroundColor: col }),
-          onLeave: () =>
-            gsap.to("main", { backgroundColor: "var(--bg-color)" }),
-          onLeaveBack: () =>
-            gsap.to("main", { backgroundColor: "var(--bg-color)" }),
-          onEnterBack: () => gsap.to("main", { backgroundColor: col }),
-        },
-      });
+    gsap.to(bgColRefs.current[0], {
+      scrollTrigger: {
+        id: `section-${0 + 1}`,
+        trigger: bgColRefs.current[0],
+        start: "top top",
+        end: "bottom - 100vh",
+        onEnter: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[0].attributes.color.value,
+          }),
+        onLeaveBack: () =>
+          gsap.to("main", { backgroundColor: "var(--bg-color)" }),
+      },
     });
+
+    gsap.to(bgColRefs.current[1], {
+      scrollTrigger: {
+        id: `section-${1 + 1}`,
+        trigger: bgColRefs.current[1],
+        start: "top top",
+        end: "bottom - 100vh",
+        onEnter: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[1].attributes.color.value,
+          }),
+        onEnterBack: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[1].attributes.color.value,
+          }),
+      },
+    });
+
+    gsap.to(bgColRefs.current[2], {
+      scrollTrigger: {
+        id: `section-${2 + 1}`,
+        trigger: bgColRefs.current[2],
+        start: "top top",
+        end: "bottom - 100vh",
+        onEnter: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[2].attributes.color.value,
+          }),
+        onEnterBack: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[2].attributes.color.value,
+          }),
+      },
+    });
+
+    gsap.to(bgColRefs.current[3], {
+      scrollTrigger: {
+        id: `section-${3 + 1}`,
+        trigger: bgColRefs.current[3],
+        start: "top top",
+        end: "bottom - 100vh",
+        onEnter: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[3].attributes.color.value,
+          }),
+        onEnterBack: () =>
+          gsap.to("main", {
+            backgroundColor: bgColRefs.current[3].attributes.color.value,
+          }),
+        onLeave: () => gsap.to("main", { backgroundColor: "var(--bg-color)" }),
+      },
+    });
+
+    // bgColRefs.current.forEach((el, index) => {
+    //   var col = el.attributes.color.value;
+    //   gsap.to(el, {
+    //     scrollTrigger: {
+    //       id: `section-${index + 1}`,
+    //       trigger: el,
+    //       start: "top top",
+    //       end: "bottom - 100vh",
+    //       onEnter: () => gsap.to("main", { backgroundColor: col }),
+    //       onLeave: () =>
+    //         gsap.to("main", { backgroundColor: "var(--bg-color)" }),
+    //       onLeaveBack: () =>
+    //         gsap.to("main", { backgroundColor: "var(--bg-color)" }),
+    //       onEnterBack: () => gsap.to("main", { backgroundColor: col }),
+    //     },
+    //   });
+    // });
   }, [bgColRefs]);
 
   // image transitons
