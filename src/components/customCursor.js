@@ -4,7 +4,7 @@ import { useGlobalStateContext } from "../context/globalContext";
 import { IconEye } from "./icons";
 
 const Cursor = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 8px;
@@ -15,7 +15,6 @@ const Cursor = styled.div`
   transition: all 0.2s ease-out;
   transition-delay: 100ms;
   transition-property: width, height, border;
-  will-change: width, height, transform, border;
   pointer-events: none;
   cursor: none;
   z-index: 9999;
@@ -60,8 +59,12 @@ const CustomCursor = () => {
     y: 400,
   });
   const onMouseMove = (event) => {
-    const { pageX: x, pageY: y } = event;
-    setMousePosition({ x, y });
+    const url = typeof window !== "undefined" ? window.location.pathname : "";
+    if (url === "/") {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    } else {
+      setMousePosition({ x: event.pageX, y: event.pageY });
+    }
   };
 
   useEffect(() => {
@@ -76,7 +79,10 @@ const CustomCursor = () => {
   return (
     <Cursor
       className={`${!!cursorType ? "hovered" : ""} ${cursorType}`}
-      style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}
+      style={{
+        left: `${mousePosition.x}px`,
+        top: `${mousePosition.y}px`,
+      }}
     >
       <span>
         <IconEye />
