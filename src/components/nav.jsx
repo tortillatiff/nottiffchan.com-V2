@@ -219,7 +219,7 @@ const StyledLinks = styled.div`
       color: var(--purple);
       transition: var(--transition);
       font-size: var(--text-xs);
-      // cursor: none;
+      cursor: none;
     }
 
     .link:hover {

@@ -55,16 +55,18 @@ const Cursor = styled.div`
 const CustomCursor = () => {
   const { cursorType } = useGlobalStateContext();
   const [mousePosition, setMousePosition] = useState({
-    x: 400,
-    y: 400,
+    x: 0,
+    y: 0,
   });
   const onMouseMove = (event) => {
-    const url = typeof window !== "undefined" ? window.location.pathname : "";
-    if (url === "/") {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    } else {
-      setMousePosition({ x: event.pageX, y: event.pageY });
-    }
+    // const url = typeof window !== "undefined" ? window.location.pathname : "";
+    // if (url === "/") {
+    // setMousePosition({ x: event.clientX, y: event.clientY });
+    // } else {
+    // setMousePosition({ x: event.pageX, y: event.pageY });
+    // }
+
+    setMousePosition({ x: event.clientX, y: event.clientY });
   };
 
   useEffect(() => {

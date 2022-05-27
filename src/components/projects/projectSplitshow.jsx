@@ -103,6 +103,10 @@ const StyledSplitshowItem = styled.div`
     overflow: hidden;
   }
 
+  .img-wrapper:hover {
+    cursor: none;
+  }
+
   img {
     width: 100%;
     position: absolute;
