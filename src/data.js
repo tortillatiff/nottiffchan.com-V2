@@ -64,8 +64,8 @@ const berry = {
   squareImageUrl: "./thumbnails/berryThumbnailSquare.png",
 };
 
-const projectSlides = [larry, rescaleLab, nusModPlanner, pomopals];
+const projectSlides = [rescaleLab, larry, nusModPlanner, pomopals];
 
-const allProjects = [larry, rescaleLab, nusModPlanner, pomopals, berry, vibing];
+const allProjects = [rescaleLab, larry, nusModPlanner, pomopals, berry, vibing];
 
 export { projectSlides, allProjects };

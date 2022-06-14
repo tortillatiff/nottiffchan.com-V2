@@ -58,6 +58,7 @@ const SplitshowItem = ({ item, i, clickable, onCursor }) => {
       {clickable ? (
         <AniLink
           paintDrip
+          hex={item.transitionCol}
           onMouseEnter={() => onCursor("viewCase")}
           onMouseLeave={onCursor}
           onClick={onCursor}
@@ -104,7 +105,7 @@ const StyledSplitshowItem = styled.div`
   }
 
   .img-wrapper:hover {
-    cursor: none;
+    /* cursor: none; */
   }
 
   img {

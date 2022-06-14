@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---cache-dev-404-page-js",
     "path": "/dev-404-page/",
-    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404/"},{"path":"/404.html"},{"path":"/about/"},{"path":"/"},{"path":"/projects/"},{"path":"/projects/berry/"},{"path":"/projects/larry/"},{"path":"/projects/nusmodplanner/"},{"path":"/projects/pomopals/"},{"path":"/projects/rescaleLab/"},{"path":"/projects/vibing/"},{"path":"/projects/testmd/"}]}},"pageContext":{}},
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404/"},{"path":"/404.html"},{"path":"/about/"},{"path":"/"},{"path":"/projects/berry/"},{"path":"/projects/"},{"path":"/projects/larry/"},{"path":"/projects/nusmodplanner/"},{"path":"/projects/pomopals/"},{"path":"/projects/rescaleLab/"},{"path":"/projects/vibing/"},{"path":"/projects/testmd/"}]}},"pageContext":{}},
     "staticQueryHashes": []}
