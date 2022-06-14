@@ -18,7 +18,7 @@ const StyledContent = styled.div`
   margin-bottom: 100vh;
   * {
     text-decoration: none;
-    cursor: none;
+    /* cursor: none; */
   }
 `;
 

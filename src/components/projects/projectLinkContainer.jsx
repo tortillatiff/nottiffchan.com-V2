@@ -52,7 +52,7 @@ const StyledLink = styled.a`
   vertical-align: middle;
   text-decoration: none;
   color: var(--purple);
-  cursor: none;
+  /* cursor: none; */
 
   &:before {
     content: "";
