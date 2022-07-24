@@ -15,7 +15,8 @@ const Footer = ({ onCursor }) => {
       <StyledFooter>
         <div></div>
         <p className="boldtext">
-          check out my
+          thanks for visiting!
+          <br /> check out my
           <a
             className="link"
             onMouseEnter={() => onCursor("pointer")}
@@ -27,7 +28,7 @@ const Footer = ({ onCursor }) => {
             {" "}
             resume
           </a>{" "}
-          and{" "}
+          {/* and{" "}
           <a
             className="link"
             onMouseEnter={() => onCursor("pointer")}
@@ -37,9 +38,9 @@ const Footer = ({ onCursor }) => {
             rel="noreferrer"
           >
             github
-          </a>
-          <br /> <br />
-          say hi on{" "}
+          </a> */}
+          <br />
+          or say hi on{" "}
           <a
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
@@ -55,7 +56,7 @@ const Footer = ({ onCursor }) => {
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
             className="link"
-            href="mailto:hi@nottiffchan.com"
+            href="mailto:nottiffchan@gmail.com"
           >
             {" "}
             email
@@ -66,7 +67,7 @@ const Footer = ({ onCursor }) => {
           href="https://github.com/nottiffchan/nottiffchan.com-V2"
           className="smalltext"
         >
-          © Designed & built with 🤍 by Tiffany Chan
+          © Designed & developed with 🤍 by Tiffany Chan
         </a>
       </StyledFooter>
     </FooterWrap>
@@ -99,6 +100,7 @@ const StyledFooter = styled.div`
     color: var(--bg-color);
     font-size: 70px;
     font-weight: 800;
+    line-height: 180%;
     width: 90%;
   }
   .link {
@@ -118,7 +120,7 @@ const StyledFooter = styled.div`
     transition: var(--transition);
     font-size: 16px;
     text-decoration: none;
-    padding-bottom: 8px;
+    padding-bottom: 20px;
   }
   .smalltext:hover {
     opacity: 1;
