@@ -99,11 +99,10 @@ const Menu = () => {
                 </ol>
               )}
               <a
-                href={CV}
+                href="https://read.cv/tiffchan"
                 target="_blank"
                 rel="noreferrer"
-                style={{ marginTop: "20px" }}
-                className="contact-button tiff-btn btn-sec"
+                style={{ marginTop: "20px", fontWeight: 500 }}
               >
                 résumé
               </a>
