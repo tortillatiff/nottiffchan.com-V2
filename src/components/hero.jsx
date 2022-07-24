@@ -230,16 +230,20 @@ const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
           <span>g</span>
           <span>n</span>
           <span>e</span>
+          <span>r </span>
+          <span>f</span>
           <span>r</span>
-          <span>/</span>
-          <span>e</span>
-          <span>n</span>
-          <span>g</span>
+          <span>o</span>
+          <span>m </span>
+          <span>S</span>
           <span>i</span>
           <span>n</span>
-          <span>e</span>
-          <span>e</span>
-          <span>r </span>
+          <span>g</span>
+          <span>a</span>
+          <span>p</span>
+          <span>o</span>
+          <span>r</span>
+          <span>e </span>
 
           <span>d</span>
           <span>e</span>
@@ -288,8 +292,7 @@ const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
 
       <StyledHeroText>
         <div className="heroTextSmall" ref={smallHeroTextRef}>
-          hola! i'm tiff, a product designer/engineer creating unique user
-          experiences.
+          hola! i'm tiff, a product designer creating unique user experiences.
         </div>
       </StyledHeroText>
 
@@ -300,9 +303,9 @@ const Hero = ({ onCursor, addAnimation, index, isMobile }) => {
           onMouseEnter={() => onCursor("pointer")}
           onMouseLeave={onCursor}
           className="email"
-          href="mailto:hi@nottiffchan.com"
+          href="mailto:nottiffchan@gmail.com"
         >
-          hi@nottiffchan.com
+          nottiffchan@gmail.com
         </a>
       </p>
 
