@@ -143,7 +143,7 @@ const Nav = ({ onCursor, addAnimation, index }) => {
           ref={navLinkFour}
           onMouseEnter={() => onCursor("pointer")}
           onMouseLeave={onCursor}
-          href={CV}
+          href="https://read.cv/tiffchan"
           target="_blank"
           rel="noreferrer"
           className="contact-button tiff-btn btn-sec"

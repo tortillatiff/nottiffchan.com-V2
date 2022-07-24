@@ -20,7 +20,7 @@ const Footer = ({ onCursor }) => {
             className="link"
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
-            href={CV}
+            href="https://read.cv/tiffchan"
             target="_blank"
             rel="noreferrer"
           >

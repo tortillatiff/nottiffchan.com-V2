@@ -97,12 +97,14 @@ const Menu = () => {
                   ))}
                 </ol>
               )}
-              <button
-                className="tiff-btn btn-sec"
-                style={{ marginTop: "20px" }}
+              <a
+                href="https://read.cv/tiffchan"
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginTop: "20px", fontWeight: 500 }}
               >
                 résumé
-              </button>
+              </a>
             </nav>
           </StyledSidebar>
         </div>
