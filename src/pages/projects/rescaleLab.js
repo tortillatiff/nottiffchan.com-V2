@@ -136,10 +136,6 @@ const RescaleLab = () => {
         <small>The solution</small>
         <h3>Visual refresh and information restructure</h3>
       </ProjectTextSection>
-      <ProjectSplitshow
-        leftItems={leftItems}
-        rightItems={rightItems}
-      ></ProjectSplitshow>
 
       <ProjectTextSection>
         <small>Research & improvement Takeaways</small>
@@ -232,13 +228,22 @@ const RescaleLab = () => {
         <video src={rDemo} loop muted autoPlay playsInline></video>
       </ScreenshotContainer>
 
+      <ProjectSplitshow
+        leftItems={leftItems}
+        rightItems={rightItems}
+      ></ProjectSplitshow>
+
       <ProjectTextSection>
         <small>Learnings & Takeaways</small>
         <h3>Looking back and running forward</h3>
         <p>
           I truly enjoyed working on this project, from starting our first
           design system from scratch to coming up with user flows and page
-          wireframes, even getting to build most of my designs out.
+          wireframes, even getting to build most of my designs out. The changes
+          that I proposed and implemented subsequently even resulted in a{" "}
+          <b>25% increase in user conversion rate</b> and 3
+          <b>6% increase in startup program participants</b> that continued
+          using the platform even after their programs had ended.
         </p>
         <p>
           <b>My main takeaway – </b> Communicating the importance of
@@ -246,11 +251,6 @@ const RescaleLab = () => {
           user interviews and usability testing in my own time, with my own
           family and friends to prove to the higher-ups that an improved design,
           and new styleguide was worth the time and effort.
-        </p>
-        <p>
-          <b>If I had more time – </b> I would have wanted to conduct more
-          thorough user research, user flows and revise from scratch the entire
-          information hierarchy of the site for all personas.
         </p>
         <p>
           After my internship, my design system and designs are still in use

@@ -45,25 +45,26 @@ const About = () => {
             <h3>Designer, developer and plant mother.</h3>
             <p style={{ marginBottom: "60px" }}>
               I’m a curious soul and product designer from <b>Singapore</b> with
-              a love for visual design, subtle details and empowering users.
+              a love for visual design, design systems and empowering users.
             </p>
           </div>
 
           <div ref={revealPara2}>
             <p style={{ marginBottom: "60px" }}>
-              My design process is inspired by my engineering background. I’m in
-              my final year in the <b>National University of Singapore</b> with
-              a BComp in <b>Computer Science</b> and a minor in{" "}
-              <b>Interactive Media Development</b>, where I incorporate my
-              multidisciplinary design and technical studies into my craft.
+              I’m currently a <b>Product Design Intern with Grab</b>. In the
+              past 3 years, I’ve gotten the chance to do a number of
+              internships, always advocating for good design at companies from
+              small startups to large organisations. I’m in my final year in the{" "}
+              <b>National University of Singapore</b> where I'm a Computer
+              Science major.
             </p>
           </div>
 
           <div ref={revealPara3}>
             <p>
-              Coming from a background in both engineering and design, I love
-              connecting the dots between business goals, technical constraints
-              and user satisfaction.
+              My design process is inspired by my background in both engineering
+              and design, I love connecting the dots between business goals,
+              technical constraints and user satisfaction.
             </p>
           </div>
         </div>
